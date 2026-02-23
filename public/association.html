@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | ICSCIS 2026</title>
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link href="./assets/css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
+
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hover Card */
+      .hover-card {
+        transition: all 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hover-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      .hover-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        border: 2px solid transparent;
+        transition: all 0.35s ease;
+      }
+
+      .hover-card:hover::after {
+        border-color: rgba(59, 130, 246, 0.4);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <div id="header-placeholder"></div>
+
+    <!-- HERO -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Association
+          </h2>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- R&D CELL -->
+    <section class="py-10 bg-gray-50 fade-section">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
+        >
+          About the R&amp;D Cell
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+              To establish a robust mechanism for developing and strengthening
+              the research ecosystem within university to reshape industries and
+              elevate society for the benefit of the world using transformative
+              innovation and advancing knowledge.
+            </p>
+          </div>
+
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4">Mission</h3>
+            <ul class="space-y-4 text-gray-600 leading-relaxed">
+              <li class="flex gap-3">
+                <span class="font-semibold text-primary">1.</span>
+                <span class="text-justify">
+                  To create an enabling environment for enhancing research
+                  productivity.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-semibold text-primary">2.</span>
+                <span class="text-justify">
+                  To encourage collaboration among industry, government,
+                  community-based organizations, and agencies.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-semibold text-primary">3.</span>
+                <span class="text-justify">
+                  To facilitate greater access to research through mobilization
+                  of resources and funding.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="hover-card bg-gray-100 rounded-2xl p-8 text-gray-600 leading-relaxed text-justify"
+        >
+          <p>
+            Poornima University's Research and Development (R&amp;D) cell is a
+            vibrant centre of research and innovation, dedicated to advancing
+            cutting-edge research in a variety of subjects and pushing the
+            boundaries of knowledge for promoting advanced research across
+            diverse fields. The R&amp;D cell works on challenges like
+            healthcare, education, environmental sustainability, and social
+            fairness with an emphasis on interdisciplinary approaches and
+            ethical research practices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NITTTR -->
+    <section class="py-24 bg-gray-100 fade-section">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
+        >
+          About NITTTR, Bhopal
+        </h2>
+
+        <di class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+              National Institute of Technical Teachers' Training and Research
+              (NITTTR), Bhopal is a premier institution established in 1965 by
+              the Ministry of Education, Government of India, for teacher
+              training and improving the overall quality of the Technical
+              Education System across the country. The Institute has developed
+              expertise through continuous research and development in areas
+              such as competency development in emerging technologies, subject
+              matter enhancement, classroom and laboratory-based learning,
+              industry-institute internships, management of technical
+              institutions, personality development, entrepreneurship
+              development, examination reforms, and student assessment.
+            </p>
+          </div>
+
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4"></h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+             It also specializes in instructional resource development,
+              multimedia and video production, educational project planning and
+              management, community development initiatives, and evaluation of
+              programs and projects within the technical education ecosystem.
+              In 2003, the Government of India upgraded the Institute’s mandate,
+              enabling it to function as a national-level resource institution
+              beyond regional boundaries. With modern infrastructure and updated
+              resources, NITTTR continues to support quality enhancement in
+              technical education through strategic collaboration and networking
+              with centers of excellence.
+            </p>
+          </div>
+        </div>
+      
+    </section>
+
+    <!-- RCAT -->
+    <section class="py-24 bg-white fade-section">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
+        >
+          About RCAT
+        </h2>
+
+         <di class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+              National Institute of Technical Teachers' Training and Research
+              (NITTTR), Bhopal is a premier institution established in 1965 by
+              the Ministry of Education, Government of India, for teacher
+              training and improving the overall quality of the Technical
+              Education System across the country. The Institute has developed
+              expertise through continuous research and development in areas
+              such as competency development in emerging technologies, subject
+              matter enhancement, classroom and laboratory-based learning,
+              industry-institute internships, management of technical
+              institutions, personality development, entrepreneurship
+              development, examination reforms, and student assessment.
+            </p>
+          </div>
+
+          <div class="hover-card bg-blue-100 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-primary mb-4"></h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+             Rajasthan Centre of Advanced Technology (R-CAT) is formed under
+              the Society Registration Act, 1958 and is managed under the aegis
+              of the Department of Information Technology & Communication
+              (DoIT&C), Government of Rajasthan (GoR).
+               R-CAT has been established to enhance the employability of
+              engineering and technology students as well as youth of the state.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
+
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        if (slides.length > 0) {
+          setInterval(() => {
+            slides[current].classList.remove("opacity-100");
+            slides[current].classList.add("opacity-0");
+            current = (current + 1) % slides.length;
+            slides[current].classList.remove("opacity-0");
+            slides[current].classList.add("opacity-100");
+          }, 4000);
+        }
+
+        const sections = document.querySelectorAll(".fade-section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script>
+  </body>
+</html>
