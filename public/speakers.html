@@ -1,236 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keynote Speakers | ICSCIS 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keynote Speakers | ICSCIS 2026</title>
 
-<link href="/assets/css/output.css" rel="stylesheet">
+    <link href="/assets/css/output.css" rel="stylesheet" />
 
-<style>
-body { animation: fadePage 0.8s ease-in-out; }
+    <style>
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
 
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-.speaker-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-  background: white;
-}
-.speaker-card.show-card {
-  opacity: 1;
-  transform: translateY(0);
-}
-.speaker-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-}
-.speaker-card img {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.6s ease;
-}
-.speaker-card.show-card img {
-  opacity: 1;
-  transform: scale(1);
-  transition-delay: 0.2s;
-}
-</style>
-</head>
+      .speaker-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+        background: white;
+      }
+      .speaker-card.show-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .speaker-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+      .speaker-card img {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.6s ease;
+      }
+      .speaker-card.show-card img {
+        opacity: 1;
+        transform: scale(1);
+        transition-delay: 0.2s;
+      }
+    </style>
+  </head>
 
-<body class="bg-gray-100 text-gray-800">
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
-<!-- Header -->
-<div id="header-placeholder"></div>
+    <!-- ================= HERO ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-<!-- ================= HERO ================= -->
-<section class="pt-20 pb-8 bg-gray-100 fade-section">
-<div class="max-w-5xl mx-auto px-6 relative">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-<div class="relative rounded-3xl overflow-hidden shadow-2xl">
-<div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
 
-<div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-<img src="/assets/images/building.avif" class="w-full h-full object-cover">
-</div>
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Keynote Speakers
+          </h2>
+          <p class="text-gray-500">
+            Distinguished speakers sharing their expertise
+          </p>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        </div>
+      </div>
+    </section>
 
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/poornima 3.webp" class="w-full h-full object-cover">
-</div>
+    <!-- ================= SPEAKERS ================= -->
+    <section class="py-20 bg-white fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Speaker 1 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Prof_Ajit_Khosla.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Prof. Ajit Khosla</h3>
+            <p class="text-primary text-sm">Yamagata University</p>
+            <p class="text-gray-600 text-sm">Japan</p>
+          </div>
 
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/footercover.webp" class="w-full h-full object-cover">
-</div>
+          <!-- Speaker 2 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Dr_Srinivasan_Lakshmanan.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Dr. Srinivasan Lakshmanan</h3>
+            <p class="text-primary text-sm">Delta System & Software Inc.</p>
+            <p class="text-gray-600 text-sm">USA</p>
+          </div>
 
-</div>
-<div class="absolute inset-0 bg-black/10"></div>
-</div>
+          <!-- Speaker 3 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Dr_Tien_Anh_Tran.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Dr. Tien Anh Tran</h3>
+            <p class="text-primary text-sm">University of Malta</p>
+            <p class="text-gray-600 text-sm">Malta</p>
+          </div>
 
-<div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
-<h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-Keynote Speakers
-</h2>
-<p class="text-gray-500">
-Distinguished speakers sharing their expertise
-</p>
-<div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-</div>
+          <!-- Speaker 4 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Mr_Ankit_R_Patel.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Mr. Ankit R. Patel</h3>
+            <p class="text-primary text-sm">University of Minho</p>
+            <p class="text-gray-600 text-sm">Portugal</p>
+          </div>
 
-</div>
-</section>
+          <!-- Speaker 5 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Dr_S_B_Goyal.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Dr. S B Goyal</h3>
+            <p class="text-primary text-sm">City University</p>
+            <p class="text-gray-600 text-sm">Malaysia</p>
+          </div>
 
-<!-- ================= SPEAKERS ================= -->
-<section class="py-20 bg-white fade-section">
-<div class="max-w-7xl mx-auto px-6">
+          <!-- Speaker 6 -->
+          <div class="speaker-card p-8 rounded-2xl text-center">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/images/Mr_Preetish_Kakkar.png"
+                class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-1">Mr. Preetish Kakkar</h3>
+            <p class="text-primary text-sm">Adobe</p>
+            <p class="text-gray-600 text-sm">USA</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- ================= FOOTER ================= -->
 
-<!-- Speaker 1 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Prof_Ajit_Khosla.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Prof. Ajit Khosla</h3>
-<p class="text-primary text-sm">Yamagata University</p>
-<p class="text-gray-600 text-sm">Japan</p>
-</div>
+    <div id="footer-placeholder"></div>
 
-<!-- Speaker 2 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Dr_Srinivasan_Lakshmanan.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Dr. Srinivasan Lakshmanan</h3>
-<p class="text-primary text-sm">Delta System & Software Inc.</p>
-<p class="text-gray-600 text-sm">USA</p>
-</div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
 
-<!-- Speaker 3 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Dr_Tien_Anh_Tran.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Dr. Tien Anh Tran</h3>
-<p class="text-primary text-sm">University of Malta</p>
-<p class="text-gray-600 text-sm">Malta</p>
-</div>
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
 
-<!-- Speaker 4 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Mr_Ankit_R_Patel.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Mr. Ankit R. Patel</h3>
-<p class="text-primary text-sm">University of Minho</p>
-<p class="text-gray-600 text-sm">Portugal</p>
-</div>
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Slider
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+        if (slides.length > 0) {
+          setInterval(() => {
+            slides[current].classList.remove("opacity-100");
+            slides[current].classList.add("opacity-0");
+            current = (current + 1) % slides.length;
+            slides[current].classList.remove("opacity-0");
+            slides[current].classList.add("opacity-100");
+          }, 4000);
+        }
 
-<!-- Speaker 5 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Dr_S_B_Goyal.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Dr. S B Goyal</h3>
-<p class="text-primary text-sm">City University</p>
-<p class="text-gray-600 text-sm">Malaysia</p>
-</div>
+        // Scroll
+        const sections = document.querySelectorAll(".fade-section");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) entry.target.classList.add("show");
+            });
+          },
+          { threshold: 0.15 },
+        );
 
-<!-- Speaker 6 -->
-<div class="speaker-card p-8 rounded-2xl text-center">
-<div class="flex justify-center mb-6">
-<img src="/assets/images/Mr_Preetish_Kakkar.png"
-     class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-md">
-</div>
-<h3 class="text-xl font-bold mb-1">Mr. Preetish Kakkar</h3>
-<p class="text-primary text-sm">Adobe</p>
-<p class="text-gray-600 text-sm">USA</p>
-</div>
+        sections.forEach((section) => observer.observe(section));
 
-</div>
-</div>
-</section>
+        // Speaker animation
+        const speakerCards = document.querySelectorAll(".speaker-card");
+        const speakerObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) entry.target.classList.add("show-card");
+            });
+          },
+          { threshold: 0.2 },
+        );
 
-<!-- ================= FOOTER ================= -->
-
-<div id="footer-placeholder"></div>
-
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
- 
-
- 
-
-  // Slider
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
-  if (slides.length > 0) {
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-      current = (current + 1) % slides.length;
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  }
-
-  // Scroll
-  const sections = document.querySelectorAll(".fade-section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-  }, { threshold: 0.15 });
-
-  sections.forEach(section => observer.observe(section));
-
-  // Speaker animation
-  const speakerCards = document.querySelectorAll(".speaker-card");
-  const speakerObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("show-card");
-    });
-  }, { threshold: 0.2 });
-
-  speakerCards.forEach(card => speakerObserver.observe(card));
-
-});
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+        speakerCards.forEach((card) => speakerObserver.observe(card));
+      });
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

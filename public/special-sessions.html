@@ -1,229 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Sessions | ICSCIS 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Sessions | ICSCIS 2026</title>
 
-<link href="/assets/css/output.css" rel="stylesheet">
+    <link href="/assets/css/output.css" rel="stylesheet" />
 
-<style>
-body { animation: fadePage 0.8s ease-in-out; }
-
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.modern-card {
-  transition: all 0.35s ease;
-}
-.modern-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-}
-
-table tbody tr:hover {
-  background-color: #f1f5ff;
-}
-</style>
-</head>
-
-<body class="bg-gray-100 text-gray-800">
-
-<!-- Header -->
-<div id="header-placeholder"></div>
-
-<!-- ================= HERO ================= -->
-<section class="pt-20 pb-8 bg-gray-100 fade-section">
-<div class="max-w-5xl mx-auto px-6 relative">
-
-<div class="relative rounded-3xl overflow-hidden shadow-2xl">
-<div class="slider relative w-full h-72 md:h-[450px]">
-
-<div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-<img src="/assets/images/building.avif" class="w-full h-full object-cover">
-</div>
-
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/poornima 3.webp" class="w-full h-full object-cover">
-</div>
-
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/footercover.webp" class="w-full h-full object-cover">
-</div>
-
-</div>
-<div class="absolute inset-0 bg-black/10"></div>
-</div>
-
-<div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
-<h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-Special Sessions
-</h2>
-<p class="text-gray-500">
-Focused topics with expert discussion
-</p>
-<div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-</div>
-
-</div>
-</section>
-
-<!-- ================= CONTENT ================= -->
-<section class="py-20 bg-white fade-section">
-<div class="max-w-6xl mx-auto px-6">
-
-<div class="bg-blue-50 p-8 rounded-2xl modern-card mb-12">
-
-<p class="font-semibold text-gray-900 mb-4">
-For special session, kindly fill the details in the required format given
-<a href="https://docs.google.com/document/d/1Oe4W00IKvmulkHxYqfGlmyOMqEQG30d0/edit"
-   target="_blank"
-   class="text-primary underline hover:text-blue-800">
-here
-</a>
-and send in PDF format at
-<a href="mailto:icscis@poornima.edu.in"
-   class="text-primary underline">
-icscis@poornima.edu.in
-</a>
-</p>
-
-<p class="font-semibold text-gray-900">
-For special session instructions,
-<a href="https://docs.google.com/document/d/1e815SxvjI95R4xMLTYCj5T4GtPqXw7pk/edit"
-   target="_blank"
-   class="text-primary underline hover:text-blue-800">
-Click here
-</a>
-</p>
-
-</div>
-
-<div class="bg-gray-50 p-8 rounded-2xl modern-card overflow-x-auto">
-
-<h3 class="text-xl font-bold text-primary mb-6">
-Special Session Topics
-</h3>
-
-<table class="w-full border border-gray-300 text-sm text-center bg-white">
-<thead class="bg-gray-200">
-<tr>
-<th class="border p-3">S.NO</th>
-<th class="border p-3">Special session topic</th>
-<th class="border p-3">Name of Person(s)</th>
-<th class="border p-3">Submission URL</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="border p-3">1</td>
-<td class="border p-3 text-left">
-Recent trends and application of industrial Internet of Things and Computing
-</td>
-<td class="border p-3">Dr. Ashish Tiwari</td>
-<td class="border p-3">
-<a href="/submission.html"
-   class="text-primary font-semibold underline hover:text-blue-800">
-Click for submission link
-</a>
-</td>
-</tr>
-
-<tr>
-<td class="border p-3">2</td>
-<td class="border p-3"></td>
-<td class="border p-3"></td>
-<td class="border p-3"></td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
-
-</div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<div id="footer-placeholder"></div>
-
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script> 
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  
-
-      // Active link detection
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
-        }
-      });
-    });
-
- 
-
-  // Slider
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
-
-  if (slides.length > 0) {
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-      current = (current + 1) % slides.length;
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  }
-
-  // Scroll animation
-  const sections = document.querySelectorAll(".fade-section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+    <style>
+      body {
+        animation: fadePage 0.8s ease-in-out;
       }
-    });
-  }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+      .modern-card {
+        transition: all 0.35s ease;
+      }
+      .modern-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+
+      table tbody tr:hover {
+        background-color: #f1f5ff;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ================= HERO ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Special Sessions
+          </h2>
+          <p class="text-gray-500">Focused topics with expert discussion</p>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="py-20 bg-white fade-section">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-blue-50 p-8 rounded-2xl modern-card mb-12">
+          <p class="font-semibold text-gray-900 mb-4">
+            For special session, kindly fill the details in the required format
+            given
+            <a
+              href="https://docs.google.com/document/d/1Oe4W00IKvmulkHxYqfGlmyOMqEQG30d0/edit"
+              target="_blank"
+              class="text-primary underline hover:text-blue-800"
+            >
+              here
+            </a>
+            and send in PDF format at
+            <a
+              href="mailto:icscis@poornima.edu.in"
+              class="text-primary underline"
+            >
+              icscis@poornima.edu.in
+            </a>
+          </p>
+
+          <p class="font-semibold text-gray-900">
+            For special session instructions,
+            <a
+              href="https://docs.google.com/document/d/1e815SxvjI95R4xMLTYCj5T4GtPqXw7pk/edit"
+              target="_blank"
+              class="text-primary underline hover:text-blue-800"
+            >
+              Click here
+            </a>
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl modern-card overflow-x-auto">
+          <h3 class="text-xl font-bold text-primary mb-6">
+            Special Session Topics
+          </h3>
+
+          <table
+            class="w-full border border-gray-300 text-sm text-center bg-white"
+          >
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="border p-3">S.NO</th>
+                <th class="border p-3">Special session topic</th>
+                <th class="border p-3">Name of Person(s)</th>
+                <th class="border p-3">Submission URL</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="border p-3">1</td>
+                <td class="border p-3 text-left">
+                  Recent trends and application of industrial Internet of Things
+                  and Computing
+                </td>
+                <td class="border p-3">Dr. Ashish Tiwari</td>
+                <td class="border p-3">
+                  <a
+                    href="/submission.html"
+                    class="text-primary font-semibold underline hover:text-blue-800"
+                  >
+                    Click for submission link
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="border p-3">2</td>
+                <td class="border p-3"></td>
+                <td class="border p-3"></td>
+                <td class="border p-3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
+
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Active link detection
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) {
+            link.classList.add("text-primary", "font-semibold");
+          }
+        });
+      });
+
+      // Slider
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      if (slides.length > 0) {
+        setInterval(() => {
+          slides[current].classList.remove("opacity-100");
+          slides[current].classList.add("opacity-0");
+          current = (current + 1) % slides.length;
+          slides[current].classList.remove("opacity-0");
+          slides[current].classList.add("opacity-100");
+        }, 4000);
+      }
+
+      // Scroll animation
+      const sections = document.querySelectorAll(".fade-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

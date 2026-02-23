@@ -1,623 +1,1088 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Committee | ICSCIS 2026</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="assets/css/output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Committee | ICSCIS 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/output.css" rel="stylesheet" />
 
-<style>
-html { scroll-behavior: smooth; }
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-/* HERO BACKGROUND */
-.hero-bg {
-  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-}
+      /* HERO BACKGROUND */
+      .hero-bg {
+        background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      }
 
-/* HERO FADE ANIMATION */
-.hero-fade {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
-}
+      /* HERO FADE ANIMATION */
+      .hero-fade {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeUp 1s ease forwards;
+      }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-/* SECTION TITLE */
-.section-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1e3a8a;
-  margin-bottom: 30px;
-}
+      /* SECTION TITLE */
+      .section-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 30px;
+      }
 
-/* GRID */
-.committee-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
+      /* GRID */
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
 
-/* CARD STYLE */
-.committee-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-  font-size: 14px;
-  transition: 0.35s ease;
-  transform: translateY(30px);
-  opacity: 0;
-}
+      /* CARD STYLE */
+      .committee-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        font-size: 14px;
+        transition: 0.35s ease;
+        transform: translateY(30px);
+        opacity: 0;
+      }
 
-.committee-card.visible {
-  transform: translateY(0);
-  opacity: 1;
-}
+      .committee-card.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
 
-.committee-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(30,58,138,0.15);
-}
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
+      .committee-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(30, 58, 138, 0.15);
+      }
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
 
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
-</head>
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
 
-<body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-50 text-gray-800">
+    <!-- NAVBAR -->
+    <div id="header-placeholder"></div>
 
-<!-- NAVBAR -->
-<div id="header-placeholder"></div>
+    <!-- ================= HERO ================= -->
+    <section class="pt-20 pb-16 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <!-- Slider Container -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg hero-image">
+          <div class="slider relative w-full h-72 md:h-[420px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-<!-- ================= HERO ================= -->
-<section class="pt-20 pb-16 bg-gray-100 fade-section">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
 
-  <div class="max-w-5xl mx-auto px-6 relative">
-
-    <!-- Slider Container -->
-    <div class="relative rounded-3xl overflow-hidden shadow-lg hero-image">
-      <div class="slider relative w-full h-72 md:h-[420px]">
-
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-          <img src="assets/images/building.avif"
-               class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/poornima 3.webp"
-               class="w-full h-full object-cover">
+        <!-- Floating Card -->
+        <div
+          class="relative mt-8 mb-20 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center card-animate"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Committee
+          </h2>
+          <p class="text-base md:text-lg text-gray-500 mb-2">
+            Meet the conference organizing committee
+          </p>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
         </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/footercover.webp"
-               class="w-full h-full object-cover">
-        </div>
-
       </div>
+    </section>
 
-      <div class="absolute inset-0 bg-black/10"></div>
-    </div>
+    <!-- CONTENT -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6 space-y-20">
+        <!-- HONORARY PATRON -->
+        <div>
+          <h2 class="section-title">HONORARY PATRON</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Mr. Shashikant Singhi, Chairperson, PU
+            </div>
+            <div class="committee-card">
+              Dr. Suresh Chandra Padhy, President, PU
+            </div>
+            <div class="committee-card">Ar. Rahul Singhi, Director, PU</div>
+          </div>
+        </div>
 
-    <!-- Floating Card -->
-   <div class="relative mt-8 mb-20 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center card-animate"> 
-      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-        Committee
-      </h2>
-      <p class="text-base md:text-lg text-gray-500 mb-2">
-        Meet the conference organizing committee
-      </p>
-      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-    </div>
+        <!-- ADVISORS -->
+        <div>
+          <h2 class="section-title">ADVISORS</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Ankush Jain, Dean Academics, PU
+            </div>
+            <div class="committee-card">
+              Dr. Chandni Kripalani, Pro-President, PU
+            </div>
+            <div class="committee-card">Ar. Manjiri Rai, Pro-President, PU</div>
+            <div class="committee-card">
+              Dr. Devendar Somwanshi, Registrar, PU
+            </div>
+            <div class="committee-card">
+              Dr. Mahesh M. Bundele, Principal, PCE
+            </div>
+            <div class="committee-card">Dr. Dinesh Goyal, Principal, PIET</div>
+          </div>
+        </div>
 
-  </div>
+        <!-- CONFERENCE CHAIRS -->
+        <div>
+          <h2 class="section-title">CONFERENCE CHAIRS</h2>
+          <div class="committee-grid">
+            <div class="committee-card">Dr. Ajay Khunteta, Dean FCE, PU</div>
+            <div class="committee-card">Dr. Manoj Gupta, Pro-President, PU</div>
+          </div>
+        </div>
 
-</section>
+        <!-- CONFERENCE CO-CHAIRS -->
+        <div>
+          <h2 class="section-title">CONFERENCE CO-CHAIRS</h2>
+          <div class="committee-grid">
+            <div class="committee-card"></div>
+            <div class="committee-card"></div>
+          </div>
+        </div>
 
-<!-- CONTENT -->
-<section class="py-20">
-<div class="max-w-7xl mx-auto px-6 space-y-20">
+        <!-- CONVENER -->
+        <div>
+          <h2 class="section-title">CONVENER</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Saurabh Shandilya, Professor, PU
+            </div>
+            <div class="committee-card">
+              Dr. Udit Mamodiya, Associate Dean Research, PU
+            </div>
+          </div>
+        </div>
 
-<!-- HONORARY PATRON -->
-<div>
-<h2 class="section-title">HONORARY PATRON</h2>
-<div class="committee-grid">
-<div class="committee-card">Mr. Shashikant Singhi, Chairperson, PU</div>
-<div class="committee-card">Dr. Suresh Chandra Padhy, President, PU</div>
-<div class="committee-card">Ar. Rahul Singhi, Director, PU</div>
-</div>
-</div>
+        <!-- CO-CONVENER -->
+        <div>
+          <h2 class="section-title">CO-CONVENER</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Sumit Kapoor, Associate Professor, PU
+            </div>
+            <div class="committee-card">Dr. Shrikant Verma, Professor, PU</div>
+          </div>
+        </div>
 
-<!-- ADVISORS -->
-<div>
-<h2 class="section-title">ADVISORS</h2>
-<div class="committee-grid">
-<div class="committee-card">Dr. Ankush Jain, Dean Academics, PU</div>
-<div class="committee-card">Dr. Chandni Kripalani, Pro-President, PU</div>
-<div class="committee-card">Ar. Manjiri Rai, Pro-President, PU</div>
-<div class="committee-card">Dr. Devendar Somwanshi, Registrar, PU</div>
-<div class="committee-card">Dr. Mahesh M. Bundele, Principal, PCE</div>
-<div class="committee-card">Dr. Dinesh Goyal, Principal, PIET</div>
-</div>
-</div>
+        <!--CONFERENCE ORGANIZING SECRETARIES-->
+        <div>
+          <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Kriti Sankhla, Associate Professor, PU
+            </div>
+            <div class="committee-card">
+              Mr. Firdos Alam Sheikh, Assistant Professor, PU
+            </div>
+            <div class="committee-card">
+              Dr. Bright Keshwani, R&amp;D Cell, PU
+            </div>
+            <div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
+          </div>
+        </div>
 
-<!-- CONFERENCE CHAIRS -->
-<div>
-<h2 class="section-title">CONFERENCE CHAIRS</h2>
-<div class="committee-grid">
-<div class="committee-card">Dr. Ajay Khunteta, Dean FCE, PU</div>
-<div class="committee-card">Dr. Manoj Gupta, Pro-President, PU</div>
-</div>
-</div>
+        <!--ORGANIZING CHAIRS-->
+        <div>
+          <h2 class="section-title">ORGANIZING CHAIRS</h2>
+          <div class="committee-grid">
+            <div class="committee-card">Mr. Sunil Bhargava, Director, PIHM</div>
+            <div class="committee-card">Dr. Priti Kaushik, Dean (FSH)</div>
+            <div class="committee-card">Dr. Jitendra Sharma, Dean (FDA)</div>
+            <div class="committee-card">Dr. Ankush Kumar Jain, Dean (FET)</div>
+            <div class="committee-card">
+              Dr. Rakesh Kumar Gupta, Dean (Student Welfare)
+            </div>
+            <div class="committee-card">
+              Dr. Swati Gokhru, Dean (International Relations)
+            </div>
+            <div class="committee-card">
+              Dr. Ajay Kumar Pagare, Associate Dean (IQAC)
+            </div>
+            <div class="committee-card">
+              Dr. Sushil Kumar Jain, Associate Dean (Academics)
+            </div>
+            <div class="committee-card">Dr. Pooja Gupta, Dean (I/C – FIRE)</div>
+            <div class="committee-card">Mr. Naval Kishor Jain, COE</div>
+          </div>
+        </div>
 
-<!-- CONFERENCE CO-CHAIRS -->
-<div>
-<h2 class="section-title">CONFERENCE CO-CHAIRS</h2>
-<div class="committee-grid">
-<div class="committee-card"></div>
-<div class="committee-card"></div>
-</div>
-</div>
+        <!--ORGANIZING CO-CHAIRS-->
+        <div>
+          <h2 class="section-title">ORGANIZING CO-CHAIRS</h2>
+          <div class="committee-grid">
+            <div class="committee-card">Dr. Vishnu Sharma HOD MCA</div>
+            <div class="committee-card">
+              Dr. Savita Shivani HOD BCA (Higher)
+            </div>
+            <div class="committee-card">
+              Dr. Pratish Rawat, HOD – Department of First year, FET &amp; FCE
+            </div>
+            <div class="committee-card">
+              Ms. Abhilasha Khandelwal, Dy-HOD B.Tech. Higher(FET)
+            </div>
+            <div class="committee-card">
+              Dr. Deepika Saxena, HOD BCA First Year
+            </div>
+            <div class="committee-card">
+              Dr. Manali Pareek Dy-HOD BCA Higher
+            </div>
+            <div class="committee-card">Ms. Kavita Lal DyHOD MCA</div>
+            <div class="committee-card">Dr. Imran Mirza Dy-BCA First Year</div>
+            <div class="committee-card">
+              Dr. Devesh Kumar, HOD - Department of Mechanical Engineering
+            </div>
+            <div class="committee-card">
+              Dr. Ashish Raj, HOD - Department of Electrical &amp; Electronics
+              Engineering
+            </div>
+            <div class="committee-card">
+              Dr. Gaurav Malpani, HOD - Department of Commerce
+            </div>
+            <div class="committee-card">
+              Dr. Monika Khatri, HOD - Department of Management (BBA)
+            </div>
+            <div class="committee-card">
+              Dr. Urvashi Bhamboo, HOD - Department of Management (MBA)
+            </div>
+            <div class="committee-card">
+              Ms. Shikha Sharma, HOD - Department of Computer Science &amp;
+              Engineering (B.Tech II to IV year)
+            </div>
+            <div class="committee-card">Mr. K. K. Parihar, HOD – PIHM</div>
+            <div class="committee-card">
+              Ms. Sunita Prareek, Chief Librarian
+            </div>
+          </div>
+        </div>
+        <!-- TECHNICAL PROGRAM CHAIRS -->
+        <div>
+          <h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Devendra Somwanshi, Registrar, PCE
+            </div>
+            <div class="committee-card">Dr. Gautam Singh, Registrar, PIET</div>
+            <div class="committee-card">
+              Dr. Vishnu Sharma, HOD – Department of Computer Science &
+              Application (MCA &BCA higher classes)
+            </div>
+            <div class="committee-card">
+              Ms. Kavita Lal, HOD – Department of Computer Science & Application
+              (MCA & BCA first year)
+            </div>
+            <div class="committee-card">
+              Dr. Pooja Gupta, HOD - Faculty of Innovation, Research, and
+              Entrepreneurship
+            </div>
+            <div class="committee-card">
+              Mr. Kumar Rahul Mayank, HOD - Department of Fashion, Textile &
+              Apparel Design
+            </div>
+            <div class="committee-card">
+              Md. Firdos Sheikh, Deputy HOD - Department of Computer Science &
+              Engineering
+            </div>
+          </div>
+        </div>
+        <!-- INTERNATIONAL ADVISORY COMMITTEE -->
+        <div>
+          <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Michael Baron, Charles Sturt University, Australia
+            </div>
+            <div class="committee-card">
+              Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions,
+              Google, USA
+            </div>
+            <div class="committee-card">
+              Pradeep Chintale, Board of Director-Education and Innovation, The
+              New World Foundation, USA
+            </div>
+            <div class="committee-card">
+              Prof. Ajit Khosla, Yamagata University, Japan
+            </div>
+            <div class="committee-card">
+              Alesa Durgaryan, Global Educator, Armenia
+            </div>
+            <div class="committee-card">
+              Dr. Srinivasan Lakshmanan, Delta System &amp; Software Inc. Texas,
+              USA
+            </div>
+            <div class="committee-card">
+              Dr. Sara Ravan Ramzani, Professor, Gisma University of Applied
+              Sciences, Germany
+            </div>
+            <div class="committee-card">
+              Prof Dr S B Goyal, Director, City University, Malaysia
+            </div>
+            <div class="committee-card">
+              Ankit R. Patel, University of Minho, Portugal
+            </div>
+            <div class="committee-card">
+              Dr. Tien Anh Tran, University of Malta, Malta
+            </div>
+            <div class="committee-card">
+              Dr Harjit Pal Singh, The University of the West Indies, St
+              Augustine Trinidad and Tobago
+            </div>
+            <div class="committee-card">
+              Gopi Desaboyina, Sr Systems Engineer, Western Governers
+              University, United States
+            </div>
+            <div class="committee-card">
+              Narendra B Merla, Senior Data Engineering Manager, Oklahoma State
+              University, United States of America
+            </div>
+            <div class="committee-card">
+              Dr Samrat Ray, Peter the Great Saint, Petersburg Polytechnic
+              University, Russia
+            </div>
+            <div class="committee-card">
+              Dr. Muthmainnah, Universitas Al Asyariah Mandar West Sulawesi,
+              Indonesia
+            </div>
+            <div class="committee-card">
+              Dr. Kusum Yadav, University of Ha'il, Saudi Arabia
+            </div>
+            <div class="committee-card">
+              Valliappan, Director of RMC, Perdana University, Malaysia
+            </div>
+            <div class="committee-card">
+              Noor Zaman Jhanjhi, Professor, Taylor's University, Malaysia
+            </div>
+            <div class="committee-card">
+              Dr Dalwinder Kaur, Manipal Global Nxt University, Malaysia
+            </div>
+            <div class="committee-card">
+              Danish Jamil, Sir Syed University of Engineering and Technology,
+              Pakistan
+            </div>
+            <div class="committee-card">
+              Pastor Arguelles, Jr. Director, University of Batangas,
+              Philippines
+            </div>
+            <div class="committee-card">
+              Dr. Aftab Ara, University of Hail, Saudi Arabia
+            </div>
+            <div class="committee-card">
+              Emmanuel Philip, Ododo University of Uyo, Nigeria
+            </div>
+            <div class="committee-card">
+              Dr. Ali Said Al Matari, Sharqiyah University, Oman
+            </div>
+            <div class="committee-card">
+              Syed Abdal Ahmad Khan, RAK Medical and Health Sciences University,
+              United Arab Emirates
+            </div>
+            <div class="committee-card">
+              A S M Ahsanul Sarkar Akib, Managing Director, Robo Tech Valley,
+              Bangladesh
+            </div>
+            <div class="committee-card">
+              Gopi Desaboyina, Western Governers University, USA
+            </div>
+            <div class="committee-card">Deeksha Dwivedi, Lealie’s, USA</div>
+            <div class="committee-card">
+              Narendra B Merla, Oklahoma State University, USA
+            </div>
+            <div class="committee-card">
+              Alesa Durgaryan, Armenian State Pedagogical University, Armenia
+            </div>
+            <div class="committee-card">
+              Dr Samrat Ray, Peter the Great Saint, Petersburg polytechnic
+              University, Russia
+            </div>
+            <div class="committee-card">
+              Dr Harjit Pal Singh, The University of the West Indies, St
+              Augustine, Trinidad and Tobago
+            </div>
+            <div class="committee-card">
+              Laraib FaTIma Al Hussaini, University of Wah, Wah Cantt, Pakistan
+            </div>
+            <div class="committee-card">Mr. Achraf Golli, Quizard AI, USA</div>
+            <div class="committee-card">
+              Mr. Akbar Doctor, Fresenius Medical Care, USA
+            </div>
+            <div class="committee-card">
+              Mr. Anirudh Khanna, Pacific Gas and Electric, USA
+            </div>
+            <div class="committee-card">Mr. Ankit Bansal, Bayer, USA</div>
+            <div class="committee-card">Mr. Arjun Jaggi, HCLTech, USA</div>
+            <div class="committee-card">
+              Mr. Bharath Muddarla, Whiz IT Solutions, USA
+            </div>
+            <div class="committee-card">
+              Mr. Dilip Kumar, Sr. Software Engineer, Intuit, USA
+            </div>
+            <div class="committee-card">
+              Mr. Diwakar Peddinti, Trackonomy Systems, USA
+            </div>
+            <div class="committee-card">
+              Mr. Gaurav Jindal, Barclays Corporate &amp; Investment Bank, USA
+            </div>
+            <div class="committee-card">
+              Mr. Govindarajan lakshmi kanthan, Independent Researcher, USA
+            </div>
+            <div class="committee-card">
+              Mr. Hariharan Ragothaman, Athenahealth, USA
+            </div>
+            <div class="committee-card">
+              Mr. Hrushikesh Deshmukh, Fannie Mae, USA
+            </div>
+            <div class="committee-card">
+              Mr. Jaipal Reddy Poddutoori, Bbu, USA
+            </div>
+            <div class="committee-card">
+              Ms. Janamolla Reddy, University of the Cumberlands, USA
+            </div>
+            <div class="committee-card">
+              Ms. Janet Zhang, Boston Easy Biotech, Inc., USA
+            </div>
+            <div class="committee-card">Mr. Mahipal Podduturi, Penske, USA</div>
+            <div class="committee-card">
+              Mr. Ramasankar Molleti, Frisco, TX, USA
+            </div>
+            <div class="committee-card">
+              Mr. Naga Tirumala Chillapalli, Macy’s, USA
+            </div>
+            <div class="committee-card">
+              Mr. Pavan Polneni, Lead DevOps Engineer, UBS, USA
+            </div>
+            <div class="committee-card">
+              Mr. Piyush Jain, Deloitte, Singapore
+            </div>
+            <div class="committee-card">
+              Mr. Praneeth Reddy Amudala Puchakayala, Regions Bank, USA
+            </div>
+            <div class="committee-card">Mr. Rajesh Malviya, NTT Data, USA</div>
+            <div class="committee-card">
+              Mr. Rakesh Ramakrishnan, PayPal, USA
+            </div>
+            <div class="committee-card">
+              Mr. Rama Kadapala, Discover Financial Services, USA
+            </div>
+            <div class="committee-card">Mr. Ravi Laudya, SAP, USA</div>
+            <div class="committee-card">
+              Mr. Ravi Kumar, Microsoft Corporation, USA
+            </div>
+            <div class="committee-card">
+              Mr. Saai Krishnan Udayakumar, Salesforce, USA
+            </div>
+            <div class="committee-card">Mr. Sabarna Choudhuri, Amazon, USA</div>
+            <div class="committee-card">
+              Mr. Shaurya Jain, Engineer at Meta, USA
+            </div>
+            <div class="committee-card">Ms. Sonia Mishra, Cloudflare, USA</div>
+            <div class="committee-card">
+              Mr. Sreejith Sreekandan Nairm, JPMorgan and Chase, USA
+            </div>
+            <div class="committee-card">
+              Mr. Sri Bhargav Krishna Adusumilli, MindQuest Technology Solutions
+              Inc, USA
+            </div>
+            <div class="committee-card">Mr. Srikanth Samudrala, GGU, USA</div>
+            <div class="committee-card">
+              Ms. Swathi Suddala, SupraSoft INC, USA
+            </div>
+            <div class="committee-card">
+              Mr. Yashovardhan Chaturvedi, Torc.ai, USA
+            </div>
+            <div class="committee-card">Mr. Yonggang Huang, NexWave, USA</div>
+          </div>
+        </div>
 
-<!-- CONVENER -->
-<div>
-<h2 class="section-title">CONVENER</h2>
-<div class="committee-grid">
-<div class="committee-card">Dr. Saurabh Shandilya, Professor, PU</div>
-<div class="committee-card">Dr. Udit Mamodiya, Associate Dean Research, PU</div>
-</div>
-</div>
+        <!--NATIONAL ADVISORY COMMITTEE-->
+        <div>
+          <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Jaivir Tyagi, Ex- Director, NIH, Roorkee
+            </div>
+            <div class="committee-card">
+              Dr. Harish Kumar Khyani, MBM Universtiy, Jodhpur
+            </div>
+            <div class="committee-card">
+              Dr. Sushindra Kumar Gupta, Scientist-'C', National Institute of
+              Hydrology, Roorkee
+            </div>
+            <div class="committee-card">
+              Dr. Sanjay Kumar Jain, Visiting Professor, Centre of Excellence in
+              Disaster Mitigation &amp; Management, IIT, Roorkee
+            </div>
+            <div class="committee-card">
+              Dr. Prashant Kumar Srivastava, Banaras Hindu University, Varanasi,
+              Uttar Pradesh, India
+            </div>
+            <div class="committee-card">
+              Dr. Yogesh Kumar Gupta, B K Birla Institute of Engineering and
+              Technology, Pilani
+            </div>
+            <div class="committee-card">
+              Dr. PK Singh, Associate Professor, Sardar Vallabhbhai Patel
+              University of Agriculture &amp; Technology, Meerut
+            </div>
+            <div class="committee-card">
+              Dr R Prasanna Kumar, Amrita Vishwa Vidyapeetham Chennai, India
+            </div>
+            <div class="committee-card">
+              Dr. Vijay Mohan Shrimal, Chandigarh University, India
+            </div>
+            <div class="committee-card">
+              Dr. P. Saracanan, SRM Institute of Science and Technology,
+              Chennai, Tamil Nadu, India
+            </div>
+            <div class="committee-card">
+              Pritha Singha Roy, Chitkara University, Punjab, India
+            </div>
+            <div class="committee-card">
+              Dr. Sushil Kumar Singh, Marwadi University, Gujarat, India
+            </div>
+            <div class="committee-card">
+              Mohit Tiwar, Bharati Vidyapeeth's College of Engineering, Delhi,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. Bishwa Ranjan Das, Interscience Institute of Management and
+              Technology, Bhubaneswar, India
+            </div>
+            <div class="committee-card">
+              Dr. Vijaya Kittu Manda, PBMEIT, Visakhapatnam, India
+            </div>
+            <div class="committee-card">
+              Dr Rashmi Soni, Dayananda Sagar Academy of Technology &amp;
+              Management, Bengaluru, India
+            </div>
+            <div class="committee-card">
+              Dr Renjith V Ravi, Rashtriya Raksha University, Gandhinagar, India
+            </div>
+            <div class="committee-card">
+              Ms. Sunita Prareek, Chief Librarian
+            </div>
+            <div class="committee-card">
+              Mr. Ravish Gupta, Dr. C V. Raman University, Kota, India
+            </div>
+            <div class="committee-card">
+              Mr. Nithesh Naik Curiouz, Tech Lab Private Limited, India
+            </div>
+            <div class="committee-card">
+              Ms. Sunita Prareek, Chief Librarian
+            </div>
+            <div class="committee-card">
+              Dr. S. Sujatha BIT Campus, Anna University, Tiruchirappalli, India
+            </div>
+            <div class="committee-card">
+              Mr. Shahid Aziz, PES University, Bengaluru, India
+            </div>
+            <div class="committee-card">
+              Dr. Achala Deshmukh Sinhgad College of Engineering, Pune, India
+            </div>
+            <div class="committee-card">
+              Dr. R. Vijay, Chaitanya Bharathi Institute of Technology,
+              Hyderabad, India
+            </div>
+            <div class="committee-card">
+              Dr. Sucheta Kakde, Mumbai University, India
+            </div>
+            <div class="committee-card">
+              Dr. Suhaib Ahmed, Model Institute of Engineering and Technology,
+              Jammu, India
+            </div>
+            <div class="committee-card">
+              Dr. Sanjeevkumar Angadi, PCET'S &amp; NMVPM's, Pune, India
+            </div>
+            <div class="committee-card">
+              Dr. R. Manikandan, SASTRA Deemed University, Thanjavur, India
+            </div>
+            <div class="committee-card">
+              Dr. Susmita Das, Narula Institute of Technology, West Bengal,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. C. KAVITHA, Dwaraka Doss Goverdhan Doss Vaishnav College,
+              Chennai, India
+            </div>
+            <div class="committee-card">
+              Mr. Rajat Kumar Dwibedi, Aarupadai Veedu Institute of Technology,
+              Salem, India
+            </div>
+            <div class="committee-card">
+              Mr. Chandragiri Radhacharan, JNTUH University College of
+              Engineering Jagtial, Telangana, India
+            </div>
+            <div class="committee-card">
+              Dr. Ashok Kumar, R R.M.D. Engineering College, Chennai, Tamil
+              Nadu, India
+            </div>
+            <div class="committee-card">
+              Dr. Madhusudhana Reddy Barusum, Ravindra College of Engineering
+              for Women, Andhra Pradesh, India
+            </div>
+            <div class="committee-card">
+              Mr. Balasubramanian T, St. Josepha College of Engineering, India
+            </div>
+            <div class="committee-card">
+              Mr. Dinesh Kumar Sain, Bikaner Technical University, India
+            </div>
+            <div class="committee-card">
+              Mrs. M Hima Jyothi, Diksha Technologies Pvt Ltd, India
+            </div>
+            <div class="committee-card">
+              Ms. Charu Jain, Engineering College Bikaner, India
+            </div>
+            <div class="committee-card">
+              Dr. Smita Pareek, BKBIET, Pilani, India
+            </div>
+            <div class="committee-card">
+              Ms. Priya L, Rajalakshmi Engineering College, India
+            </div>
+            <div class="committee-card">
+              Dr. Nitesh Kumar Dixit, Bhartiya Institute of Engineering &amp;
+              Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Lata Gidwani, Rajasthan Technical University, Kota, India
+            </div>
+            <div class="committee-card">
+              Dr. Arvind Singh Choudhary, Govt. Engineering College, Bharatpur,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. A. Mallikarjuna Prasad, JNTU, India
+            </div>
+            <div class="committee-card">
+              Dr. K. Mohana Lakshmi, JNTUH/CMR Technical Campus, India
+            </div>
+            <div class="committee-card">
+              Mr. Dileep Kumar Agarwal, Sobhasaria Group of Institutions, India
+            </div>
+            <div class="committee-card">
+              Dr. R. K. SARAN, Government Agriculture College, India
+            </div>
+            <div class="committee-card">
+              Mr. Javed, Indian Institute of Information Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. G V Suresh Lakkireddy, Bali Reddy College of Engineering,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. D. Sudha, KPR Institute of Engineering and Technology, India
+            </div>
+            <div class="committee-card">
+              Mr. Surender Singh Tanwar, Bikaner Technical University, India
+            </div>
+            <div class="committee-card">
+              Ms. Shruthi U, RNS Institute of Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Saurabh Tege, Geetanjali Institute of Technical Studies, India
+            </div>
+            <div class="committee-card">
+              Mr. Sai Bhavya Prabu, Neev Academy, India
+            </div>
+            <div class="committee-card">
+              Mr. Himanshu Verma, B K Birla Institute of Engineering &amp;
+              Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. M. Moorthi, Saveetha Engineering College, India
+            </div>
+            <div class="committee-card">
+              Dr. P. Raja, Sri Manakula Vinayagar Engineering College, India
+            </div>
+            <div class="committee-card">
+              Mr. K NARESH BABU, Geethanjali College of Engineering and
+              Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Nimish Kumar, BK Birla Institute of Engineering and
+              Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Sankar Babu Potluri, SVR Engineering College, India
+            </div>
+            <div class="committee-card">
+              Dr. Abhishek Gehlot, Jaipur National University, India
+            </div>
+            <div class="committee-card">
+              Prof. R C Chhipa, Suresh Gyan Vihar University, India
+            </div>
+            <div class="committee-card">
+              Dr. Saurabh Singh, Suresh Gyan Vihar University, India
+            </div>
+            <div class="committee-card">
+              Dr. Ashok Kumar R, Anna University / R.M.D. Engineering College,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. Rahul Agrawal, MIT Aurangabad, India
+            </div>
+            <div class="committee-card">
+              Dr P Nageswara Rao, VEMU Institute of Technology, Andhra Pradesh,
+              India
+            </div>
+            <div class="committee-card">Dr. K. Chandra Rekha, JNTUA, India</div>
+            <div class="committee-card">
+              Dr. B.Visalakshi, E.R.K Arts and Science College, Dharmapuri,
+              India
+            </div>
+            <div class="committee-card">
+              Ms. SREELATHA P K, Presidency University, Bangalore, India
+            </div>
+            <div class="committee-card">
+              Dr. Anil Singh Yadav, Bakhtiyarpur College of Engineering, Patna,
+              India
+            </div>
+            <div class="committee-card">
+              Dr. Ravi Kumar Dwivedi, MANIT, Bhopal, India
+            </div>
+            <div class="committee-card">
+              Dr. P. Saravanan, SRM Institute of Science and Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Irum Alvi, Rajasthan Technical University, Kota, India
+            </div>
+            <div class="committee-card">
+              Dr. Rajan Kumar, IES College of Technology, Bhopal, India
+            </div>
+            <div class="committee-card">
+              Mr. Ravish Gupta, Dr. C V. Raman University, India
+            </div>
+            <div class="committee-card">
+              Dr. M. Nagarajan, Industrial and Management consultant, India
+            </div>
+            <div class="committee-card">
+              Mr. Nithesh Naik, Curiouz TechLab Private Limited, India
+            </div>
+            <div class="committee-card">
+              Dr. Sushindra Kumar Gupta, National Institute of Hydrology,
+              Roorkee, India
+            </div>
+            <div class="committee-card">
+              Dr. Princy Randhawa, Manipal University, Jaipur, India
+            </div>
+            <div class="committee-card">
+              Dr Jibin Francis, AMET University, Tamilnadu, India
+            </div>
+            <div class="committee-card">
+              Mr. Sarvesh Kumar, The ICFAI University, Jaipur, India
+            </div>
+            <div class="committee-card">
+              Dr. Manorama Patnaik, Amity University, Jharkhand, Ranchi, India
+            </div>
+            <div class="committee-card">
+              Dr. Rhytheema Dulloo, Hindustan Institute of Technology and
+              Science, Chennai, India
+            </div>
+            <div class="committee-card">
+              Dr. Shazia Shaikh, MGM University's
+            </div>
+            <div class="committee-card">
+              Dr. G. Y. Pathrikar, College of Computer Science and Information
+              Technology, India
+            </div>
+            <div class="committee-card">
+              Dr. Namrata Nagpal, Amity University, India
+            </div>
+            <div class="committee-card">
+              Dr. P Sukumar, Nandha Engineering College Autonomous, Affiliated
+              to Anna University, Chennai, India
+            </div>
+            <div class="committee-card">
+              Ms. Preeti Sharma, DIT University, India
+            </div>
+            <div class="committee-card">
+              Dr. Balambigai. S, Karpagam College of Engineering, India
+            </div>
+            <div class="committee-card">
+              Dr. S. Arul Antran Vijay, Karpagam College of Engineering,
+              Coimbatore, Tamilnadu, India
+            </div>
+          </div>
+        </div>
 
-<!-- CO-CONVENER -->
-<div>
-<h2 class="section-title">CO-CONVENER</h2>
-<div class="committee-grid">
-<div class="committee-card">Dr. Sumit Kapoor, Associate Professor, PU</div>
-<div class="committee-card">Dr. Shrikant Verma, Professor, PU</div>
-</div>
-</div>
+        <!-- FINANCE COMMITTEE  -->
+        <div>
+          <h2 class="section-title">FINANCE COMMITTEE</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Dr. Saurabh Shandilya, Professor, PU
+            </div>
+            <div class="committee-card">
+              Dr. Udit Mamodiya, Associate Dean Research, PU
+            </div>
+            <div class="committee-card">
+              Dr. Sumit Kapoor, Associate Professor, PU
+            </div>
+          </div>
+        </div>
+        <!--  PUBLICITY AND SPONSORSHIP COMMITTEE-->
+        <h2 class="section-title">PUBLICITY AND SPONSORSHIP COMMITTEE</h2>
+        <div class="committee-grid">
+          <div class="committee-card">Dr. Vipin Khattri, Professor, PU</div>
+          <div class="committee-card">
+            Dr. Shikha Kulhar, Associate Professor, PU
+          </div>
+          <div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
+          <div class="committee-card">Dr. Vrishali</div>
+          <div class="committee-card">
+            Dr. Richa Mathur, Associate Professor, PU
+          </div>
+          <div class="committee-card">
+            Dr. Monika Dandhodiya, Assistant Professor, PU
+          </div>
+          <div class="committee-card">Dr. Amit Hirawat, Professor, PU</div>
+          <div class="committee-card">
+            Mr. Harish Pamnani, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Mr. Firdos Alam Sheikh, Assistant Professor, PU
+          </div>
+          <div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
+          <div class="committee-card">
+            Ms. Sunita Pareek, Chief Librarian, Central Library
+          </div>
+          <div class="committee-card">
+            Mr. Anmol Chaturvedi, Assistant Professor
+          </div>
+        </div>
+        <!-- TRACK CHAIR -->
+        <h2 class="section-title">TRACK CHAIR</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            Dr. Kriti Sankhla, Associate Professor , PU
+          </div>
+          <div class="committee-card">
+            Dr. Shikha Khullar, Associate Professor, PU
+          </div>
+          <div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
+          <div class="committee-card">
+            Dr. Ravi Soni, Assistant Professor, PU
+          </div>
+          <div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
+          <div class="committee-card">
+            Mr. Harish Pamnani, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms. Abhilasha Khandelwal, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Dr. Mirza Samiulla Beg, Associate Professor , PU
+          </div>
+          <div class="committee-card">
+            Dr. Vinay kumar, Associate Professor , PU
+          </div>
+          <div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
+          <div class="committee-card">
+            Dr. Bindiya Jain, Associate Professor, PU
+          </div>
+          <div class="committee-card">Dr. Bright Keshwani, Professor, PU</div>
+        </div>
+        <!-- STUDENT COORDINATOR -->
+        <h2 class="section-title">STUDENT COORDINATOR</h2>
+        <div class="committee-grid">
+          <div class="committee-card">Bhavya Agrawal</div>
+          <div class="committee-card">Bhumika Aggarwal</div>
+          <div class="committee-card">Bhavna Bharti</div>
+        </div>
+        <!-- HOSPITALITY COMMITTEE -->
+        <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            Mr. Sagar Kumar, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Mr. Ankit Khandelwal, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms. Nikita Sharma, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms. Manisha Gaur, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Mr. Satish Bansal, Assistant Professor, PU
+          </div>
+        </div>
+        <!-- MEDIA COORDINATION COMMITTEE -->
+        <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            Ms. Garima Jain, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms.Shakshi Kanwar Ranawat, Assistant Professor, PU
+          </div>
+        </div>
+        <!-- CONFERENCE WEB ADMIN -->
+        <h2 class="section-title">CONFERENCE WEB ADMIN</h2>
+        <div class="committee-grid">
+          <div class="committee-card">Bhavya Agrawal</div>
+          <div class="committee-card">Bhumika Aggarwal</div>
+          <div class="committee-card">Bhavna Bharti</div>
+        </div>
+        <!-- REGISTRATION COMMITTEE -->
+        <h2 class="section-title">REGISTRATION COMMITTEE</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            Ms. Seema Kaloria, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms. Neha Jain, Assistant Professor, PU
+          </div>
+          <div class="committee-card">
+            Ms. Priya Tanwar, Teaching Assistant, PU
+          </div>
+          <div class="committee-card">
+            Ms. Harleen Kaur, Teaching Assistant, PU
+          </div>
+        </div>
+        <!-- TECHNICAL NETWORK ADMINISTRATOR -->
+        <h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            Mr. Praful Kumar Dubey, Network Administrator
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!--CONFERENCE ORGANIZING SECRETARIES-->
-<div>
-  <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
-  <div class="committee-grid">
-    <div class="committee-card">Dr. Kriti Sankhla, Associate Professor, PU</div>
-    <div class="committee-card">Mr. Firdos Alam Sheikh, Assistant Professor, PU</div>
-    <div class="committee-card">Dr. Bright Keshwani, R&amp;D Cell, PU</div>
-    <div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
-  </div>
-</div>
+    <div id="footer-placeholder"></div>
 
-<!--ORGANIZING CHAIRS-->
-<div>
-  <h2 class="section-title">ORGANIZING CHAIRS</h2>
-  <div class="committee-grid">
-    <div class="committee-card">Mr. Sunil Bhargava, Director, PIHM</div>
-    <div class="committee-card">Dr. Priti Kaushik, Dean (FSH)</div>
-    <div class="committee-card">Dr. Jitendra Sharma, Dean (FDA)</div>
-    <div class="committee-card">Dr. Ankush Kumar Jain, Dean (FET)</div>
-    <div class="committee-card">Dr. Rakesh Kumar Gupta, Dean (Student Welfare)</div>
-    <div class="committee-card">Dr. Swati Gokhru, Dean (International Relations)</div>
-    <div class="committee-card">Dr. Ajay Kumar Pagare, Associate Dean (IQAC)</div>
-    <div class="committee-card">Dr. Sushil Kumar Jain, Associate Dean (Academics)</div>
-    <div class="committee-card">Dr. Pooja Gupta, Dean (I/C – FIRE)</div>
-    <div class="committee-card">Mr. Naval Kishor Jain, COE</div>
-  </div>
-</div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
 
-<!--ORGANIZING CO-CHAIRS-->
-<div>
-  <h2 class="section-title">ORGANIZING CO-CHAIRS</h2>
-  <div class="committee-grid">
-    <div class="committee-card">Dr. Vishnu Sharma HOD MCA</div>
-    <div class="committee-card">Dr. Savita Shivani HOD BCA (Higher)</div>
-    <div class="committee-card">Dr. Pratish Rawat, HOD – Department of First year, FET &amp; FCE</div>
-    <div class="committee-card">Ms. Abhilasha Khandelwal, Dy-HOD B.Tech. Higher(FET)</div>
-    <div class="committee-card">Dr. Deepika Saxena, HOD BCA First Year</div>
-    <div class="committee-card">Dr. Manali Pareek Dy-HOD BCA Higher</div>
-    <div class="committee-card">Ms. Kavita Lal DyHOD MCA</div>
-    <div class="committee-card">Dr. Imran Mirza Dy-BCA First Year</div>
-    <div class="committee-card">Dr. Devesh Kumar, HOD - Department of Mechanical Engineering</div>
-    <div class="committee-card">Dr. Ashish Raj, HOD - Department of Electrical &amp; Electronics Engineering</div>
-    <div class="committee-card">Dr. Gaurav Malpani, HOD - Department of Commerce</div>
-    <div class="committee-card">Dr. Monika Khatri, HOD - Department of Management (BBA)</div>
-    <div class="committee-card">Dr. Urvashi Bhamboo, HOD - Department of Management (MBA)</div>
-    <div class="committee-card">Ms. Shikha Sharma, HOD - Department of Computer Science &amp; Engineering (B.Tech II to IV year)</div>
-    <div class="committee-card">Mr. K. K. Parihar, HOD – PIHM</div>
-    <div class="committee-card">Ms. Sunita Prareek, Chief Librarian</div>
-  </div>
-</div>
-<!-- TECHNICAL PROGRAM CHAIRS -->
- <div>
-<h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
-<div class="committee-grid">
-<div class="committee-card">Dr. Devendra Somwanshi, Registrar, PCE</div>
-<div class="committee-card">Dr. Gautam Singh, Registrar, PIET</div>
-<div class="committee-card">Dr. Vishnu Sharma, HOD – Department of Computer Science & Application (MCA &BCA higher classes)</div>
-<div class="committee-card">Ms. Kavita Lal, HOD – Department of Computer Science & Application (MCA & BCA first year)</div>
-<div class="committee-card">Dr. Pooja Gupta, HOD - Faculty of Innovation, Research, and Entrepreneurship</div>
-<div class="committee-card">Mr. Kumar Rahul Mayank, HOD - Department of Fashion, Textile & Apparel Design</div>
-<div class="committee-card">Md. Firdos Sheikh, Deputy HOD - Department of Computer Science & Engineering</div>
-</div>
-</div>
-<!-- INTERNATIONAL ADVISORY COMMITTEE -->
-<div>
-  <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
-  <div class="committee-grid">
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
 
-    <div class="committee-card">Michael Baron, Charles Sturt University, Australia</div>
-    <div class="committee-card">Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions, Google, USA</div>
-    <div class="committee-card">Pradeep Chintale, Board of Director-Education and Innovation, The New World Foundation, USA</div>
-    <div class="committee-card">Prof. Ajit Khosla, Yamagata University, Japan</div>
-    <div class="committee-card">Alesa Durgaryan, Global Educator, Armenia</div>
-    <div class="committee-card">Dr. Srinivasan Lakshmanan, Delta System &amp; Software Inc. Texas, USA</div>
-    <div class="committee-card">Dr. Sara Ravan Ramzani, Professor, Gisma University of Applied Sciences, Germany</div>
-    <div class="committee-card">Prof Dr S B Goyal, Director, City University, Malaysia</div>
-    <div class="committee-card">Ankit R. Patel, University of Minho, Portugal</div>
-    <div class="committee-card">Dr. Tien Anh Tran, University of Malta, Malta</div>
-    <div class="committee-card">Dr Harjit Pal Singh, The University of the West Indies, St Augustine Trinidad and Tobago</div>
-    <div class="committee-card">Gopi Desaboyina, Sr Systems Engineer, Western Governers University, United States</div>
-    <div class="committee-card">Narendra B Merla, Senior Data Engineering Manager, Oklahoma State University, United States of America</div>
-    <div class="committee-card">Dr Samrat Ray, Peter the Great Saint, Petersburg Polytechnic University, Russia</div>
-    <div class="committee-card">Dr. Muthmainnah, Universitas Al Asyariah Mandar West Sulawesi, Indonesia</div>
-    <div class="committee-card">Dr. Kusum Yadav, University of Ha'il, Saudi Arabia</div>
-    <div class="committee-card">Valliappan, Director of RMC, Perdana University, Malaysia</div>
-    <div class="committee-card">Noor Zaman Jhanjhi, Professor, Taylor's University, Malaysia</div>
-    <div class="committee-card">Dr Dalwinder Kaur, Manipal Global Nxt University, Malaysia</div>
-    <div class="committee-card">Danish Jamil, Sir Syed University of Engineering and Technology, Pakistan</div>
-    <div class="committee-card">Pastor Arguelles, Jr. Director, University of Batangas, Philippines</div>
-    <div class="committee-card">Dr. Aftab Ara, University of Hail, Saudi Arabia</div>
-    <div class="committee-card">Emmanuel Philip, Ododo University of Uyo, Nigeria</div>
-    <div class="committee-card">Dr. Ali Said Al Matari, Sharqiyah University, Oman</div>
-    <div class="committee-card">Syed Abdal Ahmad Khan, RAK Medical and Health Sciences University, United Arab Emirates</div>
-    <div class="committee-card">A S M Ahsanul Sarkar Akib, Managing Director, Robo Tech Valley, Bangladesh</div>
-    <div class="committee-card">Gopi Desaboyina, Western Governers University, USA</div>
-    <div class="committee-card">Deeksha Dwivedi, Lealie’s, USA</div>
-    <div class="committee-card">Narendra B Merla, Oklahoma State University, USA</div>
-    <div class="committee-card">Alesa Durgaryan, Armenian State Pedagogical University, Armenia</div>
-    <div class="committee-card">Dr Samrat Ray, Peter the Great Saint, Petersburg polytechnic University, Russia</div>
-    <div class="committee-card">Dr Harjit Pal Singh, The University of the West Indies, St Augustine, Trinidad and Tobago</div>
-    <div class="committee-card">Laraib FaTIma Al Hussaini, University of Wah, Wah Cantt, Pakistan</div>
-    <div class="committee-card">Mr. Achraf Golli, Quizard AI, USA</div>
-    <div class="committee-card">Mr. Akbar Doctor, Fresenius Medical Care, USA</div>
-    <div class="committee-card">Mr. Anirudh Khanna, Pacific Gas and Electric, USA</div>
-    <div class="committee-card">Mr. Ankit Bansal, Bayer, USA</div>
-    <div class="committee-card">Mr. Arjun Jaggi, HCLTech, USA</div>
-    <div class="committee-card">Mr. Bharath Muddarla, Whiz IT Solutions, USA</div>
-    <div class="committee-card">Mr. Dilip Kumar, Sr. Software Engineer, Intuit, USA</div>
-    <div class="committee-card">Mr. Diwakar Peddinti, Trackonomy Systems, USA</div>
-    <div class="committee-card">Mr. Gaurav Jindal, Barclays Corporate &amp; Investment Bank, USA</div>
-    <div class="committee-card">Mr. Govindarajan lakshmi kanthan, Independent Researcher, USA</div>
-    <div class="committee-card">Mr. Hariharan Ragothaman, Athenahealth, USA</div>
-    <div class="committee-card">Mr. Hrushikesh Deshmukh, Fannie Mae, USA</div>
-    <div class="committee-card">Mr. Jaipal Reddy Poddutoori, Bbu, USA</div>
-    <div class="committee-card">Ms. Janamolla Reddy, University of the Cumberlands, USA</div>
-    <div class="committee-card">Ms. Janet Zhang, Boston Easy Biotech, Inc., USA</div>
-    <div class="committee-card">Mr. Mahipal Podduturi, Penske, USA</div>
-    <div class="committee-card">Mr. Ramasankar Molleti, Frisco, TX, USA</div>
-    <div class="committee-card">Mr. Naga Tirumala Chillapalli, Macy’s, USA</div>
-    <div class="committee-card">Mr. Pavan Polneni, Lead DevOps Engineer, UBS, USA</div>
-    <div class="committee-card">Mr. Piyush Jain, Deloitte, Singapore</div>
-    <div class="committee-card">Mr. Praneeth Reddy Amudala Puchakayala, Regions Bank, USA</div>
-    <div class="committee-card">Mr. Rajesh Malviya, NTT Data, USA</div>
-    <div class="committee-card">Mr. Rakesh Ramakrishnan, PayPal, USA</div>
-    <div class="committee-card">Mr. Rama Kadapala, Discover Financial Services, USA</div>
-    <div class="committee-card">Mr. Ravi Laudya, SAP, USA</div>
-    <div class="committee-card">Mr. Ravi Kumar, Microsoft Corporation, USA</div>
-    <div class="committee-card">Mr. Saai Krishnan Udayakumar, Salesforce, USA</div>
-    <div class="committee-card">Mr. Sabarna Choudhuri, Amazon, USA</div>
-    <div class="committee-card">Mr. Shaurya Jain, Engineer at Meta, USA</div>
-    <div class="committee-card">Ms. Sonia Mishra, Cloudflare, USA</div>
-    <div class="committee-card">Mr. Sreejith Sreekandan Nairm, JPMorgan and Chase, USA</div>
-    <div class="committee-card">Mr. Sri Bhargav Krishna Adusumilli, MindQuest Technology Solutions Inc, USA</div>
-    <div class="committee-card">Mr. Srikanth Samudrala, GGU, USA</div>
-    <div class="committee-card">Ms. Swathi Suddala, SupraSoft INC, USA</div>
-    <div class="committee-card">Mr. Yashovardhan Chaturvedi, Torc.ai, USA</div>
-    <div class="committee-card">Mr. Yonggang Huang, NexWave, USA</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Header
 
-  </div>
-</div>
+        /* MOBILE MENU */
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
 
-<!--NATIONAL ADVISORY COMMITTEE-->
-<div>
-  <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
-  <div class="committee-grid">
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
 
-    <div class="committee-card">Dr. Jaivir Tyagi, Ex- Director, NIH, Roorkee</div>
-    <div class="committee-card">Dr. Harish Kumar Khyani, MBM Universtiy, Jodhpur</div>
-    <div class="committee-card">Dr. Sushindra Kumar Gupta, Scientist-'C', National Institute of Hydrology, Roorkee</div>
-    <div class="committee-card">Dr. Sanjay Kumar Jain, Visiting Professor, Centre of Excellence in Disaster Mitigation &amp; Management, IIT, Roorkee</div>
-    <div class="committee-card">Dr. Prashant Kumar Srivastava, Banaras Hindu University, Varanasi, Uttar Pradesh, India</div>
-    <div class="committee-card">Dr. Yogesh Kumar Gupta, B K Birla Institute of Engineering and Technology, Pilani</div>
-    <div class="committee-card">Dr. PK Singh, Associate Professor, Sardar Vallabhbhai Patel University of Agriculture &amp; Technology, Meerut</div>
-    <div class="committee-card">Dr R Prasanna Kumar, Amrita Vishwa Vidyapeetham Chennai, India</div>
-    <div class="committee-card">Dr. Vijay Mohan Shrimal, Chandigarh University, India</div>
-    <div class="committee-card">Dr. P. Saracanan, SRM Institute of Science and Technology, Chennai, Tamil Nadu, India</div>
-    <div class="committee-card">Pritha Singha Roy, Chitkara University, Punjab, India</div>
-    <div class="committee-card">Dr. Sushil Kumar Singh, Marwadi University, Gujarat, India</div>
-    <div class="committee-card">Mohit Tiwar, Bharati Vidyapeeth's College of Engineering, Delhi, India</div>
-    <div class="committee-card">Dr. Bishwa Ranjan Das, Interscience Institute of Management and Technology, Bhubaneswar, India</div>
-    <div class="committee-card">Dr. Vijaya Kittu Manda, PBMEIT, Visakhapatnam, India</div>
-    <div class="committee-card">Dr Rashmi Soni, Dayananda Sagar Academy of Technology &amp; Management, Bengaluru, India</div>
-    <div class="committee-card">Dr Renjith V Ravi, Rashtriya Raksha University, Gandhinagar, India</div>
-    <div class="committee-card">Ms. Sunita Prareek, Chief Librarian</div>
-    <div class="committee-card">Mr. Ravish Gupta, Dr. C V. Raman University, Kota, India</div>
-    <div class="committee-card">Mr. Nithesh Naik Curiouz, Tech Lab Private Limited, India</div>
-    <div class="committee-card">Ms. Sunita Prareek, Chief Librarian</div>
-    <div class="committee-card">Dr. S. Sujatha BIT Campus, Anna University, Tiruchirappalli, India</div>
-    <div class="committee-card">Mr. Shahid Aziz, PES University, Bengaluru, India</div>
-    <div class="committee-card">Dr. Achala Deshmukh Sinhgad College of Engineering, Pune, India</div>
-    <div class="committee-card">Dr. R. Vijay, Chaitanya Bharathi Institute of Technology, Hyderabad, India</div>
-    <div class="committee-card">Dr. Sucheta Kakde, Mumbai University, India</div>
-    <div class="committee-card">Dr. Suhaib Ahmed, Model Institute of Engineering and Technology, Jammu, India</div>
-    <div class="committee-card">Dr. Sanjeevkumar Angadi, PCET'S &amp; NMVPM's, Pune, India</div>
-    <div class="committee-card">Dr. R. Manikandan, SASTRA Deemed University, Thanjavur, India</div>
-    <div class="committee-card">Dr. Susmita Das, Narula Institute of Technology, West Bengal, India</div>
-    <div class="committee-card">Dr. C. KAVITHA, Dwaraka Doss Goverdhan Doss Vaishnav College, Chennai, India</div>
-    <div class="committee-card">Mr. Rajat Kumar Dwibedi, Aarupadai Veedu Institute of Technology, Salem, India</div>
-    <div class="committee-card">Mr. Chandragiri Radhacharan, JNTUH University College of Engineering Jagtial, Telangana, India</div>
-    <div class="committee-card">Dr. Ashok Kumar, R R.M.D. Engineering College, Chennai, Tamil Nadu, India</div>
-    <div class="committee-card">Dr. Madhusudhana Reddy Barusum, Ravindra College of Engineering for Women, Andhra Pradesh, India</div>
-    <div class="committee-card">Mr. Balasubramanian T, St. Josepha College of Engineering, India</div>
-    <div class="committee-card">Mr. Dinesh Kumar Sain, Bikaner Technical University, India</div>
-    <div class="committee-card">Mrs. M Hima Jyothi, Diksha Technologies Pvt Ltd, India</div>
-    <div class="committee-card">Ms. Charu Jain, Engineering College Bikaner, India</div>
-    <div class="committee-card">Dr. Smita Pareek, BKBIET, Pilani, India</div>
-    <div class="committee-card">Ms. Priya L, Rajalakshmi Engineering College, India</div>
-    <div class="committee-card">Dr. Nitesh Kumar Dixit, Bhartiya Institute of Engineering &amp; Technology, India</div>
-    <div class="committee-card">Dr. Lata Gidwani, Rajasthan Technical University, Kota, India</div>
-    <div class="committee-card">Dr. Arvind Singh Choudhary, Govt. Engineering College, Bharatpur, India</div>
-    <div class="committee-card">Dr. A. Mallikarjuna Prasad, JNTU, India</div>
-    <div class="committee-card">Dr. K. Mohana Lakshmi, JNTUH/CMR Technical Campus, India</div>
-    <div class="committee-card">Mr. Dileep Kumar Agarwal, Sobhasaria Group of Institutions, India</div>
-    <div class="committee-card">Dr. R. K. SARAN, Government Agriculture College, India</div>
-    <div class="committee-card">Mr. Javed, Indian Institute of Information Technology, India</div>
-    <div class="committee-card">Dr. G V Suresh Lakkireddy, Bali Reddy College of Engineering, India</div>
-    <div class="committee-card">Dr. D. Sudha, KPR Institute of Engineering and Technology, India</div>
-    <div class="committee-card">Mr. Surender Singh Tanwar, Bikaner Technical University, India</div>
-    <div class="committee-card">Ms. Shruthi U, RNS Institute of Technology, India</div>
-    <div class="committee-card">Dr. Saurabh Tege, Geetanjali Institute of Technical Studies, India</div>
-    <div class="committee-card">Mr. Sai Bhavya Prabu, Neev Academy, India</div>
-    <div class="committee-card">Mr. Himanshu Verma, B K Birla Institute of Engineering &amp; Technology, India</div>
-    <div class="committee-card">Dr. M. Moorthi, Saveetha Engineering College, India</div>
-    <div class="committee-card">Dr. P. Raja, Sri Manakula Vinayagar Engineering College, India</div>
-    <div class="committee-card">Mr. K NARESH BABU, Geethanjali College of Engineering and Technology, India</div>
-    <div class="committee-card">Dr. Nimish Kumar, BK Birla Institute of Engineering and Technology, India</div>
-    <div class="committee-card">Dr. Sankar Babu Potluri, SVR Engineering College, India</div>
-    <div class="committee-card">Dr. Abhishek Gehlot, Jaipur National University, India</div>
-    <div class="committee-card">Prof. R C Chhipa, Suresh Gyan Vihar University, India</div>
-    <div class="committee-card">Dr. Saurabh Singh, Suresh Gyan Vihar University, India</div>
-    <div class="committee-card">Dr. Ashok Kumar R, Anna University / R.M.D. Engineering College, India</div>
-    <div class="committee-card">Dr. Rahul Agrawal, MIT Aurangabad, India</div>
-    <div class="committee-card">Dr P Nageswara Rao, VEMU Institute of Technology, Andhra Pradesh, India</div>
-    <div class="committee-card">Dr. K. Chandra Rekha, JNTUA, India</div>
-    <div class="committee-card">Dr. B.Visalakshi, E.R.K Arts and Science College, Dharmapuri, India</div>
-    <div class="committee-card">Ms. SREELATHA P K, Presidency University, Bangalore, India</div>
-    <div class="committee-card">Dr. Anil Singh Yadav, Bakhtiyarpur College of Engineering, Patna, India</div>
-    <div class="committee-card">Dr. Ravi Kumar Dwivedi, MANIT, Bhopal, India</div>
-    <div class="committee-card">Dr. P. Saravanan, SRM Institute of Science and Technology, India</div>
-    <div class="committee-card">Dr. Irum Alvi, Rajasthan Technical University, Kota, India</div>
-    <div class="committee-card">Dr. Rajan Kumar, IES College of Technology, Bhopal, India</div>
-    <div class="committee-card">Mr. Ravish Gupta, Dr. C V. Raman University, India</div>
-    <div class="committee-card">Dr. M. Nagarajan, Industrial and Management consultant, India</div>
-    <div class="committee-card">Mr. Nithesh Naik, Curiouz TechLab Private Limited, India</div>
-    <div class="committee-card">Dr. Sushindra Kumar Gupta, National Institute of Hydrology, Roorkee, India</div>
-    <div class="committee-card">Dr. Princy Randhawa, Manipal University, Jaipur, India</div>
-    <div class="committee-card">Dr Jibin Francis, AMET University, Tamilnadu, India</div>
-    <div class="committee-card">Mr. Sarvesh Kumar, The ICFAI University, Jaipur, India</div>
-    <div class="committee-card">Dr. Manorama Patnaik, Amity University, Jharkhand, Ranchi, India</div>
-    <div class="committee-card">Dr. Rhytheema Dulloo, Hindustan Institute of Technology and Science, Chennai, India</div>
-    <div class="committee-card">Dr. Shazia Shaikh, MGM University's</div>
-    <div class="committee-card">Dr. G. Y. Pathrikar, College of Computer Science and Information Technology, India</div>
-    <div class="committee-card">Dr. Namrata Nagpal, Amity University, India</div>
-    <div class="committee-card">Dr. P Sukumar, Nandha Engineering College Autonomous, Affiliated to Anna University, Chennai, India</div>
-    <div class="committee-card">Ms. Preeti Sharma, DIT University, India</div>
-    <div class="committee-card">Dr. Balambigai. S, Karpagam College of Engineering, India</div>
-    <div class="committee-card">Dr. S. Arul Antran Vijay, Karpagam College of Engineering, Coimbatore, Tamilnadu, India</div>
+        /* COMMITTEE CARD SCROLL */
+        const cards = document.querySelectorAll(".committee-card");
 
-  </div>
-</div>
+        const cardObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
 
-<!-- FINANCE COMMITTEE  -->
- <div>
-    <h2 class="section-title">FINANCE COMMITTEE</h2>
-<div class="committee-grid">
-      <div class="committee-card">Dr. Saurabh Shandilya, Professor, PU</div>
-      <div class="committee-card">Dr. Udit Mamodiya, Associate Dean Research, PU</div>
-      <div class="committee-card">Dr. Sumit Kapoor, Associate Professor, PU</div>
+        cards.forEach((card) => cardObserver.observe(card));
 
-</div>
-</div>
-<!--  PUBLICITY AND SPONSORSHIP COMMITTEE-->
-  <h2 class="section-title">PUBLICITY AND SPONSORSHIP COMMITTEE</h2>
-  <div class="committee-grid">
+        /* SECTION SCROLL */
+        const sections = document.querySelectorAll(".fade-section");
 
-<div class="committee-card">Dr. Vipin Khattri, Professor, PU</div>
-<div class="committee-card">Dr. Shikha Kulhar, Associate Professor, PU</div>
-<div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
-<div class="committee-card">Dr. Vrishali</div>
-<div class="committee-card">Dr. Richa Mathur, Associate Professor, PU</div>
-<div class="committee-card">Dr. Monika Dandhodiya, Assistant Professor, PU</div>
-<div class="committee-card">Dr. Amit Hirawat, Professor, PU</div>
-<div class="committee-card">Mr. Harish Pamnani, Assistant Professor, PU</div>
-<div class="committee-card">Mr. Firdos Alam Sheikh, Assistant Professor, PU</div>
-<div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
-<div class="committee-card">Ms. Sunita Pareek, Chief Librarian, Central Library</div>
-<div class="committee-card">Mr. Anmol Chaturvedi, Assistant Professor</div>
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
 
-</div>
-<!-- TRACK CHAIR -->
- <h2 class="section-title">TRACK CHAIR</h2>
-<div class="committee-grid">
+        sections.forEach((section) => sectionObserver.observe(section));
 
-<div class="committee-card">Dr. Kriti Sankhla, Associate Professor , PU</div>
-<div class="committee-card">Dr. Shikha Khullar, Associate Professor, PU</div>
-<div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
-<div class="committee-card">Dr. Ravi Soni, Assistant Professor, PU</div>
-<div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
-<div class="committee-card">Mr. Harish Pamnani, Assistant Professor, PU</div>
-<div class="committee-card">Ms. Abhilasha Khandelwal, Assistant Professor, PU</div>
-<div class="committee-card">Dr. Mirza Samiulla Beg, Associate Professor , PU</div>
-<div class="committee-card">Dr. Vinay kumar, Associate Professor , PU</div>
-<div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
-<div class="committee-card">Dr. Bindiya Jain, Associate Professor, PU</div>
-<div class="committee-card">Dr. Bright Keshwani, Professor, PU</div>
+        /* SLIDER */
+        const sliders = document.querySelectorAll(".slider");
 
-</div>
-<!-- STUDENT COORDINATOR -->
- <h2 class="section-title">STUDENT COORDINATOR</h2>
-<div class="committee-grid">
+        sliders.forEach((slider) => {
+          const slides = slider.querySelectorAll(".slide");
+          let current = 0;
 
-<div class="committee-card">Bhavya Agrawal</div>
-<div class="committee-card">Bhumika Aggarwal</div>
-<div class="committee-card">Bhavna Bharti</div>
+          if (slides.length > 0) {
+            setInterval(() => {
+              slides[current].classList.remove("opacity-100", "z-10");
+              slides[current].classList.add("opacity-0", "z-0");
 
-</div>
-<!-- HOSPITALITY COMMITTEE -->
- <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
-<div class="committee-grid">
+              current = (current + 1) % slides.length;
 
-<div class="committee-card">Mr. Sagar Kumar, Assistant Professor, PU</div>
-<div class="committee-card">Mr. Ankit Khandelwal, Assistant Professor, PU</div>
-<div class="committee-card">Ms. Nikita Sharma, Assistant Professor, PU</div>
-<div class="committee-card">Ms. Manisha Gaur, Assistant Professor, PU</div>
-<div class="committee-card">Mr. Satish Bansal, Assistant Professor, PU</div>
-
-</div>
-<!-- MEDIA COORDINATION COMMITTEE -->
- <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
-<div class="committee-grid">
-
-<div class="committee-card">Ms. Garima Jain, Assistant Professor, PU</div>
-<div class="committee-card">Ms.Shakshi Kanwar Ranawat, Assistant Professor, PU</div>
-
-</div>
-<!-- CONFERENCE WEB ADMIN -->
-<h2 class="section-title">CONFERENCE WEB ADMIN</h2>
-<div class="committee-grid">
-
-<div class="committee-card">Bhavya Agrawal</div>
-<div class="committee-card">Bhumika Aggarwal</div>
-<div class="committee-card">Bhavna Bharti</div>
-
-</div>
-<!-- REGISTRATION COMMITTEE -->
- <h2 class="section-title">REGISTRATION COMMITTEE</h2>
-<div class="committee-grid">
-
-<div class="committee-card">Ms. Seema Kaloria, Assistant Professor, PU</div>
-<div class="committee-card">Ms. Neha Jain, Assistant Professor, PU</div>
-<div class="committee-card">Ms. Priya Tanwar, Teaching Assistant, PU</div>
-<div class="committee-card">Ms. Harleen Kaur, Teaching Assistant, PU</div>
-
-</div>
-<!-- TECHNICAL NETWORK ADMINISTRATOR -->
-<h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
-<div class="committee-grid">
-
-<div class="committee-card">Mr. Praful Kumar Dubey, Network Administrator</div>
-
-</div>
-</div>
-</section>
-
-<div id="footer-placeholder"></div>
-
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Header
-  
-
-  /* MOBILE MENU */
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-
-  
-
-  /* COMMITTEE CARD SCROLL */
-  const cards = document.querySelectorAll(".committee-card");
-
-  const cardObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.15 });
-
-  cards.forEach(card => cardObserver.observe(card));
-
-  /* SECTION SCROLL */
-  const sections = document.querySelectorAll(".fade-section");
-
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.15 });
-
-  sections.forEach(section => sectionObserver.observe(section));
-
-  /* SLIDER */
-  const sliders = document.querySelectorAll(".slider");
-
-  sliders.forEach((slider) => {
-    const slides = slider.querySelectorAll(".slide");
-    let current = 0;
-
-    if (slides.length > 0) {
-      setInterval(() => {
-
-  slides[current].classList.remove("opacity-100", "z-10");
-  slides[current].classList.add("opacity-0", "z-0");
-
-  current = (current + 1) % slides.length;
-
-  slides[current].classList.remove("opacity-0", "z-0");
-  slides[current].classList.add("opacity-100", "z-10");
-
-}, 4000);
-    }
-  });
-
-});
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+              slides[current].classList.remove("opacity-0", "z-0");
+              slides[current].classList.add("opacity-100", "z-10");
+            }, 4000);
+          }
+        });
+      });
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

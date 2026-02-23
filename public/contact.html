@@ -1,217 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | ICSCIS 2026</title>
-<link href="assets/css/output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | ICSCIS 2026</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
 
-<style>
+    <style>
+      /* Page Fade */
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
 
-/* Page Fade */
-body { animation: fadePage 0.8s ease-in-out; }
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      /* Section Reveal */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
 
-/* Section Reveal */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+      /* Contact Card */
+      .contact-card {
+        background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+        border-radius: 18px;
+        padding: 40px;
+        transition: all 0.35s ease;
+      }
 
-/* Contact Card */
-.contact-card {
-  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
-  border-radius: 18px;
-  padding: 40px;
-  transition: all 0.35s ease;
-}
+      .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(79, 70, 229, 0.25);
+      }
+    </style>
+  </head>
 
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(79, 70, 229, 0.25);
-}
+  <body class="bg-gray-100 text-gray-800">
+    <!-- ================= HEADER ================= -->
+    <div id="header-placeholder"></div>
 
-</style>
-</head>
+    <!-- ================= HERO (Slider Style Like Other Pages) ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <!-- Slider -->
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-<body class="bg-gray-100 text-gray-800">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-<!-- ================= HEADER ================= -->
-<div id="header-placeholder"></div>
-
-<!-- ================= HERO (Slider Style Like Other Pages) ================= -->
-<section class="pt-20 pb-8 bg-gray-100 fade-section">
-
-  <div class="max-w-5xl mx-auto px-6 relative">
-
-    <!-- Slider -->
-    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-      <div class="slider relative w-full h-72 md:h-[450px]">
-
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-          <img src="assets/images/building.avif" class="w-full h-full object-cover">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/poornima 3.webp" class="w-full h-full object-cover">
+        <!-- Floating White Card -->
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Contact Us
+          </h2>
+          <p class="text-gray-500">
+            Get in touch with the conference organizing team
+          </p>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
         </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/footercover.webp" class="w-full h-full object-cover">
-        </div>
-
       </div>
-      <div class="absolute inset-0 bg-black/10"></div>
-    </div>
+    </section>
 
-    <!-- Floating White Card -->
-    <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-        Contact Us
-      </h2>
-      <p class="text-gray-500">
-        Get in touch with the conference organizing team
-      </p>
-      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-    </div>
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="py-24 bg-white fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- CONVENER -->
+          <div class="contact-card">
+            <h2 class="text-2xl font-bold text-indigo-700 mb-8">Convener</h2>
 
-  </div>
+            <div class="mb-8">
+              <h3 class="font-semibold text-lg">Dr. Saurabh Shandilya</h3>
+              <p class="text-gray-600">Professor, PU, Jaipur</p>
+              <p class="text-sm text-gray-600 mt-2">
+                Faculty of Computer Science Engineering
+              </p>
+              <p class="text-sm text-indigo-700 mt-2 font-medium">
+                Email – saurabh.shandilya@poornima.edu.in
+              </p>
+              <p class="text-sm font-semibold mt-1">Mobile - +91-9887587811</p>
+            </div>
 
-</section>
+            <div>
+              <h3 class="font-semibold text-lg">Dr. Udit Mamodiya</h3>
+              <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
+              <p class="text-sm text-gray-600 mt-2">Head R&D Cell</p>
+              <p class="text-sm text-indigo-700 mt-2 font-medium">
+                Email – udit.mamodiya@poornima.edu.in
+              </p>
+              <p class="text-sm font-semibold mt-1">Mobile - +91-7014937762</p>
+            </div>
+          </div>
 
-<!-- ================= CONTACT SECTION ================= -->
-<section class="py-24 bg-white fade-section">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- CO-CONVENER -->
+          <div class="contact-card">
+            <h2 class="text-2xl font-bold text-indigo-700 mb-8">Co-Convener</h2>
 
-<!-- CONVENER -->
-<div class="contact-card">
-<h2 class="text-2xl font-bold text-indigo-700 mb-8">Convener</h2>
+            <div class="mb-8">
+              <h3 class="font-semibold text-lg">Dr. Sumit Kapoor</h3>
+              <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
+              <p class="text-sm text-gray-600 mt-2">
+                Faculty of Computer Science Engineering
+              </p>
+              <p class="text-sm text-indigo-700 mt-2 font-medium">
+                Email – sumit.kapoor@poornima.edu.in
+              </p>
+              <p class="text-sm font-semibold mt-1">Mobile - +91-8006690016</p>
+            </div>
 
-<div class="mb-8">
-<h3 class="font-semibold text-lg">Dr. Saurabh Shandilya</h3>
-<p class="text-gray-600">Professor, PU, Jaipur</p>
-<p class="text-sm text-gray-600 mt-2">Faculty of Computer Science Engineering</p>
-<p class="text-sm text-indigo-700 mt-2 font-medium">Email – saurabh.shandilya@poornima.edu.in</p>
-<p class="text-sm font-semibold mt-1">Mobile - +91-9887587811</p>
-</div>
+            <div>
+              <h3 class="font-semibold text-lg">Dr. Deepen Banoriya</h3>
+              <p class="text-gray-600">Professor, PU, Jaipur</p>
+              <p class="text-sm text-gray-600 mt-2">Member, R&D Cell</p>
+              <p class="text-sm text-indigo-700 mt-2 font-medium">
+                Email - deepen.banoriya@poornima.edu.in
+              </p>
+              <p class="text-sm font-semibold mt-1">Mobile - +91-7000542674</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div>
-<h3 class="font-semibold text-lg">Dr. Udit Mamodiya</h3>
-<p class="text-gray-600">Associate Professor, PU, Jaipur</p>
-<p class="text-sm text-gray-600 mt-2">Head R&D Cell</p>
-<p class="text-sm text-indigo-700 mt-2 font-medium">Email – udit.mamodiya@poornima.edu.in</p>
-<p class="text-sm font-semibold mt-1">Mobile - +91-7014937762</p>
-</div>
+    <div id="footer-placeholder"></div>
 
-</div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
 
-<!-- CO-CONVENER -->
-<div class="contact-card">
-<h2 class="text-2xl font-bold text-indigo-700 mb-8">Co-Convener</h2>
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
 
-<div class="mb-8">
-<h3 class="font-semibold text-lg">Dr. Sumit Kapoor</h3>
-<p class="text-gray-600">Associate Professor, PU, Jaipur</p>
-<p class="text-sm text-gray-600 mt-2">Faculty of Computer Science Engineering</p>
-<p class="text-sm text-indigo-700 mt-2 font-medium">Email – sumit.kapoor@poornima.edu.in</p>
-<p class="text-sm font-semibold mt-1">Mobile - +91-8006690016</p>
-</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Header
 
-<div>
-<h3 class="font-semibold text-lg">Dr. Deepen Banoriya</h3>
-<p class="text-gray-600">Professor, PU, Jaipur</p>
-<p class="text-sm text-gray-600 mt-2">Member, R&D Cell</p>
-<p class="text-sm text-indigo-700 mt-2 font-medium">Email - deepen.banoriya@poornima.edu.in</p>
-<p class="text-sm font-semibold mt-1">Mobile - +91-7000542674</p>
-</div>
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-link");
 
-</div>
+        navLinks.forEach((link) => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) {
+            link.classList.add("text-primary", "font-semibold");
+          }
+        });
+      });
 
-</div>
-</div>
-</section>
+      /* Slider */
+      const sliders = document.querySelectorAll(".slider");
+      sliders.forEach((slider) => {
+        const slides = slider.querySelectorAll(".slide");
+        let current = 0;
 
-<div id="footer-placeholder"></div>
-
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Header
- 
-      
-
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
+        if (slides.length > 0) {
+          setInterval(() => {
+            slides[current].classList.remove("opacity-100");
+            slides[current].classList.add("opacity-0");
+            current = (current + 1) % slides.length;
+            slides[current].classList.remove("opacity-0");
+            slides[current].classList.add("opacity-100");
+          }, 4000);
         }
       });
-    });
 
-  /* Slider */
-  const sliders = document.querySelectorAll(".slider");
-  sliders.forEach((slider) => {
-    const slides = slider.querySelectorAll(".slide");
-    let current = 0;
+      /* Section Animation */
+      const sections = document.querySelectorAll(".fade-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
 
-    if (slides.length > 0) {
-      setInterval(() => {
-        slides[current].classList.remove("opacity-100");
-        slides[current].classList.add("opacity-0");
-        current = (current + 1) % slides.length;
-        slides[current].classList.remove("opacity-0");
-        slides[current].classList.add("opacity-100");
-      }, 4000);
-    }
-  });
+      sections.forEach((section) => observer.observe(section));
 
-  /* Section Animation */
-  const sections = document.querySelectorAll(".fade-section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.15 });
-
-  sections.forEach(section => observer.observe(section));
-
-  /* Footer */
-  fetch("components/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+      /* Footer */
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

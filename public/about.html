@@ -1,189 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | ICSCIS 2026</title>
-<link href="assets/css/output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | ICSCIS 2026</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
 
-<style>
-/* Page Fade (same as downloads) */
-body {
-  animation: fadePage 0.8s ease-in-out;
-}
-
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Scroll Fade (same system as downloads) */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Page Load Animation for Top Section */
-.page-load {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: pageFade 0.8s ease forwards;
-}
-
-@keyframes pageFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-</head>
-
-<body class="bg-gray-100 text-gray-800">
-
-<!-- ================= HEADER ================= -->
-<div id="header-placeholder"></div>
-
-<!-- ================= TOP SECTION ================= -->
-<section class="pt-20 pb-8 bg-gray-100 page-load">
-
-  <div class="max-w-5xl mx-auto px-6 relative">
-
-    <!-- Slider -->
-    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-      <div class="slider relative w-full h-72 md:h-[450px]">
-
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-          <img src="assets/images/building.avif" class="w-full h-full object-cover">
-        </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/poornima 3.webp" class="w-full h-full object-cover">
-        </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/footercover.webp" class="w-full h-full object-cover">
-        </div>
-
-      </div>
-      <div class="absolute inset-0 bg-black/10"></div>
-    </div>
-
-    <!-- About Card -->
-    <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-        About the Conference
-      </h2>
-
-      <p class="text-base md:text-lg text-gray-500 mb-2">
-        Learn more about ICSCIS 2026
-      </p>
-
-      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CONTENT ================= -->
-<section class="py-24 fade-section">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-
-     <div class="fade-in">
-        <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-yellow-400 pl-4">
-          Conference Overview
-        </h2>
-
-        <p class="text-gray-700 leading-relaxed text-justify mb-6">
-          The design and development of new technologies to handle the arising stability and reliability concerns will determine the sustainability of the global economy in the future. Modern technologies like cloud computing, edge computing, artificial intelligence, and the internet of things present a fantastic chance to educate people for a wiser world that will be better equipped to face the difficulties of sustainability in the years to come.
-        </p>
-
-         <p class="text-gray-700 leading-relaxed text-justify mb-6">
-          To provide attendees with the most recent findings in sustainable computing and smart technologies,
-          <span class="font-bold italic text-gray-900">
-            the 2nd International Conference on Sustainable Computing and Intelligent Systems (ICSCIS-2026)
-          </span>
-          has been proposed.
-        </p>
-
-        <p class="text-gray-700 leading-relaxed text-justify">
-          By bringing together top researchers, academics, scholars, scientists, and industry leaders, this conference enhances sustainable research through collaboration and knowledge exchange.
-        </p>
-      </div>
-
-      <div>
-        <img src="assets/images/ab1.jpg"
-             class="rounded-3xl shadow-2xl w-full transition duration-500 hover:scale-105">
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<div id="footer-placeholder"></div>
-<script src="/assets/js/main.js"></script>
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-
-document.addEventListener("DOMContentLoaded", function () {
-
-
-  /* Slider */
-  const sliders = document.querySelectorAll(".slider");
-
-  sliders.forEach((slider) => {
-    const slides = slider.querySelectorAll(".slide");
-    let current = 0;
-
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-
-      current = (current + 1) % slides.length;
-
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  });
-
-  /* Scroll Animation */
-  const sections = document.querySelectorAll(".fade-section");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+    <style>
+      /* Page Fade (same as downloads) */
+      body {
+        animation: fadePage 0.8s ease-in-out;
       }
-    });
-  }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-});
+      /* Scroll Fade (same system as downloads) */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
 
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-</script>
+      /* Page Load Animation for Top Section */
+      .page-load {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: pageFade 0.8s ease forwards;
+      }
 
-</body>
+      @keyframes pageFade {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- ================= HEADER ================= -->
+    <div id="header-placeholder"></div>
+
+    <!-- ================= TOP SECTION ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 page-load">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <!-- Slider -->
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <!-- About Card -->
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            About the Conference
+          </h2>
+
+          <p class="text-base md:text-lg text-gray-500 mb-2">
+            Learn more about ICSCIS 2026
+          </p>
+
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="py-24 fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="fade-in">
+            <h2
+              class="text-3xl font-bold text-primary mb-6 border-l-4 border-yellow-400 pl-4"
+            >
+              Conference Overview
+            </h2>
+
+            <p class="text-gray-700 leading-relaxed text-justify mb-6">
+              The design and development of new technologies to handle the
+              arising stability and reliability concerns will determine the
+              sustainability of the global economy in the future. Modern
+              technologies like cloud computing, edge computing, artificial
+              intelligence, and the internet of things present a fantastic
+              chance to educate people for a wiser world that will be better
+              equipped to face the difficulties of sustainability in the years
+              to come.
+            </p>
+
+            <p class="text-gray-700 leading-relaxed text-justify mb-6">
+              To provide attendees with the most recent findings in sustainable
+              computing and smart technologies,
+              <span class="font-bold italic text-gray-900">
+                the 2nd International Conference on Sustainable Computing and
+                Intelligent Systems (ICSCIS-2026)
+              </span>
+              has been proposed.
+            </p>
+
+            <p class="text-gray-700 leading-relaxed text-justify">
+              By bringing together top researchers, academics, scholars,
+              scientists, and industry leaders, this conference enhances
+              sustainable research through collaboration and knowledge exchange.
+            </p>
+          </div>
+
+          <div>
+            <img
+              src="assets/images/ab1.jpg"
+              class="rounded-3xl shadow-2xl w-full transition duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/main.js"></script>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
+
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Slider */
+        const sliders = document.querySelectorAll(".slider");
+
+        sliders.forEach((slider) => {
+          const slides = slider.querySelectorAll(".slide");
+          let current = 0;
+
+          setInterval(() => {
+            slides[current].classList.remove("opacity-100");
+            slides[current].classList.add("opacity-0");
+
+            current = (current + 1) % slides.length;
+
+            slides[current].classList.remove("opacity-0");
+            slides[current].classList.add("opacity-100");
+          }, 4000);
+        });
+
+        /* Scroll Animation */
+        const sections = document.querySelectorAll(".fade-section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script>
+  </body>
 </html>

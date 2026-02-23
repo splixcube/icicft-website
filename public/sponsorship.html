@@ -1,200 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sponsorship | ICSCIS 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponsorship | ICSCIS 2026</title>
 
-<link href="/assets/css/output.css" rel="stylesheet">
+    <link href="/assets/css/output.css" rel="stylesheet" />
 
-<style>
-body { animation: fadePage 0.8s ease-in-out; }
-
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.sponsor-card {
-  transition: all 0.35s ease;
-}
-.sponsor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-}
-</style>
-</head>
-
-<body class="bg-gray-100 text-gray-800">
-
-<!-- Header -->
-<div id="header-placeholder"></div>
-
-<!-- ================= HERO ================= -->
-<section class="pt-20 pb-8 bg-gray-100 fade-section">
-<div class="max-w-5xl mx-auto px-6 relative">
-
-<div class="relative rounded-3xl overflow-hidden shadow-2xl">
-<div class="slider relative w-full h-72 md:h-[450px]">
-
-<div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-<img src="/assets/images/building.avif" class="w-full h-full object-cover">
-</div>
-
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/poornima 3.webp" class="w-full h-full object-cover">
-</div>
-
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-<img src="/assets/images/footercover.webp" class="w-full h-full object-cover">
-</div>
-
-</div>
-<div class="absolute inset-0 bg-black/10"></div>
-</div>
-
-<div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
-<h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-Sponsorship
-</h2>
-<p class="text-gray-500">
-Partnership and sponsorship opportunities
-</p>
-<div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-</div>
-
-</div>
-</section>
-
-<!-- ================= INTRO ================= -->
-<section class="py-16 bg-white fade-section">
-<div class="max-w-5xl mx-auto px-6 text-center">
-<p class="text-lg text-gray-700 leading-relaxed">
-Sponsorship of ICSCIS-2026 provides companies and organizations a unique opportunity
-to increase visibility and product awareness within a highly specialized and influential community.
-</p>
-</div>
-</section>
-
-<!-- ================= TIERS ================= -->
-<section class="pb-24 bg-gray-50 fade-section">
-<div class="max-w-6xl mx-auto px-6 space-y-12">
-
-<div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
-<h2 class="text-2xl font-bold text-primary mb-6">
-Diamond Sponsorship (Rs. 30000)
-</h2>
-<ul class="space-y-3 text-gray-700">
-<li>✓ Three full conference registrations free of cost</li>
-<li>✓ Three Stall spaces for exhibits</li>
-<li>✓ Inclusion of company name & logo in web advertising</li>
-<li>✓ Prominent acknowledgment in opening address</li>
-</ul>
-</div>
-
-<div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
-<h2 class="text-2xl font-bold text-primary mb-6">
-Gold Sponsorship (Rs. 20000)
-</h2>
-<ul class="space-y-3 text-gray-700">
-<li>✓ Two full conference registrations free of cost</li>
-<li>✓ Two Stall spaces for exhibits</li>
-<li>✓ Inclusion of company name & logo in web advertising</li>
-<li>✓ Acknowledgment in opening address</li>
-</ul>
-</div>
-
-<div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
-<h2 class="text-2xl font-bold text-primary mb-6">
-Bronze Sponsorship (Rs. 10000)
-</h2>
-<ul class="space-y-3 text-gray-700">
-<li>✓ One full conference registration free of cost</li>
-<li>✓ One Stall space for exhibits</li>
-<li>✓ Inclusion of company name & logo in web advertising</li>
-<li>✓ Acknowledgment in opening address</li>
-</ul>
-</div>
-
-</div>
-</section>
-
- <!-- ================= FOOTER ================= -->
-
-<div id="footer-placeholder"></div>
-
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  
-
-      // Active link detection
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
-        }
-      });
-    });
-
-
-  // Slider
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
-
-  if (slides.length > 0) {
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-      current = (current + 1) % slides.length;
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  }
-
-  // Scroll animation
-  const sections = document.querySelectorAll(".fade-section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+    <style>
+      body {
+        animation: fadePage 0.8s ease-in-out;
       }
-    });
-  }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+      .sponsor-card {
+        transition: all 0.35s ease;
+      }
+      .sponsor-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ================= HERO ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Sponsorship
+          </h2>
+          <p class="text-gray-500">Partnership and sponsorship opportunities</p>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="py-16 bg-white fade-section">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Sponsorship of ICSCIS-2026 provides companies and organizations a
+          unique opportunity to increase visibility and product awareness within
+          a highly specialized and influential community.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= TIERS ================= -->
+    <section class="pb-24 bg-gray-50 fade-section">
+      <div class="max-w-6xl mx-auto px-6 space-y-12">
+        <div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
+          <h2 class="text-2xl font-bold text-primary mb-6">
+            Diamond Sponsorship (Rs. 30000)
+          </h2>
+          <ul class="space-y-3 text-gray-700">
+            <li>✓ Three full conference registrations free of cost</li>
+            <li>✓ Three Stall spaces for exhibits</li>
+            <li>✓ Inclusion of company name & logo in web advertising</li>
+            <li>✓ Prominent acknowledgment in opening address</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
+          <h2 class="text-2xl font-bold text-primary mb-6">
+            Gold Sponsorship (Rs. 20000)
+          </h2>
+          <ul class="space-y-3 text-gray-700">
+            <li>✓ Two full conference registrations free of cost</li>
+            <li>✓ Two Stall spaces for exhibits</li>
+            <li>✓ Inclusion of company name & logo in web advertising</li>
+            <li>✓ Acknowledgment in opening address</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-10 rounded-2xl sponsor-card">
+          <h2 class="text-2xl font-bold text-primary mb-6">
+            Bronze Sponsorship (Rs. 10000)
+          </h2>
+          <ul class="space-y-3 text-gray-700">
+            <li>✓ One full conference registration free of cost</li>
+            <li>✓ One Stall space for exhibits</li>
+            <li>✓ Inclusion of company name & logo in web advertising</li>
+            <li>✓ Acknowledgment in opening address</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
+
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Active link detection
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) {
+            link.classList.add("text-primary", "font-semibold");
+          }
+        });
+      });
+
+      // Slider
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      if (slides.length > 0) {
+        setInterval(() => {
+          slides[current].classList.remove("opacity-100");
+          slides[current].classList.add("opacity-0");
+          current = (current + 1) % slides.length;
+          slides[current].classList.remove("opacity-0");
+          slides[current].classList.add("opacity-100");
+        }, 4000);
+      }
+
+      // Scroll animation
+      const sections = document.querySelectorAll(".fade-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

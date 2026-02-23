@@ -1,124 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venue | ICSCIS 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue | ICSCIS 2026</title>
 
-  <!-- Tailwind CSS -->
-  <link href="/assets/css/output.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <link href="/assets/css/output.css" rel="stylesheet" />
 
-  <style>
-    /* Page Fade */
-    body {
-      animation: fadePage 0.8s ease-in-out;
-    }
+    <style>
+      /* Page Fade */
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
 
-    @keyframes fadePage {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-    /* Section Reveal */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+      /* Section Reveal */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
 
-    .fade-section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    /* Card Hover */
-    .modern-card {
-      transition: all 0.35s ease;
-      background: white;
-    }
+      /* Card Hover */
+      .modern-card {
+        transition: all 0.35s ease;
+        background: white;
+      }
 
-    .modern-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-    }
-  </style>
-</head>
+      .modern-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
 
-<body class="bg-gray-100 text-gray-800">
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
-  <!-- Header Placeholder -->
-  <div id="header-placeholder"></div>
+    <!-- ================= HERO ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-  <!-- ================= HERO ================= -->
-  <section class="pt-20 pb-8 bg-gray-100 fade-section">
-    <div class="max-w-5xl mx-auto px-6 relative">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-        <div class="slider relative w-full h-72 md:h-[450px]">
-
-          <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-            <img src="/assets/images/building.avif" class="w-full h-full object-cover">
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
-
-          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-            <img src="/assets/images/poornima 3.webp" class="w-full h-full object-cover">
-          </div>
-
-          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-            <img src="/assets/images/footercover.webp" class="w-full h-full object-cover">
-          </div>
-
+          <div class="absolute inset-0 bg-black/10"></div>
         </div>
-        <div class="absolute inset-0 bg-black/10"></div>
+
+        <!-- Floating White Card -->
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Ist AIP Conference
+          </h2>
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        </div>
       </div>
-      
-    <!-- Floating White Card -->
-      <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-        Ist AIP Conference
-      </h2>
-      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-    </div>
+    </section>
 
-  </div>
-  </section>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
-  
-  <!-- Footer Placeholder -->
-  <div id="footer-placeholder"></div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
 
-<script>
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    // Small delay so CSS applies first
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-<script src="/assets/js/main.js"></script>
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-     
-
-          // Active link
-          const currentPage = window.location.pathname.split("/").pop();
-          const navLinks = document.querySelectorAll(".nav-link");
-
-          navLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-              link.classList.add("text-primary", "font-semibold");
-            }
-          });
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
         });
+    </script>
+    <script src="/assets/js/main.js"></script>
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Active link
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) {
+            link.classList.add("text-primary", "font-semibold");
+          }
+        });
+      });
 
       // ===== Slider =====
       const slides = document.querySelectorAll(".slide");
@@ -139,15 +151,18 @@ fetch("components/footer.html")
       // ===== Section Animation =====
       const sections = document.querySelectorAll(".fade-section");
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      }, { threshold: 0.15 });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
 
-      sections.forEach(section => observer.observe(section));
-
-  
-  </script>
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>

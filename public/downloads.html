@@ -1,248 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Downloads | ICSCIS 2026</title>
-<link href="assets/css/output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloads | ICSCIS 2026</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
 
-<style>
-/* Page Fade */
-body {
-  animation: fadePage 0.8s ease-in-out;
-}
+    <style>
+      /* Page Fade */
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
 
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Scroll Section Animation */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Download Card Hover */
-.download-card {
-  transition: all 0.35s ease;
-}
-
-.download-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-/* Stagger Card Animation */
-.card-animate {
-  opacity: 0;
-  transform: translateY(40px) scale(0.95);
-  transition: all 0.7s ease;
-}
-
-.card-animate.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-</style>
-</head>
-
-<body class="bg-gray-100 text-gray-800">
-
-<!-- ================= HEADER ================= -->
-<div id="header-placeholder"></div>
-
-<!-- ================= TOP SLIDER SECTION ================= -->
-<section class="pt-20 pb-8 bg-gray-100 fade-section">
-
-  <div class="max-w-5xl mx-auto px-6 relative">
-
-    <!-- Slider -->
-    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-      <div class="slider relative w-full h-72 md:h-[450px]">
-
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-          <img src="assets/images/building.avif" class="w-full h-full object-cover">
-        </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/poornima 3.webp" class="w-full h-full object-cover">
-        </div>
-
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-          <img src="assets/images/footercover.webp" class="w-full h-full object-cover">
-        </div>
-
-      </div>
-
-      <div class="absolute inset-0 bg-black/10"></div>
-    </div>
-
-    <!-- White Card -->
-    <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-        Downloads
-      </h2>
-
-      <p class="text-base md:text-lg text-gray-500 mb-2">
-        Download essential conference materials
-      </p>
-
-      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= DOWNLOAD CARDS ================= -->
-<section class="py-20 bg-white fade-section">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- Paper Template -->
-      <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
-        <div class="flex justify-between items-start mb-6">
-          <div class="text-primary text-4xl">📄</div>
-          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">DOCX</span>
-        </div>
-        <h3 class="text-lg font-bold mb-2">For paper template</h3>
-        <p class="text-gray-600 text-sm mb-6">MANUSCRIPT</p>
-        <a href="#" class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition">
-          ⬇ Download
-        </a>
-      </div>
-
-      <!-- Copyright -->
-      <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
-        <div class="flex justify-between items-start mb-6">
-          <div class="text-primary text-4xl">🖨️</div>
-          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">PDF</span>
-        </div>
-        <h3 class="text-lg font-bold mb-2">For copyright form</h3>
-        <p class="text-gray-600 text-sm mb-6">COPYRIGHT FORM</p>
-        <a href="#" class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition">
-          ⬇ Download
-        </a>
-      </div>
-
-      <!-- Publication Ethics -->
-      <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
-        <div class="flex justify-between items-start mb-6">
-          <div class="text-primary text-4xl">📑</div>
-          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">DOCX</span>
-        </div>
-        <h3 class="text-lg font-bold mb-2">For publication ethics</h3>
-        <p class="text-gray-600 text-sm mb-6">PUBLICATION ETHICS</p>
-        <a href="https://docs.google.com/document/d/1MIfxAq8g_n8ndfkuOR8mndDdN8UCVbpj/edit?usp=sharing&ouid=106267889453596678336&rtpof=true&sd=true"
-           target="_blank"
-           class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition">
-          ⬇ Download
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<div id="footer-placeholder"></div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* Mobile Menu */
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", function () {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-  // Header
-  
-      
-
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
+      @keyframes fadePage {
+        from {
+          opacity: 0;
         }
-      });
-    });
-  /* Slider */
-  const sliders = document.querySelectorAll(".slider");
-  sliders.forEach((slider) => {
-    const slides = slider.querySelectorAll(".slide");
-    let current = 0;
-
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-
-      current = (current + 1) % slides.length;
-
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  });
-
-  /* Scroll Section Animation */
-  const sections = document.querySelectorAll(".fade-section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+        to {
+          opacity: 1;
+        }
       }
-    });
-  }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+      /* Scroll Section Animation */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
 
-  /* Card Stagger Animation */
-  const cards = document.querySelectorAll(".card-animate");
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  const cardObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        cards.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add("show");
-          }, index * 150);
+      /* Download Card Hover */
+      .download-card {
+        transition: all 0.35s ease;
+      }
+
+      .download-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Stagger Card Animation */
+      .card-animate {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        transition: all 0.7s ease;
+      }
+
+      .card-animate.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- ================= HEADER ================= -->
+    <div id="header-placeholder"></div>
+
+    <!-- ================= TOP SLIDER SECTION ================= -->
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <!-- Slider -->
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
+            <div
+              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/building.avif"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/poornima 3.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="assets/images/footercover.webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <!-- White Card -->
+        <div
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+            Downloads
+          </h2>
+
+          <p class="text-base md:text-lg text-gray-500 mb-2">
+            Download essential conference materials
+          </p>
+
+          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DOWNLOAD CARDS ================= -->
+    <section class="py-20 bg-white fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Paper Template -->
+          <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
+            <div class="flex justify-between items-start mb-6">
+              <div class="text-primary text-4xl">📄</div>
+              <span
+                class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold"
+                >DOCX</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2">For paper template</h3>
+            <p class="text-gray-600 text-sm mb-6">MANUSCRIPT</p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition"
+            >
+              ⬇ Download
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
+            <div class="flex justify-between items-start mb-6">
+              <div class="text-primary text-4xl">🖨️</div>
+              <span
+                class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold"
+                >PDF</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2">For copyright form</h3>
+            <p class="text-gray-600 text-sm mb-6">COPYRIGHT FORM</p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition"
+            >
+              ⬇ Download
+            </a>
+          </div>
+
+          <!-- Publication Ethics -->
+          <div class="bg-gray-50 p-8 rounded-2xl download-card card-animate">
+            <div class="flex justify-between items-start mb-6">
+              <div class="text-primary text-4xl">📑</div>
+              <span
+                class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold"
+                >DOCX</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2">For publication ethics</h3>
+            <p class="text-gray-600 text-sm mb-6">PUBLICATION ETHICS</p>
+            <a
+              href="https://docs.google.com/document/d/1MIfxAq8g_n8ndfkuOR8mndDdN8UCVbpj/edit?usp=sharing&ouid=106267889453596678336&rtpof=true&sd=true"
+              target="_blank"
+              class="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary/10 transition"
+            >
+              ⬇ Download
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Mobile Menu */
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+        // Header
+
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) {
+            link.classList.add("text-primary", "font-semibold");
+          }
         });
+      });
+      /* Slider */
+      const sliders = document.querySelectorAll(".slider");
+      sliders.forEach((slider) => {
+        const slides = slider.querySelectorAll(".slide");
+        let current = 0;
+
+        setInterval(() => {
+          slides[current].classList.remove("opacity-100");
+          slides[current].classList.add("opacity-0");
+
+          current = (current + 1) % slides.length;
+
+          slides[current].classList.remove("opacity-0");
+          slides[current].classList.add("opacity-100");
+        }, 4000);
+      });
+
+      /* Scroll Section Animation */
+      const sections = document.querySelectorAll(".fade-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      /* Card Stagger Animation */
+      const cards = document.querySelectorAll(".card-animate");
+
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add("show");
+                }, index * 150);
+              });
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      if (cards.length > 0) {
+        cardObserver.observe(cards[0]);
       }
-    });
-  }, { threshold: 0.2 });
 
-  if (cards.length > 0) {
-    cardObserver.observe(cards[0]);
-  }
+      /* Footer Load */
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
 
-  
-
-/* Footer Load */
-fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    const placeholder = document.getElementById("footer-placeholder");
-    placeholder.innerHTML = data;
-
-    setTimeout(() => {
-      const footer = placeholder.querySelector(".footer");
-      if (footer) footer.classList.add("show-footer");
-    }, 100);
-  });
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            if (footer) footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

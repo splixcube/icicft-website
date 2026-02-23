@@ -44,6 +44,7 @@ fetch("components/header.html")
       if (aboutArrow) aboutArrow.classList.remove("rotate-180");
       if (cfpArrow) cfpArrow.classList.remove("rotate-180");
     }
+    
 
     /* ===== ABOUT ===== */
 
@@ -96,6 +97,21 @@ if (mobileCfpToggle && mobileCfpMenu) {
 
     mobileCfpMenu.classList.toggle("hidden");
     mobileCfpArrow?.classList.toggle("rotate-180");
+  });
+}
+
+/* ===== MOBILE ABOUT ===== */
+
+const mobileAboutToggle = document.getElementById("mobileAboutToggle");
+const mobileAboutMenu = document.getElementById("mobileAboutMenu");
+const mobileAboutArrow = document.getElementById("mobileAboutArrow");
+
+if (mobileAboutToggle && mobileAboutMenu) {
+  mobileAboutToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    mobileAboutMenu.classList.toggle("hidden");
+    mobileAboutArrow?.classList.toggle("rotate-180");
   });
 }
   });

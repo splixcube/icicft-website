@@ -1,12 +1,11 @@
-
 <header class="bg-white shadow-sm sticky top-0 z-50">
-
   <!-- Top Bar -->
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    
-    <img src="/assets/images/PU_Logo.png"
-         class="h-12"
-         alt="Poornima University">
+    <img
+      src="/assets/images/PU_Logo.png"
+      class="h-12"
+      alt="Poornima University"
+    />
 
     <div class="hidden md:flex gap-6 text-sm font-semibold">
       <div class="text-primary">AIP Conference Proceedings</div>
@@ -17,58 +16,64 @@
   <!-- Navigation -->
   <nav class="border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4">
-
       <div class="flex justify-between items-center py-3">
-
         <!-- Desktop Menu -->
-        <ul class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center">
-
+        <ul
+          class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center"
+        >
           <li>
-            <a href="/index.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/index.html"
+              class="hover:text-primary transition nav-link"
+            >
               Home
             </a>
           </li>
 
-<li class="relative">
+          <li class="relative">
+            <button
+              id="aboutBtn"
+              class="hover:text-primary transition flex items-center gap-1 font-medium"
+            >
+              About
+              <span
+                id="aboutArrow"
+                class="transition-transform duration-300 text-xs"
+              >
+                ▼
+              </span>
+            </button>
 
-  <button id="aboutBtn"
-          class="hover:text-primary transition flex items-center gap-1 font-medium">
-    About
-    <span id="aboutArrow"
-          class="transition-transform duration-300 text-xs">
-        ▼
-    </span>
-  </button>
+            <div
+              id="aboutMenu"
+              class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
+            >
+              <ul
+                class="py-2 text-sm text-gray-800 list-disc list-inside space-y-1"
+              >
+                <div></div>
+                <li>
+                  <a
+                    href="/1st-AIP-conf.html"
+                    class="block px-4 py-2 hover:text-primary"
+                  >
+                    1st AIP Conference
+                  </a>
+                </li>
 
- <div id="aboutMenu"
-
-       class="absolute left-0 top-full mt-3 w-64 bg-white 
-              rounded-2xl shadow-2xl border border-gray-100 
-              hidden z-50 ">
-
-  <ul class="py-2 text-sm text-gray-800 list-disc list-inside space-y-1">
-<div></div>
-    <li>
-      <a href="/1st-AIP-conf.html"
-         class="block px-4 py-2 hover:text-primary">
-        1st AIP Conference
-      </a>
-    </li>
-
-    <li>
-      <a href="/about.html"
-         class="block px-4 py-2 hover:text-primary">
-        2nd AIP Conference
-      </a>
-    </li>
-
-  </ul>
-
-</div>
-
-</li>
+                <li>
+                  <a
+                    href="/about.html"
+                    class="block px-4 py-2 hover:text-primary"
+                  >
+                    2nd AIP Conference
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
           <!-- Call For Papers Dropdown -->
-            <!-- <li class="relative">
+          <!-- <li class="relative">
                 
 <button id="cfpBtn"
           class="hover:text-primary transition flex items-center gap-1">
@@ -101,178 +106,201 @@
 
 </div>
           </li> -->
-<li class="relative">
+          <li class="relative">
+            <button
+              id="cfpBtn"
+              class="hover:text-primary transition flex items-center gap-1 font-medium"
+            >
+              Call for Papers
+              <span
+                id="cfpArrow"
+                class="transition-transform duration-300 text-xs"
+              >
+                ▼
+              </span>
+            </button>
 
-  <button id="cfpBtn"
-          class="hover:text-primary transition flex items-center gap-1 font-medium">
-    Call for Papers
-    <span id="cfpArrow"
-          class="transition-transform duration-300 text-xs">
-      ▼
-    </span>
-  </button>
+            <div
+              id="cfpMenu"
+              class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
+            >
+              <ul class="py-2 text-sm text-gray-800 space-y-1">
+                <li>
+                  <a
+                    href="/call-for-papers.html"
+                    class="block px-4 py-2 hover:text-primary"
+                  >
+                    Conference Track
+                  </a>
+                </li>
 
-  <div id="cfpMenu"
-       class="absolute left-0 top-full mt-3 w-64 bg-white 
-              rounded-2xl shadow-2xl border border-gray-100 
-              hidden z-50">
-
-    <ul class="py-2 text-sm text-gray-800 space-y-1">
-
-      <li>
-        <a href="/call-for-papers.html"
-           class="block px-4 py-2 hover:text-primary">
-          Conference Track
-        </a>
-      </li>
-
-      <li>
-        <a href="/special-sessions.html"
-           class="block px-4 py-2 hover:text-primary">
-          Special Sessions
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-
-</li>
-
-          
+                <li>
+                  <a
+                    href="/special-sessions.html"
+                    class="block px-4 py-2 hover:text-primary"
+                  >
+                    Special Sessions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
 
           <li>
-            <a href="/submission.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/submission.html"
+              class="hover:text-primary transition nav-link"
+            >
               Submission
             </a>
           </li>
 
           <li>
-            <a href="/publications.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/publications.html"
+              class="hover:text-primary transition nav-link"
+            >
               Publications
             </a>
           </li>
 
           <li>
-            <a href="/registration.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/registration.html"
+              class="hover:text-primary transition nav-link"
+            >
               Registrations
             </a>
           </li>
 
           <li>
-            <a href="/downloads.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/downloads.html"
+              class="hover:text-primary transition nav-link"
+            >
               Downloads
             </a>
           </li>
 
           <li>
-            <a href="/committee.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/committee.html"
+              class="hover:text-primary transition nav-link"
+            >
               Committee
             </a>
           </li>
 
           <li>
-            <a href="/partners.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/partners.html"
+              class="hover:text-primary transition nav-link"
+            >
               Partners
             </a>
           </li>
 
           <li>
-            <a href="/speakers.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/speakers.html"
+              class="hover:text-primary transition nav-link"
+            >
               Speakers
             </a>
           </li>
 
           <li>
-            <a href="/sponsorship.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/sponsorship.html"
+              class="hover:text-primary transition nav-link"
+            >
               Sponsorship
             </a>
           </li>
 
           <li>
-            <a href="/venue.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/venue.html"
+              class="hover:text-primary transition nav-link"
+            >
               Venue
             </a>
           </li>
 
           <li>
-            <a href="/contact.html" class="hover:text-primary transition nav-link">
+            <a
+              href="/contact.html"
+              class="hover:text-primary transition nav-link"
+            >
               Contact
             </a>
           </li>
-
         </ul>
 
         <!-- Mobile Toggle -->
-        <button id="menuBtn"
-                class="lg:hidden text-gray-700 text-2xl">
+        <button id="menuBtn" class="lg:hidden text-gray-700 text-2xl">
           ☰
         </button>
-
       </div>
 
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden lg:hidden pb-4">
-
         <ul class="flex flex-col gap-3 text-sm font-medium text-gray-700">
-
           <li><a href="/index.html">Home</a></li>
           <li>
-  <button id="mobileAboutToggle"
-    class="w-full text-left flex justify-between items-center">
-    About
-    <span id="mobileAboutArrow"
-      class="transition-transform duration-300">
-      ▼
-    </span>
-  </button>
+            <button
+              id="mobileAboutToggle"
+              class="w-full text-left flex justify-between items-center"
+            >
+              About
+              <span
+                id="mobileAboutArrow"
+                class="transition-transform duration-300"
+              >
+                ▼
+              </span>
+            </button>
 
-  <ul id="mobileAboutMenu"
-      class="hidden pl-4 mt-2 space-y-2 text-sm">
+            <ul id="mobileAboutMenu" class="hidden pl-4 mt-2 space-y-2 text-sm">
+              <li>
+                <div>
+                  <a href="/1st-AIP-conf.html" class="block py-2 tracking-wide">
+                    1st&nbsp;&nbsp;AIP&nbsp;&nbsp;Conference
+                  </a>
+                </div>
+              </li>
 
-    <li>
-      <div>
-      <a href="/1st-AIP-conf.html"
-      class="block py-2 tracking-wide">
-      1st&nbsp;&nbsp;AIP&nbsp;&nbsp;Conference
-    </a>
-      </div>
-    </li>
-
-    <li>
-      <div>
-      <a href="/about.html"
-      class="block py-2 tracking-wide">
-      2nd&nbsp;&nbsp;AIP&nbsp;&nbsp;Conference
-    </a>
-      </div>
-    </li>
-
-  </ul>
-</li>
+              <li>
+                <div>
+                  <a href="/about.html" class="block py-2 tracking-wide">
+                    2nd&nbsp;&nbsp;AIP&nbsp;&nbsp;Conference
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </li>
 
           <!-- Mobile Call For Papers Dropdown -->
           <li>
-  <button id="mobileCfpToggle"
-          class="w-full text-left flex justify-between items-center">
+            <button
+              id="mobileCfpToggle"
+              class="w-full text-left flex justify-between items-center"
+            >
+              Call for Papers
 
-    Call for Papers
+              <span
+                id="mobileCfpArrow"
+                class="transition-transform duration-300"
+              >
+                ▼
+              </span>
+            </button>
 
-    <span id="mobileCfpArrow"
-          class="transition-transform duration-300">
-      ▼
-    </span>
-  </button>
-
-  <ul id="mobileCfpMenu"
-      class="hidden pl-4 mt-2 space-y-2 text-sm">
-
-    <li><a href="/call-for-papers.html">Conference Track</a></li>
-    <li><a href="/special-sessions.html">Special Sessions</a></li>
-    
-
-  </ul>
-</li>
+            <ul id="mobileCfpMenu" class="hidden pl-4 mt-2 space-y-2 text-sm">
+              <li><a href="/call-for-papers.html">Conference Track</a></li>
+              <li><a href="/special-sessions.html">Special Sessions</a></li>
+            </ul>
+          </li>
 
           <li><a href="/submission.html">Submission</a></li>
           <li><a href="/publications.html">Publications</a></li>
@@ -284,12 +312,8 @@
           <li><a href="/sponsorship.html">Sponsorship</a></li>
           <li><a href="/venue.html">Venue</a></li>
           <li><a href="/contact.html">Contact</a></li>
-
         </ul>
-
       </div>
-
     </div>
   </nav>
-
 </header>
