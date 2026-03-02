@@ -383,8 +383,8 @@
         </div>
       </div>
     </section>
-    <!-- ABOUT THE FCE DEPARTMENT -->
-    <section class="py-24 bg-gray-100">
+    <!-- Committee Section  -->
+    <section class="py-24 bg-white text-center fade-section">
       <div class="max-w-6xl mx-auto px-6">
         <!-- Section Title -->
         <h2
@@ -503,27 +503,6 @@
     <!-- ================= SCRIPTS ================= -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Slider (Fix - Per Slider)
-        const sliders = document.querySelectorAll(".slider");
-
-        sliders.forEach((slider) => {
-          const slides = slider.querySelectorAll(".slide");
-          let current = 0;
-
-          if (slides.length > 0) {
-            setInterval(() => {
-              slides[current].classList.remove("opacity-100");
-              slides[current].classList.add("opacity-0");
-
-              current = (current + 1) % slides.length;
-
-              slides[current].classList.remove("opacity-0");
-              slides[current].classList.add("opacity-100");
-            }, 4000);
-          }
-        });
-
-        // Scroll animation
         const sections = document.querySelectorAll(".fade-section");
         const observer = new IntersectionObserver(
           (entries) => {
