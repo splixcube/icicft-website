@@ -89,44 +89,44 @@
 
   /* ================= POPUP CSS ================= */
 
- #conferencePopup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  display: none;
-  z-index: 9999;
-  overflow-y: auto;       /* scroll on mobile */
-  padding: 20px;
-}
+  #conferencePopup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    z-index: 9999;
+    overflow-y: auto; /* scroll on mobile */
+    padding: 20px;
+  }
 
-#conferencePopup.show {
-  display: flex;
-  align-items: flex-start;   /* important */
-  justify-content: center;
-}
-
-/* Modal box */
-#conferencePopup .popup-box {
-  background: #ffffff;
-  width: 100%;
-  max-width: 800px;         /* smaller on desktop */
-  border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-  margin-top: 40px;
-  margin-bottom: 40px;
-  overflow: hidden;
-}
-
-/* Desktop center perfectly */
-@media (min-width: 768px) {
   #conferencePopup.show {
-    align-items: center;   /* vertical center only on desktop */
+    display: flex;
+    align-items: flex-start; /* important */
+    justify-content: center;
   }
 
+  /* Modal box */
   #conferencePopup .popup-box {
-    margin: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 800px; /* smaller on desktop */
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow: hidden;
   }
-}
+
+  /* Desktop center perfectly */
+  @media (min-width: 768px) {
+    #conferencePopup.show {
+      align-items: center; /* vertical center only on desktop */
+    }
+
+    #conferencePopup .popup-box {
+      margin: 0;
+    }
+  }
 </style>
 
 <footer class="footer">
@@ -285,8 +285,7 @@
         class="mt-6 bg-blue-50 border border-blue-200 text-blue-800 text-sm p-4 rounded-lg"
       >
         <strong>Note:</strong> All papers will be peer reviewed. Accepted papers
-        will be published in AIP Proceedings – Scopus Indexed (Approval
-        pending).
+        will be published in AIP Proceedings – Scopus Indexed.
       </div>
 
       <!-- Buttons -->
@@ -298,7 +297,7 @@
           Submit Paper Now →
         </a>
 
-         <a
+        <a
           href="call-for-papers.html"
           class="flex-1 bg-blue-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-900 transition"
         >

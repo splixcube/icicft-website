@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | ICSCIS 2026</title>
+
+    <title>Contact & Venue | ICSCIS 2026</title>
+
     <link
       rel="shortcut icon"
       href="assets/images/favicon.png"
       type="image/x-icon"
     />
+
     <link href="./assets/css/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-      /* Page Fade */
       body {
         animation: fadePage 0.8s ease-in-out;
       }
@@ -27,7 +29,6 @@
         }
       }
 
-      /* Section Reveal */
       .fade-section {
         opacity: 0;
         transform: translateY(40px);
@@ -39,7 +40,16 @@
         transform: translateY(0);
       }
 
-      /* Contact Card */
+      .modern-card {
+        transition: all 0.35s ease;
+        background: white;
+      }
+
+      .modern-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+
       .contact-card {
         background: linear-gradient(135deg, #eef2ff, #e0e7ff);
         border-radius: 18px;
@@ -55,13 +65,12 @@
   </head>
 
   <body class="bg-gray-100 text-gray-800">
-    <!-- ================= HEADER ================= -->
+    <!-- HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- ================= HERO (Slider Style Like Other Pages) ================= -->
+    <!-- HERO -->
     <section class="pt-20 pb-8 bg-gray-100 fade-section">
       <div class="max-w-5xl mx-auto px-6 relative">
-        <!-- Slider -->
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
           <div class="slider relative w-full h-72 md:h-[450px]">
             <div
@@ -91,78 +100,96 @@
               />
             </div>
           </div>
+
           <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
-        <!-- Floating White Card -->
         <div
           class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
         >
           <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Contact Us
+            Contact & Venue
           </h2>
+
           <p class="text-gray-500">
-            Get in touch with the conference organizing team
+            Conference location and contact information
           </p>
+
           <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= CONTACT SECTION ================= -->
-    <section class="py-24 bg-white fade-section">
+    <!-- CONTACT SECTION -->
+    <section class="py-24 bg-gray-100 fade-section">
       <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Contact Us</h2>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- CONVENER -->
           <div class="contact-card">
             <h2 class="text-2xl font-bold text-indigo-700 mb-8">Convener</h2>
 
             <div class="mb-8">
               <h3 class="font-semibold text-lg">Dr. Saurabh Shandilya</h3>
+
               <p class="text-gray-600">Professor, PU, Jaipur</p>
+
               <p class="text-sm text-gray-600 mt-2">
                 Faculty of Computer Science Engineering
               </p>
+
               <p class="text-sm text-indigo-700 mt-2 font-medium">
                 Email – saurabh.shandilya@poornima.edu.in
               </p>
+
               <p class="text-sm font-semibold mt-1">Mobile - +91-9887587811</p>
             </div>
 
             <div>
               <h3 class="font-semibold text-lg">Dr. Udit Mamodiya</h3>
+
               <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
+
               <p class="text-sm text-gray-600 mt-2">Head R&D Cell</p>
+
               <p class="text-sm text-indigo-700 mt-2 font-medium">
                 Email – udit.mamodiya@poornima.edu.in
               </p>
+
               <p class="text-sm font-semibold mt-1">Mobile - +91-7014937762</p>
             </div>
           </div>
 
-          <!-- CO-CONVENER -->
           <div class="contact-card">
             <h2 class="text-2xl font-bold text-indigo-700 mb-8">Co-Convener</h2>
 
             <div class="mb-8">
               <h3 class="font-semibold text-lg">Dr. Sumit Kapoor</h3>
+
               <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
+
               <p class="text-sm text-gray-600 mt-2">
                 Faculty of Computer Science Engineering
               </p>
+
               <p class="text-sm text-indigo-700 mt-2 font-medium">
                 Email – sumit.kapoor@poornima.edu.in
               </p>
+
               <p class="text-sm font-semibold mt-1">Mobile - +91-8006690016</p>
             </div>
 
             <div>
               <h3 class="font-semibold text-lg">Dr. Deepen Banoriya</h3>
+
               <p class="text-gray-600">Professor, PU, Jaipur</p>
+
               <p class="text-sm text-gray-600 mt-2">Member, R&D Cell</p>
+
               <p class="text-sm text-indigo-700 mt-2 font-medium">
                 Email - deepen.banoriya@poornima.edu.in
               </p>
+
               <p class="text-sm font-semibold mt-1">Mobile - +91-7000542674</p>
             </div>
           </div>
@@ -170,8 +197,120 @@
       </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <!-- VENUE SECTION -->
+    <section class="py-20 bg-white fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Location + Map -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="modern-card p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-primary mb-4">
+              Poornima University
+            </h2>
+            <p class="text-gray-600 mb-6">
+              ICSCIS 2026 will be held at Poornima University, Jaipur — a
+              state-of-the-art educational institution equipped with modern
+              facilities for international conferences.
+            </p>
 
+            <div class="space-y-6">
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-sm text-gray-600">
+                  Plot No. IS-2027-2031, Ramchandrapura P.O. Vidhani Vatika
+                  Road, Sitapura, Rajasthan 303905
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold">Phone</p>
+                <p class="text-sm text-gray-600">+91-9887587811</p>
+              </div>
+
+              <div>
+                <p class="font-semibold">Email</p>
+                <p class="text-sm text-gray-600">icscis@poornima.edu.in</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modern-card p-4 rounded-2xl">
+            <a
+              href="https://www.google.com/maps/place/Poornima+University/@26.7796222,75.8770182,17z/"
+              target="_blank"
+            >
+              <img
+                src="assets/images/map.png"
+                class="rounded-xl w-full object-contain hover:scale-105 transition duration-500"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <h2 class="text-3xl font-bold mb-8">Venue Facilities</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-16">
+          <div class="modern-card p-6 rounded-2xl">
+            <h3 class="font-semibold mb-4">Conference Facilities</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>✓ Large auditorium for keynote sessions</li>
+              <li>✓ Multiple meeting rooms for parallel sessions</li>
+              <li>✓ High-speed WiFi</li>
+              <li>✓ Advanced audio-visual equipment</li>
+            </ul>
+          </div>
+
+          <div class="modern-card p-6 rounded-2xl">
+            <h3 class="font-semibold mb-4">Amenities</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>✓ On-campus dining</li>
+              <li>✓ Parking available</li>
+              <li>✓ Refreshment lounges</li>
+              <li>✓ Accessible facilities</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Travel -->
+        <h2 class="text-3xl font-bold mb-8">Getting to Jaipur</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="modern-card p-6 rounded-2xl">
+            <h3 class="font-semibold mb-3">By Air ✈️</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Jaipur International Airport (JAI) is well connected to major
+              cities.
+            </p>
+            <p class="text-xs text-gray-500">
+              Distance: ~13 km | Time: ~30 minutes
+            </p>
+          </div>
+
+          <div class="modern-card p-6 rounded-2xl">
+            <h3 class="font-semibold mb-3">By Rail 🚆</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Jaipur Railway Station connects to all major Indian cities.
+            </p>
+            <p class="text-xs text-gray-500">
+              Distance: ~12 km | Time: ~25 minutes
+            </p>
+          </div>
+
+          <div class="modern-card p-6 rounded-2xl">
+            <h3 class="font-semibold mb-3">By Road 🚘</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Excellent highway connectivity from Delhi and nearby states.
+            </p>
+            <p class="text-xs text-gray-500">
+              Delhi to Jaipur: ~260 km | ~4.5 hours
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
     <script>
       fetch("components/footer.html")
         .then((response) => response.text())
@@ -188,39 +327,21 @@
     </script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Header
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
 
-        const currentPage = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".nav-link");
+      setInterval(() => {
+        slides[current].classList.remove("opacity-100");
+        slides[current].classList.add("opacity-0");
 
-        navLinks.forEach((link) => {
-          const linkPage = link.getAttribute("href").split("/").pop();
-          if (linkPage === currentPage) {
-            link.classList.add("text-primary", "font-semibold");
-          }
-        });
-      });
+        current = (current + 1) % slides.length;
 
-      /* Slider */
-      const sliders = document.querySelectorAll(".slider");
-      sliders.forEach((slider) => {
-        const slides = slider.querySelectorAll(".slide");
-        let current = 0;
+        slides[current].classList.remove("opacity-0");
+        slides[current].classList.add("opacity-100");
+      }, 4000);
 
-        if (slides.length > 0) {
-          setInterval(() => {
-            slides[current].classList.remove("opacity-100");
-            slides[current].classList.add("opacity-0");
-            current = (current + 1) % slides.length;
-            slides[current].classList.remove("opacity-0");
-            slides[current].classList.add("opacity-100");
-          }, 4000);
-        }
-      });
-
-      /* Section Animation */
       const sections = document.querySelectorAll(".fade-section");
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -233,14 +354,8 @@
       );
 
       sections.forEach((section) => observer.observe(section));
-
-      /* Footer */
-      fetch("components/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-        });
     </script>
+
     <script src="/assets/js/main.js"></script>
   </body>
 </html>

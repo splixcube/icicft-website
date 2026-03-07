@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paper Submission | ICSCIS 2026</title>
+
+    <title>Paper Submission & Downloads | ICSCIS 2026</title>
+
     <link
       rel="shortcut icon"
       href="assets/images/favicon.png"
       type="image/x-icon"
     />
-    <!-- Tailwind -->
+
     <link href="./assets/css/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -32,6 +34,7 @@
         transform: translateY(40px);
         transition: all 0.8s ease;
       }
+
       .fade-section.show {
         opacity: 1;
         transform: translateY(0);
@@ -43,12 +46,11 @@
         padding: 50px;
         box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
         transition: all 0.4s ease;
-        border: 1px solid transparent;
       }
+
       .card-clean:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 50px rgba(30, 58, 138, 0.12);
-        border-color: #1e3a8a;
       }
 
       .btn-primary {
@@ -59,17 +61,29 @@
         font-weight: 600;
         transition: all 0.3s ease;
       }
+
       .btn-primary:hover {
         background: #162d6d;
         transform: scale(1.05);
       }
 
+      .download-card {
+        transition: all 0.35s ease;
+      }
+
+      .download-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
       table td {
         padding: 14px 18px;
       }
+
       table tr:nth-child(even) {
         background: #f8fafc;
       }
+
       table tr:hover {
         background: #eef2ff;
       }
@@ -77,10 +91,10 @@
   </head>
 
   <body class="bg-gray-100 text-gray-800">
-    <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
+
     <section class="pt-20 pb-8 bg-gray-100 fade-section">
       <div class="max-w-5xl mx-auto px-6 relative">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -89,7 +103,7 @@
               class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
             >
               <img
-                src="/assets/images/building.avif"
+                src="assets/images/building.avif"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -98,7 +112,7 @@
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="/assets/images/poornima 3.webp"
+                src="assets/images/poornima 3.webp"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -107,11 +121,12 @@
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="/assets/images/footercover.webp"
+                src="assets/images/footercover.webp"
                 class="w-full h-full object-cover"
               />
             </div>
           </div>
+
           <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
@@ -121,49 +136,46 @@
           <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
             Paper Submission
           </h2>
+
           <p class="text-gray-500">
             Submit your research papers for ICSCIS 2026
           </p>
+
           <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
         </div>
       </div>
     </section>
 
+    <!-- PAPER SUBMISSION -->
 
-<!-- PAPER SUBMISSION -->
-
-<section class="py-24 fade-section">
-
-<div class="max-w-7xl mx-auto px-6 space-y-20">
-
-
-<div class="card-clean">
-
-<h2 class="text-2xl font-bold text-primary mb-6">
-Paper Submission Guidelines
-</h2>
+    <section class="py-24 fade-section">
+      <div class="max-w-7xl mx-auto px-6 space-y-20">
+        <div class="card-clean">
+          <h2 class="text-2xl font-bold text-primary mb-6">
+            Paper Submission Guidelines
+          </h2>
 
           <ul class="space-y-2 text-sm text-gray-700">
-            <li>
-              • Kindly use the Full Paper Template provided in the Downloads
-              tab.
-            </li>
+            <li>• Kindly use the Full Paper Template provided below.</li>
+
             <li>• Paper must be original and not under review elsewhere.</li>
+
             <li>• Plagiarism must be below 10%.</li>
-            <li>
-              • Use of AI-generated content is strictly prohibited. AI
-              similarity must be 0%.
-            </li>
+
+            <li>• AI-generated content similarity must be 0%.</li>
+
             <li>
               • All submissions will be screened using Turnitin plagiarism
               detection software.
             </li>
+
             <li>
-              • Papers failing to meet originality standards will be rejected
-              without review.
+              • Papers failing to meet originality standards will be rejected.
             </li>
+
             <li>• Submit full article in DOC or DOCX format.</li>
-            <li>• Ensure clear and professional English language.</li>
+
+            <li>• Ensure clear professional English language.</li>
           </ul>
 
           <p class="mt-6 text-gray-700">
@@ -173,10 +185,10 @@ Paper Submission Guidelines
           </p>
         </div>
 
-        <!-- Two Columns -->
         <div class="grid md:grid-cols-2 gap-12">
           <div class="card-clean">
             <h3 class="text-xl font-bold text-primary mb-4">How to Submit?</h3>
+
             <p class="text-gray-700 mb-6">
               Authors must submit full-length manuscripts via the submission
               portal.
@@ -187,8 +199,7 @@ Paper Submission Guidelines
             </div>
 
             <p class="text-gray-700">
-              Only full-length papers are accepted for review. Abstract-only
-              submissions are not considered.
+              Only full-length papers are accepted for review.
             </p>
           </div>
 
@@ -207,7 +218,6 @@ Paper Submission Guidelines
           </div>
         </div>
 
-        <!-- Important Dates -->
         <div class="card-clean">
           <h3 class="text-xl font-bold text-primary mb-6">Important Dates</h3>
 
@@ -218,18 +228,27 @@ Paper Submission Guidelines
                   <td class="font-semibold">Full Paper Submission</td>
                   <td>July 10, 2026</td>
                 </tr>
+
                 <tr class="border-b">
                   <td class="font-semibold">Notification of Acceptance</td>
                   <td>August 31, 2026</td>
                 </tr>
-                <!-- <tr class="border-b">
-                  <td class="font-semibold">Revised Submission</td>
-                  <td>August 31, 2026</td>
-                </tr> -->
+
                 <tr class="border-b">
                   <td class="font-semibold">Early Bird Registration</td>
                   <td>September 5, 2026</td>
                 </tr>
+
+                <tr class="border-b">
+                  <td class="font-semibold">Late Registration</td>
+                  <td>September 15, 2026</td>
+                </tr>
+
+                <tr class="border-b">
+                  <td class="font-semibold">Camera Ready</td>
+                  <td>September 20, 2026</td>
+                </tr>
+
                 <tr>
                   <td class="font-semibold">Conference Dates</td>
                   <td>September 25–26, 2026</td>
@@ -245,7 +264,7 @@ Paper Submission Guidelines
 
     <section class="py-20 bg-white fade-section">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Downloads</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Download from here</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-gray-50 p-8 rounded-2xl download-card">
@@ -315,41 +334,36 @@ Paper Submission Guidelines
           }, 100);
         });
     </script>
-
-    <script src="/assets/js/main.js"></script>
-    <!-- ================= SCRIPTS ================= -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Slider
-        const slides = document.querySelectorAll(".slide");
-        let current = 0;
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
 
-        if (slides.length > 0) {
-          setInterval(() => {
-            slides[current].classList.remove("opacity-100");
-            slides[current].classList.add("opacity-0");
-            current = (current + 1) % slides.length;
-            slides[current].classList.remove("opacity-0");
-            slides[current].classList.add("opacity-100");
-          }, 4000);
-        }
+      setInterval(() => {
+        slides[current].classList.remove("opacity-100");
+        slides[current].classList.add("opacity-0");
 
-        // Scroll animation
-        const sections = document.querySelectorAll(".fade-section");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
+        current = (current + 1) % slides.length;
 
-        sections.forEach((section) => observer.observe(section));
-      });
+        slides[current].classList.remove("opacity-0");
+        slides[current].classList.add("opacity-100");
+      }, 4000);
+
+      const sections = document.querySelectorAll(".fade-section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((section) => observer.observe(section));
     </script>
+
     <script src="/assets/js/main.js"></script>
   </body>
 </html>

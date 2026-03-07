@@ -14,27 +14,31 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center py-3">
+  <nav class="py-4">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="hidden md:flex justify-center">
+      
+      <div class="flex items-center gap-8 text-base font-semibold bg-white px-8 py-3 rounded-full shadow-md">
         <!-- Desktop Menu -->
         <ul
           class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center"
         >
           <li>
-            <a
-              href="/index.html"
-              class="hover:text-primary transition nav-link"
-            >
+           <a
+            href="/index.html"
+              class="relative hover:text-primary transition nav-link group">
               Home
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
           <li>
             <a
               href="/association.html"
-              class="hover:text-primary transition nav-link"
+              class="relative hover:text-primary transition nav-link group"
             >
               About
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
 
@@ -42,7 +46,7 @@
           <li class="relative">
             <button
               id="cfpBtn"
-              class="hover:text-primary transition flex items-center gap-1 font-medium"
+              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
             >
               Call for Papers
               <span
@@ -51,6 +55,7 @@
               >
                 ▼
               </span>
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
 
             <div
@@ -82,7 +87,7 @@
           <li class="relative">
             <button
               id="registerBtn"
-              class="hover:text-primary transition flex items-center gap-1 font-medium"
+              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
             >
               Register Now
               <span
@@ -91,6 +96,7 @@
               >
                 ▼
               </span>
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
 
             <div
@@ -112,16 +118,10 @@
                     class="block px-4 py-2 hover:text-primary"
                   >
                     Registration
+                    
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/downloads.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Downloads
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </li>
@@ -130,42 +130,46 @@
              <li>
             <a
               href="/partners.html"
-              class="hover:text-primary transition nav-link"
+              class="relative hover:text-primary transition nav-link group"
             >
               Partners
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
 
           <li>
             <a
               href="/committee.html"
-              class="hover:text-primary transition nav-link"
-            >
+              class="relative hover:text-primary transition nav-link group">
+            
               Committee
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
 
           <li>
             <a
               href="/speakers.html"
-              class="hover:text-primary transition nav-link"
-            >
+              class="relative hover:text-primary transition nav-link group">
+           
               Speakers
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
 
           <li>
             <a
               href="/sponsorship.html"
-              class="hover:text-primary transition nav-link"
-            >
+              class="relative hover:text-primary transition nav-link group">
+          
               Sponsorship
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
           <li class="relative">
             <button
               id="aboutBtn"
-              class="hover:text-primary transition flex items-center gap-1 font-medium"
+              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
             >
               Archives
               <span
@@ -174,6 +178,7 @@
               >
                 ▼
               </span>
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
 
             <div
@@ -203,7 +208,17 @@
             </div>
           </li>
 
-          <li class="relative">
+           <li>
+            <a
+              href="/contact.html"
+             class="relative hover:text-primary transition nav-link group">
+            
+              Contacts
+              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </li>
+
+          <!-- <li class="relative">
             <button
               id="contactBtn"
               class="hover:text-primary transition flex items-center gap-1 font-medium"
@@ -240,7 +255,7 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Mobile Toggle -->
@@ -298,7 +313,7 @@
             >
               <li><a href="/submission.html">Submission</a></li>
               <li><a href="/registration.html">Registration</a></li>
-              <li><a href="/downloads.html">Downloads</a></li>
+              
             </ul>
           </li>
 
@@ -343,27 +358,7 @@
             </ul>
           </li>
           <!-- Contacts -->
-          <li>
-            <button
-              id="mobileContactToggle"
-              class="w-full text-left flex justify-between items-center"
-            >
-              Contact
-              <span
-                id="mobileContactArrow"
-                class="transition-transform duration-300 transform"
-              >
-                ▼
-              </span>
-            </button>
-
-            <ul
-              id="mobileContactMenu"
-              class="hidden pl-4 mt-2 space-y-2 text-sm"
-            >
-              <li><a href="/contact.html">Contacts</a></li>
-              <li><a href="/venue.html">Venue</a></li>
-            </ul>
+           <li><a href="/contact.html">Contacts</a></li>
           </li>
         </ul>
       </div>
