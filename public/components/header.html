@@ -1,284 +1,256 @@
 <header class="bg-white shadow-sm sticky top-0 z-50">
+  <!-- TOP BAR -->
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <img
+      src="/assets/images/PU_Logo.png"
+      class="h-12"
+      alt="Poornima University"
+    />
 
-<!-- TOP BAR -->
-<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="hidden md:flex gap-6 text-sm font-semibold">
+      <div class="text-primary">AIP Conference Proceedings</div>
+      <div class="text-primary">Scopus Indexed</div>
+    </div>
 
-  <img src="/assets/images/PU_Logo.png" class="h-12" alt="Poornima University"/>
-
-  <div class="hidden md:flex gap-6 text-sm font-semibold">
-    <div class="text-primary">AIP Conference Proceedings</div>
-    <div class="text-primary">Scopus Indexed</div>
+    <button id="menuBtn" class="md:hidden text-2xl text-gray-700">☰</button>
   </div>
 
-  <button id="menuBtn" class="md:hidden text-2xl text-gray-700">
-    ☰
-  </button>
-
-</div>
-
-
-<!-- DESKTOP NAVIGATION -->
-<nav class="hidden md:flex justify-center pb-4">
-
-<div class="flex items-center gap-8 text-base font-semibold bg-white px-8 py-3 rounded-full shadow-md">
-
- <ul
-          class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center"
-        >
-          <li>
-           <a
+  <!-- DESKTOP NAVIGATION -->
+  <nav class="hidden md:flex justify-center pb-4">
+    <div
+      class="flex items-center gap-8 text-base font-semibold bg-white px-8 py-3 rounded-full shadow-md"
+    >
+      <ul
+        class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center"
+      >
+        <li>
+          <a
             href="/index.html"
-              class="relative hover:text-primary transition nav-link group">
-              Home
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/association.html"
-              class="relative hover:text-primary transition nav-link group"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Home
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/association.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            About
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+
+        <li class="relative">
+          <button
+            id="cfpBtn"
+            class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
+          >
+            Call for Papers
+            <span
+              id="cfpArrow"
+              class="transition-transform duration-300 text-xs"
             >
-              About
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
+              ▼
+            </span>
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </button>
 
+          <div
+            id="cfpMenu"
+            class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
+          >
+            <ul class="py-2 text-sm text-gray-800 space-y-1">
+              <li>
+                <a
+                  href="/call-for-papers.html"
+                  class="block px-4 py-2 hover:text-primary"
+                >
+                  Conference Track
+                </a>
+              </li>
 
-          <li class="relative">
-            <button
-              id="cfpBtn"
-              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
+              <li>
+                <a
+                  href="/special-sessions.html"
+                  class="block px-4 py-2 hover:text-primary"
+                >
+                  Special Sessions
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a
+            href="/partners.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Partners
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/committee.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Committee
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/speakers.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Speakers
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/sponsorship.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Sponsorship
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+        <li class="relative">
+          <button
+            id="aboutBtn"
+            class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
+          >
+            Archives
+            <span
+              id="aboutArrow"
+              class="transition-transform duration-300 text-xs"
             >
-              Call for Papers
-              <span
-                id="cfpArrow"
-                class="transition-transform duration-300 text-xs"
-              >
-                ▼
-              </span>
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </button>
+              ▼
+            </span>
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </button>
 
-            <div
-              id="cfpMenu"
-              class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
-            >
-              <ul class="py-2 text-sm text-gray-800 space-y-1">
-                <li>
-                  <a
-                    href="/call-for-papers.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Conference Track
-                  </a>
-                </li>
+          <div
+            id="aboutMenu"
+            class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
+          >
+            <ul class="py-2 text-sm text-gray-800 space-y-1">
+              <div></div>
+              <li>
+                <a
+                  href="/1st-AIP-conf.html"
+                  class="block px-4 py-2 hover:text-primary"
+                >
+                  1st AIP Conference
+                </a>
+              </li>
 
-                <li>
-                  <a
-                    href="/special-sessions.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Special Sessions
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
+              <li>
+                <a
+                  href="/association.html"
+                  class="block px-4 py-2 hover:text-primary"
+                >
+                  2nd AIP Conference
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
 
-          <li class="relative">
-            <button
-              id="registerBtn"
-              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
-            >
-              Register Now
-              <span
-                id="registerArrow"
-                class="transition-transform duration-300 text-xs"
-              >
-                ▼
-              </span>
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </button>
+        <li>
+          <a
+            href="/contact.html"
+            class="relative hover:text-primary transition nav-link group"
+          >
+            Contact
+            <span
+              class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
 
-            <div
-              id="registerMenu"
-              class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
-            >
-              <ul class="py-2 text-sm text-gray-800 space-y-1">
-                <li>
-                  <a
-                    href="/submission.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Submission
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/registration.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Registration
-                    
-                  </a>
-                </li>
-                
-              </ul>
-            </div>
-          </li>
+        <li class="ml-4">
+          <a
+            href="/submission.html"
+            class="inline-flex items-center gap-2 bg-primary text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-800 transition"
+          >
+            Register Now
+            <span>→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow">
+    <ul class="flex flex-col gap-3 p-4 text-sm font-medium">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/association.html">About</a></li>
 
-             <li>
-            <a
-              href="/partners.html"
-              class="relative hover:text-primary transition nav-link group"
-            >
-              Partners
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
+      <li>
+        <button id="mobileCfpToggle" class="w-full flex justify-between">
+          Call for Papers
+          <span id="mobileCfpArrow">▼</span>
+        </button>
 
-          <li>
-            <a
-              href="/committee.html"
-              class="relative hover:text-primary transition nav-link group">
-            
-              Committee
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/speakers.html"
-              class="relative hover:text-primary transition nav-link group">
-           
-              Speakers
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/sponsorship.html"
-              class="relative hover:text-primary transition nav-link group">
-          
-              Sponsorship
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-          <li class="relative">
-            <button
-              id="aboutBtn"
-              class="relative group hover:text-primary transition flex items-center gap-1 font-medium"
-            >
-              Archives
-              <span
-                id="aboutArrow"
-                class="transition-transform duration-300 text-xs"
-              >
-                ▼
-              </span>
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </button>
-
-            <div
-              id="aboutMenu"
-              class="absolute left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50"
-            >
-              <ul class="py-2 text-sm text-gray-800 space-y-1">
-                <div></div>
-                <li>
-                  <a
-                    href="/1st-AIP-conf.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    1st AIP Conference
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/association.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    2nd AIP Conference
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-           <li>
-            <a
-              href="/contact.html"
-             class="relative hover:text-primary transition nav-link group">
-            
-              Contact
-              <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-
+        <ul id="mobileCfpMenu" class="hidden pl-4 mt-2 space-y-2">
+          <li><a href="/call-for-papers.html">Conference Track</a></li>
+          <li><a href="/special-sessions.html">Special Sessions</a></li>
         </ul>
+      </li>
 
-</div>
+      
+      <li><a href="/partners.html">Partners</a></li>
+      <li><a href="/committee.html">Committee</a></li>
+      <li><a href="/speakers.html">Speakers</a></li>
+      <li><a href="/sponsorship.html">Sponsorship</a></li>
 
-</nav>
+      <li>
+        <button id="mobileAboutToggle" class="w-full flex justify-between">
+          Archives
+          <span id="mobileAboutArrow">▼</span>
+        </button>
 
+        <ul id="mobileAboutMenu" class="hidden pl-4 mt-2 space-y-2">
+          <li><a href="/1st-AIP-conf.html">1st AIP Conference</a></li>
+          <li><a href="/association.html">2nd AIP Conference</a></li>
+        </ul>
+      </li>
 
-<!-- MOBILE MENU -->
-<div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow">
+      <li><a href="/contact.html">Contact</a></li>
 
-<ul class="flex flex-col gap-3 p-4 text-sm font-medium">
-
-<li><a href="/index.html">Home</a></li>
-    <li><a href="/association.html">About</a></li>
-
-    <li>
-      <button id="mobileCfpToggle" class="w-full flex justify-between">
-        Call for Papers
-        <span id="mobileCfpArrow">▼</span>
-      </button>
-
-      <ul id="mobileCfpMenu" class="hidden pl-4 mt-2 space-y-2">
-        <li><a href="/call-for-papers.html">Conference Track</a></li>
-        <li><a href="/special-sessions.html">Special Sessions</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <button id="mobileRegisterToggle" class="w-full flex justify-between">
-        Register Now
-        <span id="mobileRegisterArrow">▼</span>
-      </button>
-
-      <ul id="mobileRegisterMenu" class="hidden pl-4 mt-2 space-y-2">
-        <li><a href="/submission.html">Submission</a></li>
-        <li><a href="/registration.html">Registration</a></li>
-      </ul>
-    </li>
-
-    <li><a href="/partners.html">Partners</a></li>
-    <li><a href="/committee.html">Committee</a></li>
-    <li><a href="/speakers.html">Speakers</a></li>
-    <li><a href="/sponsorship.html">Sponsorship</a></li>
-
-    <li>
-      <button id="mobileAboutToggle" class="w-full flex justify-between">
-        Archives
-        <span id="mobileAboutArrow">▼</span>
-      </button>
-
-      <ul id="mobileAboutMenu" class="hidden pl-4 mt-2 space-y-2">
-        <li><a href="/1st-AIP-conf.html">1st AIP Conference</a></li>
-        <li><a href="/association.html">2nd AIP Conference</a></li>
-      </ul>
-    </li>
-
-    <li><a href="/contact.html">Contact</a></li>
-
-  </ul>
-
-</div>
-
+      <li class="mt-4">
+        <a
+          href="/submission.html"
+          class="block text-center bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition"
+        >
+          Register Now →
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>

@@ -11,7 +11,7 @@
     />
 
     <link href="./assets/css/output.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <style>
       body {
@@ -57,8 +57,6 @@
   </head>
 
   <body class="bg-white text-gray-800">
-    <!-- ================= NOTICE SLIDER ================= -->
-
     <!-- HEADER -->
     <div id="header-placeholder"></div>
     <div
@@ -189,7 +187,7 @@
         <div
           class="inline-block bg-blue-50 border border-blue-200 px-6 py-4 rounded-xl max-w-3xl w-full text-center shadow-md transition-all duration-300 hover:shadow-xl"
         >
-          <p class="text-primary font-medium ">
+          <p class="text-primary font-medium">
             All accepted papers will be recommended for publication in AIP
             Conference Proceedings (Application sent for publication)
           </p>
@@ -207,11 +205,24 @@
           <h3 class="text-3xl font-bold mb-6">What is ICSCIS–2026?</h3>
 
           <p class="text-gray-600 leading-relaxed mb-6">
-            The International Conference on Sustainable Computing and Intelligent Systems (ICSCIS-2026) is a premier academic and research platform committed to advancing innovation in intelligent technologies and sustainable digital ecosystems. The conference is designed to address the growing demand for energy-efficient, scalable, and intelligent solutions that can support the rapidly evolving global digital landscape.
+            The International Conference on Sustainable Computing and
+            Intelligent Systems (ICSCIS-2026) is a premier academic and research
+            platform committed to advancing innovation in intelligent
+            technologies and sustainable digital ecosystems. The conference is
+            designed to address the growing demand for energy-efficient,
+            scalable, and intelligent solutions that can support the rapidly
+            evolving global digital landscape.
           </p>
 
           <p class="text-gray-600 leading-relaxed">
-            ICSCIS-2026 brings together researchers, academicians, industry professionals, and policy experts to explore transformative developments in Artificial Intelligence, Internet of Things, Big Data Analytics, Intelligent Automation, Cyber-Physical Systems, Cloud and Edge Computing, and Green Computing technologies. The conference emphasizes sustainable design principles, responsible innovation, and technology frameworks that balance performance, efficiency, and societal impact.
+            ICSCIS-2026 brings together researchers, academicians, industry
+            professionals, and policy experts to explore transformative
+            developments in Artificial Intelligence, Internet of Things, Big
+            Data Analytics, Intelligent Automation, Cyber-Physical Systems,
+            Cloud and Edge Computing, and Green Computing technologies. The
+            conference emphasizes sustainable design principles, responsible
+            innovation, and technology frameworks that balance performance,
+            efficiency, and societal impact.
           </p>
           <br />
           <a
@@ -243,61 +254,93 @@
         >
           ICSCIS-2026 covers interdisciplinary research areas that address
           emerging challenges in sustainable computing, intelligent systems, and
-          digital transformation. The conference encourages innovative research
-          contributions, practical implementations, and industry-driven
-          solutions across core and emerging technology domains.
+          digital transformation.
         </p>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Box 1 -->
-          <div
-            class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition"
-          >
-            <h4 class="text-2xl font-semibold text-blue-900 mb-3">
-              Internet of Things
-            </h4>
-            <p class="text-gray-700 leading-relaxed">
-              Research on smart devices, sensor networks, real-time
-              communication systems, and scalable IoT architectures enabling
-              sustainable and intelligent infrastructure development.
-            </p>
-          </div>
+        <!-- Slider Container -->
+        <div class="relative max-w-xl mx-auto">
+          <!-- Slider -->
+          <div id="slider" class="overflow-hidden">
+            <div id="slides" class="flex transition-transform duration-500">
+              <!-- Card 1 -->
+              <div class="w-full flex-shrink-0 p-4">
+                <div
+                  class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md"
+                >
+                  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+                    Smart and Autonomous Systems
+                  </h4>
+                  <p class="text-gray-700">
+                    Development of intelligent systems that can perceive,
+                    decide, and act independently. Applications include
+                    autonomous vehicles, robotics, and adaptive industrial
+                    systems.
+                  </p>
+                </div>
+              </div>
 
-          <!-- Box 2 -->
-          <div
-            class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition"
-          >
-            <h4 class="text-2xl font-semibold text-blue-900 mb-3">
-              Big Data Analytics
-            </h4>
-            <p class="text-gray-700 leading-relaxed">
-              Advanced research in large-scale data processing, predictive
-              modeling, machine learning algorithms, and intelligent
-              decision-support systems for solving complex real-world and
-              industrial challenges.
-            </p>
-          </div>
+              <!-- Card 2 -->
+              <div class="w-full flex-shrink-0 p-4">
+                <div
+                  class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md"
+                >
+                  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+                    Big Data Analytics
+                  </h4>
+                  <p class="text-gray-700">
+                    Analysis of large and complex datasets to discover patterns,
+                    trends, and insights. Applications include predictive
+                    analytics, data-driven decision making, and real-time
+                    processing.
+                  </p>
+                </div>
+              </div>
 
-          <!-- Box 3 -->
-          <div
-            class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition"
-          >
-            <h4 class="text-2xl font-semibold text-blue-900 mb-3">
-              Automation
-            </h4>
-            <p class="text-gray-700 leading-relaxed">
-              Innovations in intelligent control systems, robotics, industrial
-              automation, and smart manufacturing technologies aimed at
-              improving efficiency, precision, and sustainable operational
-              performance.
-            </p>
+              <!-- Card 3 -->
+              <div class="w-full flex-shrink-0 p-4">
+                <div
+                  class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md"
+                >
+                  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+                    Drones
+                  </h4>
+                  <p class="text-gray-700">
+                    Advancements in unmanned aerial vehicles for surveillance,
+                    mapping, and delivery. Research focuses on navigation, swarm
+                    coordination, and real-time data collection.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="w-full flex-shrink-0 p-4">
+                <div
+                  class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md"
+                >
+                  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+                    Artificial Intelligence
+                  </h4>
+                  <p class="text-gray-700">
+                    Development of intelligent systems that can learn, reason,
+                    and make decisions. Applications include machine learning,
+                    deep learning, computer vision, and natural language
+                    processing.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Dots -->
+          <div id="dots" class="flex justify-center gap-3 mt-6"></div>
         </div>
+
         <br />
+
         <a
           href="call-for-papers.html"
           class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-          >More Tracks
+        >
+          More Tracks
         </a>
       </div>
     </section>
@@ -345,12 +388,17 @@
           <div
             class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition"
           >
-            <img src="assets/images/ashrae.png" class="mx-auto h-20 mb-4" />
-            <h4 class="text-lg font-semibold text-gray-800">ASHRAE</h4>
+            <img
+              src="assets/images/R&D Cell Poornima.jpeg"
+              class="mx-auto h-20 mb-4"
+            />
+            <h4 class="text-lg font-semibold text-gray-800">
+              R&D Cell Poornima
+            </h4>
             <p class="text-sm text-gray-600 mt-2">
-              Global professional body advancing sustainable engineering
-              practices in heating, ventilation, air conditioning, and
-              energy-efficient systems.
+              The R&D Cell promotes innovation and a strong research culture at
+              Poornima University. It supports faculty and students in
+              developing new technologies and conducting impactful research.
             </p>
           </div>
         </div>
@@ -407,9 +455,9 @@
             class="bg-blue-50 border border-blue-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition"
           >
             <h4 class="text-xl font-semibold text-blue-900 mb-2">
-              Dr. Ajay Khunteta
+              Dr. Manoj Gupta
             </h4>
-            <p>Dean FCE, PU</p>
+            <p>Pro-President, PU</p>
             <p class="text-gray-700">Conference Chair</p>
           </div>
         </div>
@@ -437,7 +485,9 @@
             assistance and detailed information.
           </p>
 
-          <p class="mb-3"><strong>Email:</strong></p>
+          <p class="mb-3">
+            <strong>Email:</strong> saurabh.shandilya@poornima.edu.in
+          </p>
           <p class="mb-3"><strong>Phone:</strong> +91-9887587811</p>
           <p class="mb-6">
             <strong>Address:</strong> Poornima University, Jaipur, Rajasthan,
@@ -571,6 +621,54 @@
     </script>
 
     <script src="/assets/js/main.js"></script>
-      
+
+    <script>
+      const slides = document.getElementById("slides");
+      const totalSlides = slides.children.length;
+      const dotsContainer = document.getElementById("dots");
+
+      let index = 0;
+
+      /* create dots */
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("button");
+        dot.className = "w-3 h-3 rounded-full bg-gray-300";
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+
+        [...dotsContainer.children].forEach((dot, i) => {
+          dot.classList.toggle("bg-blue-700", i === index);
+          dot.classList.toggle("bg-gray-300", i !== index);
+        });
+      }
+
+      function goToSlide(i) {
+        index = i;
+        updateSlider();
+      }
+
+      document.getElementById("next").onclick = () => {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+      };
+
+      document.getElementById("prev").onclick = () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      };
+
+      updateSlider();
+    </script>
+    <script>
+      // auto slide every 3 seconds
+      setInterval(() => {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+      }, 3000);
+    </script>
   </body>
 </html>

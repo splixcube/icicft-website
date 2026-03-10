@@ -45,9 +45,7 @@
       const mobileRegisterMenu = document.getElementById("mobileRegisterMenu");
       const mobileRegisterArrow = document.getElementById("mobileRegisterArrow");
 
-      // const contactBtn = document.getElementById("contactBtn");
-      // const contactMenu = document.getElementById("contactMenu");
-      // const contactArrow = document.getElementById("contactArrow");
+      
 
       function closeAllDropdowns() {
         if (aboutMenu) aboutMenu.classList.add("hidden");
@@ -58,8 +56,7 @@
         if (cfpArrow) cfpArrow.classList.remove("rotate-180");
         if (registerArrow) registerArrow.classList.remove("rotate-180");
 
-        // if (contactMenu) contactMenu.classList.add("hidden");
-        // if (contactArrow) contactArrow.classList.remove("rotate-180");
+        
       }
 
       /* ===== ABOUT ===== */
@@ -113,21 +110,6 @@
         });
       }
 
-      // Contact dropdown
-      // if (contactBtn && contactMenu) {
-      //   contactBtn.addEventListener("click", function (e) {
-      //     e.preventDefault();
-      //     e.stopPropagation();
-
-      //     const isOpen = !contactMenu.classList.contains("hidden");
-      //     closeAllDropdowns();
-
-      //     if (!isOpen) {
-      //       contactMenu.classList.remove("hidden");
-      //       contactArrow?.classList.add("rotate-180");
-      //     }
-      //   });
-      // }
 
       /* ===== OUTSIDE CLICK CLOSE (DESKTOP) ===== */
 
@@ -176,16 +158,5 @@
         });
       }
 
-      // Mobile Contact dropdown
-      // const mobileContactToggle = document.getElementById("mobileContactToggle");
-      // const mobileContactMenu = document.getElementById("mobileContactMenu");
-      // const mobileContactArrow = document.getElementById("mobileContactArrow");
-
-      // if (mobileContactToggle && mobileContactMenu) {
-      //   mobileContactToggle.addEventListener("click", function (e) {
-      //     e.stopPropagation();
-
-      //     mobileContactMenu.classList.toggle("hidden");
-      //     mobileContactArrow?.classList.toggle("rotate-180");
-      //   });
-    });
+      
+    })
