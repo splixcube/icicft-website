@@ -1,6 +1,6 @@
 ## 📌 Overview
 
-The ICSCIS website provides:
+The ICICFT website provides:
 
 - Conference information
 - Advisory and organizing committees
@@ -25,7 +25,7 @@ The project is designed as a fast, maintainable, and easily deployable static we
 ## 📂 Project Structure
 ```
 
-ICSCIS-Website/
+ICICFT-Website/
 │
 ├── index.html # Main landing page
 ├── *.html # Other website pages
