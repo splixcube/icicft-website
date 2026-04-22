@@ -14,137 +14,199 @@
 
     <style>
 
-/* Page Fade */
-body{
-  animation:fadePage 0.8s ease-in-out;
+/* ── Page Fade ── */
+body {
+  animation: fadePage 0.8s ease-in-out;
+}
+@keyframes fadePage {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@keyframes fadePage{
-  from{opacity:0;}
-  to{opacity:1;}
+/* ── Scroll Animation ── */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Scroll Animation */
-.fade-section{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
+/* ══════════════════════════════════════
+   CARD LAYOUT  (inspired by CodePen)
+══════════════════════════════════════ */
+
+.l-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.fade-section.show{
-  opacity:1;
-  transform:translateY(0);
+/* Each track card */
+.c-card {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  min-height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+
+  /* entry state – slides from bottom */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.35s ease;
 }
 
-/* Track Card */
-.track-card{
-  background:#ffffff;
-  border-left:4px solid #1e3a8a;
-  border-radius:16px;
-  padding:32px;
-  box-shadow:0 6px 25px rgba(0,0,0,0.04);
-  transition:all 0.35s ease;
+/* Alternate: even cards flip figure left */
+.c-card:nth-child(even) {
+  grid-template-columns: 340px 1fr;
+}
+.c-card:nth-child(even) .c-card__description { order: 2; }
+.c-card:nth-child(even) .c-card__figure      { order: 1; }
+
+/* Visible state (added by JS) */
+.c-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.track-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 18px 50px rgba(30,58,138,0.12);
-  background:#f8fafc;
-}
-.track-group h3{
-  font-size:24px;
-  font-weight:700;
-  color:#1e3a8a;
-  text-align:center;
-  margin:60px 0 30px 0;
-  letter-spacing:0.5px;
+/* Staggered delay per card */
+.c-card[data-index="0"] { transition-delay: 0s;    }
+.c-card[data-index="1"] { transition-delay: 0.12s; }
+.c-card[data-index="2"] { transition-delay: 0.24s; }
+.c-card[data-index="3"] { transition-delay: 0.36s; }
+.c-card[data-index="4"] { transition-delay: 0.48s; }
+
+.c-card:hover {
+  box-shadow: 0 20px 56px rgba(30, 58, 138, 0.14);
+  transform: translateY(-6px) !important; /* override entry state */
 }
 
-/* Title */
-.track-card h3{
-  font-size:1.05rem;
-  font-weight:600;
-  color:#1e3a8a;
-  margin-bottom:20px;
-  text-transform:uppercase;
-  letter-spacing:1px;
+/* ── Description side ── */
+.c-card__description {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
 }
 
-/* GRID FOR TRACK ITEMS */
-.track-card ul{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);   /* 3 columns like PIET */
-  gap:10px;
-  padding:0;
-  margin:0;
-  list-style:none;
+.c-card__tagline {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
 }
 
-/* TRACK PILLS */
-.track-card ul li{
-  background:#f1f5f9;
-  padding:8px 12px;
-  border-radius:20px;
-  font-size:13px;
-  color:#334155;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  transition:0.25s ease;
+.c-card__title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  line-height: 1.3;
+  margin: 0;
 }
 
-/* small blue dot */
-.track-card ul li::before{
-  content:"";
-  width:6px;
-  height:6px;
-  background:#60a5fa;
-  border-radius:50%;
+/* Topic pills grid */
+.c-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
 }
 
-/* hover */
-.track-card ul li:hover{
-  background:#e2e8f0;
-  transform:translateY(-2px);
+.topic-pill {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.2s, transform 0.2s;
+}
+.topic-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #60a5fa;
+  flex-shrink: 0;
+}
+.topic-pill:hover {
+  background: #dbeafe;
+  transform: translateY(-2px);
 }
 
-/* TRACK GRID */
-.tracks-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
+/* ── Figure side ── */
+.c-card__figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  /* background set inline per card */
 }
 
-/* TRACK PILLS */
-.track-pill{
-  background:#ffffff;
-  padding:10px 14px;
-  border-radius:20px;
-  font-size:14px;
-  color:#334155;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
-  transition:all 0.25s ease;
+/* Decorative track number */
+.c-card__number {
+  font-size: clamp(80px, 10vw, 140px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1;
+  user-select: none;
+  letter-spacing: -4px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+.c-card:hover .c-card__number {
+  color: rgba(255, 255, 255, 0.28);
+  transform: scale(1.08);
 }
 
-/* BLUE DOT ICON */
-.track-pill::before{
-  content:"";
-  width:8px;
-  height:8px;
-  background:#60a5fa;
-  border-radius:50%;
-  flex-shrink:0;
+/* Decorative circle behind number */
+.c-card__figure::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  top: -40px;
+  right: -40px;
+}
+.c-card__figure::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  bottom: -20px;
+  left: -20px;
 }
 
-/* HOVER EFFECT */
-.track-pill:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 15px rgba(0,0,0,0.08);
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .c-card,
+  .c-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 160px auto;
+  }
+  .c-card:nth-child(even) .c-card__description { order: 2; }
+  .c-card:nth-child(even) .c-card__figure      { order: 1; }
+  .c-card__description {
+    padding: 28px 24px;
+  }
+  .c-card__title {
+    font-size: 1.15rem;
+  }
 }
-  </style>
+    </style>
   </head>
 
   <body class="bg-gray-100 text-gray-800">
@@ -232,99 +294,135 @@ body{
 
     <!-- ================= TRACKS ================= -->
     <section class="py-24 bg-gray-100 fade-section">
-  <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-6">
 
-    <h2 class="text-3xl font-bold text-center text-primary mb-16">
-      Conference Tracks
-    </h2>
+        <h2 class="text-3xl font-bold text-center text-primary mb-4">
+          Conference Tracks
+        </h2>
+        <p class="text-center text-gray-500 mb-20 text-base max-w-xl mx-auto leading-relaxed">
+          ICICFT-2026 features five focused research tracks covering the frontiers of intelligent computing and emerging digital technologies.
+        </p>
 
-    <!-- TRACK 1 -->
-    <div class="track-group">
-      <h3>Track 1: Intelligent Systems and Machine Learning</h3>
-      <div class="tracks-grid">
-        <div class="track-pill">Machine Learning</div>
-        <div class="track-pill">Deep Learning</div>
-        <div class="track-pill">Neural Networks</div>
-        <div class="track-pill">Natural Language Processing</div>
-        <div class="track-pill">Computer Vision</div>
-        <div class="track-pill">Pattern Recognition</div>
-        <div class="track-pill">Expert Systems</div>
-        <div class="track-pill">Cognitive Computing</div>
-        <div class="track-pill">Reinforcement Learning</div>
-        <div class="track-pill">AI Applications in Industry and Society</div>
+        <div class="l-cards">
+
+          <!-- TRACK 1 -->
+          <div class="c-card" data-index="0">
+            <div class="c-card__description">
+              <div class="c-card__tagline">Track 01</div>
+              <h2 class="c-card__title">Intelligent Systems &amp; Machine Learning</h2>
+              <div class="c-card__topics">
+                <span class="topic-pill">Machine Learning</span>
+                <span class="topic-pill">Deep Learning</span>
+                <span class="topic-pill">Neural Networks</span>
+                <span class="topic-pill">Natural Language Processing</span>
+                <span class="topic-pill">Computer Vision</span>
+                <span class="topic-pill">Pattern Recognition</span>
+                <span class="topic-pill">Expert Systems</span>
+                <span class="topic-pill">Cognitive Computing</span>
+                <span class="topic-pill">Reinforcement Learning</span>
+                <span class="topic-pill">AI Applications in Industry &amp; Society</span>
+              </div>
+            </div>
+            <figure class="c-card__figure" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%)">
+              <span class="c-card__number">01</span>
+            </figure>
+          </div>
+
+          <!-- TRACK 2 -->
+          <div class="c-card" data-index="1">
+            <div class="c-card__description">
+              <div class="c-card__tagline">Track 02</div>
+              <h2 class="c-card__title">Data Science &amp; Analytics</h2>
+              <div class="c-card__topics">
+                <span class="topic-pill">Big Data Analytics</span>
+                <span class="topic-pill">Data Mining</span>
+                <span class="topic-pill">Knowledge Discovery in Databases</span>
+                <span class="topic-pill">Predictive Analytics</span>
+                <span class="topic-pill">Business Intelligence</span>
+                <span class="topic-pill">Data Visualization</span>
+                <span class="topic-pill">Data Engineering</span>
+                <span class="topic-pill">Scientific Computing</span>
+                <span class="topic-pill">Information Retrieval</span>
+                <span class="topic-pill">Intelligent Data Processing</span>
+              </div>
+            </div>
+            <figure class="c-card__figure" style="background:linear-gradient(135deg,#0e7490 0%,#06b6d4 100%)">
+              <span class="c-card__number">02</span>
+            </figure>
+          </div>
+
+          <!-- TRACK 3 -->
+          <div class="c-card" data-index="2">
+            <div class="c-card__description">
+              <div class="c-card__tagline">Track 03</div>
+              <h2 class="c-card__title">Cybersecurity &amp; Secure Computing</h2>
+              <div class="c-card__topics">
+                <span class="topic-pill">Network Security</span>
+                <span class="topic-pill">Cryptography &amp; Encryption</span>
+                <span class="topic-pill">Digital Forensics</span>
+                <span class="topic-pill">Cloud Computing</span>
+                <span class="topic-pill">Distributed &amp; Parallel Computing</span>
+                <span class="topic-pill">Wireless Networks</span>
+                <span class="topic-pill">Blockchain Security</span>
+                <span class="topic-pill">Privacy Preserving Technologies</span>
+                <span class="topic-pill">Secure Computing Systems</span>
+                <span class="topic-pill">Computer Networks</span>
+              </div>
+            </div>
+            <figure class="c-card__figure" style="background:linear-gradient(135deg,#7c3aed 0%,#a855f7 100%)">
+              <span class="c-card__number">03</span>
+            </figure>
+          </div>
+
+          <!-- TRACK 4 -->
+          <div class="c-card" data-index="3">
+            <div class="c-card__description">
+              <div class="c-card__tagline">Track 04</div>
+              <h2 class="c-card__title">Smart &amp; Emerging Technologies</h2>
+              <div class="c-card__topics">
+                <span class="topic-pill">Internet of Things (IoT)</span>
+                <span class="topic-pill">Wireless Sensor Networks</span>
+                <span class="topic-pill">Embedded Systems</span>
+                <span class="topic-pill">Edge &amp; Fog Computing</span>
+                <span class="topic-pill">Robotics &amp; Automation</span>
+                <span class="topic-pill">Cyber-Physical Systems</span>
+                <span class="topic-pill">Smart Cities</span>
+                <span class="topic-pill">Augmented &amp; Virtual Reality</span>
+                <span class="topic-pill">Quantum Computing</span>
+                <span class="topic-pill">Green &amp; Sustainable Computing</span>
+              </div>
+            </div>
+            <figure class="c-card__figure" style="background:linear-gradient(135deg,#b45309 0%,#f59e0b 100%)">
+              <span class="c-card__number">04</span>
+            </figure>
+          </div>
+
+          <!-- TRACK 5 -->
+          <div class="c-card" data-index="4">
+            <div class="c-card__description">
+              <div class="c-card__tagline">Track 05</div>
+              <h2 class="c-card__title">Intelligent Healthcare &amp; Biomedical Applications</h2>
+              <div class="c-card__topics">
+                <span class="topic-pill">AI in Healthcare</span>
+                <span class="topic-pill">Medical Image Processing</span>
+                <span class="topic-pill">Health Informatics</span>
+                <span class="topic-pill">Bioinformatics</span>
+                <span class="topic-pill">Disease Prediction with ML</span>
+                <span class="topic-pill">Smart Healthcare Systems</span>
+                <span class="topic-pill">Wearable Health Monitoring</span>
+                <span class="topic-pill">Telemedicine &amp; Digital Healthcare</span>
+                <span class="topic-pill">Healthcare Data Analytics</span>
+                <span class="topic-pill">Intelligent Systems for Agriculture &amp; Education</span>
+              </div>
+            </div>
+            <figure class="c-card__figure" style="background:linear-gradient(135deg,#0f766e 0%,#14b8a6 100%)">
+              <span class="c-card__number">05</span>
+            </figure>
+          </div>
+
+        </div>
       </div>
-    </div>
-
-    <!-- TRACK 2 -->
-    <div class="track-group">
-      <h3>Track 2: Cybersecurity and Secure Computing</h3>
-      <div class="tracks-grid">
-        <div class="track-pill">Big Data Analytics</div>
-        <div class="track-pill">Data Mining</div>
-        <div class="track-pill">Knowledge Discovery in Databases</div>
-        <div class="track-pill">Predictive Analytics</div>
-        <div class="track-pill">Business Intelligence</div>
-        <div class="track-pill">Data Visualization</div>
-        <div class="track-pill">Data Engineering</div>
-        <div class="track-pill">Scientific Computing</div>
-        <div class="track-pill">Information Retrieval</div>
-        <div class="track-pill">Intelligent Data Processing</div>
-      </div>
-    </div>
-
-    <!-- TRACK 3 -->
-    <div class="track-group">
-      <h3>Track 3: Intelligent Healthcare Systems and Biomedical Applications</h3>
-      <div class="tracks-grid">
-        <div class="track-pill">Network Security</div>
-        <div class="track-pill">Cryptography and Data Encryption</div>
-        <div class="track-pill">Digital Forensics</div>
-        <div class="track-pill">Computer Networks</div>
-        <div class="track-pill">Cloud Computing</div>
-        <div class="track-pill">Distributed and Parallel Computing</div>
-        <div class="track-pill">Wireless Networks</div>
-        <div class="track-pill">Blockchain Security</div>
-        <div class="track-pill">Privacy Preserving Technologies</div>
-        <div class="track-pill">Secure Computing Systems</div>
-      </div>
-    </div>
-
-    <!-- TRACK 4 -->
-    <div class="track-group">
-      <h3>Track 4: Indian Knowledge Systems and Indigenous Technologies</h3>
-      <div class="tracks-grid">
-        <div class="track-pill">Internet of Things (IoT)</div>
-        <div class="track-pill">Wireless Sensor Networks</div>
-        <div class="track-pill">Embedded Systems</div>
-        <div class="track-pill">Edge and Fog Computing</div>
-        <div class="track-pill">Robotics and Automation</div>
-        <div class="track-pill">Cyber-Physical Systems</div>
-        <div class="track-pill">Smart Cities and Smart Infrastructure</div>
-        <div class="track-pill">Augmented Reality and Virtual Reality</div>
-        <div class="track-pill">Quantum Computing</div>
-        <div class="track-pill">Green and Sustainable Computing</div>
-      </div>
-    </div>
-
-    <!-- TRACK 5 -->
-    <div class="track-group">
-      <h3>Track 5: Smart and Emerging Technologies for Sustainable Development</h3>
-      <div class="tracks-grid">
-        <div class="track-pill">AI in Healthcare</div>
-        <div class="track-pill">Medical Image Processing</div>
-        <div class="track-pill">Health Informatics</div>
-        <div class="track-pill">Bioinformatics and Computational Biology</div>
-        <div class="track-pill">Disease Prediction using Machine Learning</div>
-        <div class="track-pill">Smart Healthcare Systems</div>
-        <div class="track-pill">Wearable Health Monitoring Systems</div>
-        <div class="track-pill">Telemedicine and Digital Healthcare</div>
-        <div class="track-pill">Healthcare Data Analytics</div>
-        <div class="track-pill">Intelligent Systems for Agriculture, Education and Environment</div>
-      </div>
-    </div>
-    
-  </div>
-</section>
+    </section>
 
     <!-- ================= NOTE + CTA ================= -->
     <section class="py-20 bg-white text-center fade-section">
@@ -369,7 +467,7 @@ body{
           }, 4000);
         });
 
-        /* Scroll Animation */
+        /* Scroll Animation – sections */
         const sections = document.querySelectorAll(".fade-section");
         const observer = new IntersectionObserver(
           (entries) => {
@@ -379,10 +477,24 @@ body{
               }
             });
           },
-          { threshold: 0.15 },
+          { threshold: 0.12 },
         );
-
         sections.forEach((section) => observer.observe(section));
+
+        /* Track cards – staggered reveal */
+        const cards = document.querySelectorAll(".c-card");
+        const cardObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                cardObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+        );
+        cards.forEach((card) => cardObserver.observe(card));
       });
 
       /* Footer Load */
