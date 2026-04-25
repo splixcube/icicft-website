@@ -1,1671 +1,1734 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Committee | ICISET 2026</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicon.png"
-      type="image/x-icon"
-    />
-    <link href="./assets/css/output.css" rel="stylesheet" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-      <style>
+<head>
+  <meta charset="UTF-8" />
+  <title>Committee | ICISET 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link href="./assets/css/output.css" rel="stylesheet" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-  html{
-    scroll-behavior:smooth;
-  }
-
-  /* PAGE LOAD */
-  body{
-    animation:fadePage 0.8s ease-in-out;
-  }
-
-  @keyframes fadePage{
-    from{opacity:0;}
-    to{opacity:1;}
-  }
-
-  /* HERO */
-  .hero-bg{
-    background:linear-gradient(135deg,#1e3a8a 0%,#0f172a 100%);
-  }
-
-  .hero-fade{
-    opacity:0;
-    transform:translateY(40px);
-    animation:fadeUp 1s ease forwards;
-  }
-
-  @keyframes fadeUp{
-    to{
-      opacity:1;
-      transform:translateY(0);
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
-  }
 
-  /* SECTION */
-  .fade-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-  }
+    /* PAGE LOAD */
+    body {
+      animation: fadePage 0.8s ease-in-out;
+    }
 
-  .fade-section.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    @keyframes fadePage {
+      from {
+        opacity: 0;
+      }
 
-.section-container{
-  max-width:1500px;
-  margin:0 auto;
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* HERO */
+    .hero-bg {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    }
+
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 🔥 SECTION (FIXED + NO OVERLAP) */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+      margin-bottom: 80px;
+      /* 🔥 important fix */
+    }
+
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CONTAINER */
+    .section-container {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    /* TITLE */
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 40px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden; /* VERY IMPORTANT */
+  margin: 0 auto 16px;
+  background: #e8eef8;
 }
 
-  /* TITLE */
-  .section-title{
-    font-size:26px;
-    font-weight:700;
-    color:#1e3a8a;
-    margin-bottom:40px;
-    letter-spacing:0.5px;
-    text-align:center;
-  }
+/* Image */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 
-  /* GRID */
-  .committee-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,380px));
-    justify-content:center;
-    gap:40px;
-  }
+  transform: scale(1); /* initial */
+  transition: transform 0.4s ease; /* smooth */
+}
 
-  /* CARD */
-  .committee-card{
-    background:#ffffff;
-    border-radius:20px;
-    padding:32px 26px;
-    text-align:center;
-    box-shadow:0 12px 32px rgba(0,0,0,0.06);
-    transition:all 0.4s ease;
+/* Hover zoom */
+.image-container:hover img {
+  transform: scale(1.12); /* zoom level */
+}
 
-    opacity:1;
-    transform:translateY(0);
-  }
+    .section-title:hover {
+      letter-spacing: 1px;
+      transform: translateY(-2px);
+    }
 
-  /* CARD SHOW */
-  .committee-card.show{
-    opacity:1;
-    transform:translateY(0);
-  }
+    /* GRID */
+    .committee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+      justify-content: center;
+      gap: 40px;
+    }
 
-  /* HOVER */
-  .committee-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 22px 55px rgba(30,58,138,0.15);
-  }
+    /* 🔥 CARD (ANIMATED PROPERLY) */
+    .committee-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 26px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s ease;
 
-  /* MEMBER TEXT */
-  .member-name{
-    font-size:19px;
-    font-weight:600;
-    color:#0f172a;
-  }
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-  .member-role{
-    font-size:15px;
-    font-weight:500;
-    color:#1e3a8a;
-    margin-top:8px;
-  }
+    /* 🔥 MATCH YOUR JS (visible class) */
+    .committee-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  .member-org{
-    font-size:14px;
-    color:#555;
-    margin-top:6px;
-  }
+    /* HOVER */
+    .committee-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(30, 58, 138, 0.18);
+    }
 
+    /* CLICK */
+    .committee-card:active {
+      transform: scale(0.98);
+    }
+
+    .committee-card.no-image {
+  padding-top: 40px; /* adjust so it looks balanced */
+}
+
+    /* TEXT */
+    .member-name {
+      font-size: 19px;
+      font-weight: 600;
+      color: #0f172a;
+      transition: color 0.3s ease;
+    }
+
+    .member-role {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1e3a8a;
+      margin-top: 8px;
+    }
+
+    .member-org {
+      font-size: 14px;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    /* TEXT HOVER */
+    .committee-card:hover .member-name {
+      color: #1e3a8a;
+    }
   </style>
-  </head>
+</head>
 
-  <body class="bg-gray-50 text-gray-800">
-    <!-- NAVBAR -->
-    <div id="header-placeholder"></div>
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAVBAR -->
+  <div id="header-placeholder"></div>
 
-    <!-- ================= HERO ================= -->
-    <section class="pt-20 pb-8 bg-gray-100 fade-section">
-      <div class="max-w-5xl mx-auto px-6 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <div class="slider relative w-full h-72 md:h-[450px]">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/building.avif"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/poornima 3.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/footercover.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
+  <!-- ================= HERO ================= -->
+  <section class="pt-20 pb-8 bg-gray-100 fade-section">
+    <div class="max-w-5xl mx-auto px-6 relative">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+        <div class="slider relative w-full h-72 md:h-[450px]">
+          <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+            <img src="/assets/images/building.avif" alt="Poornima University campus building" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute inset-0 bg-black/10"></div>
-        </div>
 
-        <div
-          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-5 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Partners & Publication 
-          </h2>
-          <p class="text-gray-500">
-            Conference proceedings and journal publication opportunities
-          </p>
-          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="/assets/images/poornima 3.webp" alt="Poornima University campus" class="w-full h-full object-cover" />
+          </div>
+
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="/assets/images/footercover.webp" alt="ICSCIS conference venue" class="w-full h-full object-cover" />
+          </div>
         </div>
+        <div class="absolute inset-0 bg-black/10"></div>
       </div>
-    </section>
 
-    <!-- CONTENT -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6 space-y-20">
-        <!-- CHIEF PATRONS -->
-        <div class="fade-section">
+      <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-5 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+          Partners & Publication
+        </h2>
+        <p class="text-gray-500">
+          Conference proceedings and journal publication opportunities
+        </p>
+        <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6 space-y-20">
+      <!-- CHIEF PATRONS -->
+      <div class="fade-section">
         <h2 class="section-title">CHIEF PATRONS</h2>
 
         <div class="committee-grid">
 
-    <!-- Card 1 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sashikant-singhi.png" alt="Shri Shashikant Singhi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <h3 class="member-name">Shri Shashikant Singhi</h3>
-      <p class="member-role">Chairperson</p>
-      <p class="member-org">Poornima University</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/suresh-padhy.png" alt="Dr. Suresh Chand Padhy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <h3 class="member-name">Dr. Suresh Chand Padhy</h3>
-      <p class="member-role">President</p>
-      <p class="member-org">Poornima University</p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/rahl-singhi.png" alt="Ar. Rahul Singhi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <h3 class="member-name">Ar. Rahul Singhi</h3>
-      <p class="member-role">Director</p>
-      <p class="member-org">Poornima University</p>
-    </div>
-
+          <!-- Card 1 -->
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/sashikant-singhi.png" alt="Shri. Shashikant Singhi">
   </div>
-</div>
-
-        <!-- HONORARY PATRON -->
-       <div class="fade-section">
-  <h2 class="section-title"> GENERAL CHAIRS </h2>
-
-  <div class="committee-grid">
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/manoj-gupta.png" alt="Dr. Manoj Gupta" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Manoj Gupta</div>
-      <div class="member-role">Pro-President (FET & FCE)</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/arun-chougule.png" alt="Dr. Arun Chougule" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Prof. (Dr.) Arun Chougule</div>
-      <div class="member-role">Dean Academics</div>
-      <div class="member-org">SKGI</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/issam-naqa.png" alt="Dr. Issam El Naqa" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Issam El Naqa</div>
-      <div class="member-role">Chair, Department of Machine Learning</div>
-      <div class="member-org">Moffitt Cancer Center, Tampa, Florida, USA</div>
-    </div>
-
-     <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/john-damilakis.png" alt="Dr. John Damilakis" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. John Damilakis</div>
-      <div class="member-role">Professor School of Medicine, University of Crete</div>
-      <div class="member-org">Crete, Greece, Immediate past president of IOMP</div>
-    </div>
-  </div>
+  
+            <h3 class="member-name">Shri Shashikant Singhi</h3>
+            <p class="member-role">Chairperson</p>
+            <p class="member-org">Poornima University</p>
           </div>
 
-        <!-- Co pateron -->
-         <div class="fade-section">
-  <h2 class="section-title">GENERAL CO-CHAIRS</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/ajay-khunteta.png" alt="Dr. Ajay Khunteta" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Ajay Khunteta</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-<div class="committee-card">
-  <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/devendra-somvanshi.png" alt="Dr. Devendra Somvanshi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Devendra Somvanshi</div>
-      <div class="member-role">Registrar</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-<div class="committee-card">
-  <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/shikha-sharma.png" alt="Dr. Shikha Sharma" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Shikha Sharma</div>
-      <div class="member-role">HOD, CSE</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+          <!-- Card 2 -->
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/suresh-padhy.png" alt="Dr. Suresh Chand Padhy">
   </div>
-  </div>  
+  
+            <h3 class="member-name">Dr. Suresh Chand Padhy</h3>
+            <p class="member-role">President</p>
+            <p class="member-org">Poornima University</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/rahl-singhi.png" alt="Ar. Rahul Singhi">
   </div>
-</div>
-       
+  
+            <h3 class="member-name">Ar. Rahul Singhi</h3>
+            <p class="member-role">Director</p>
+            <p class="member-org">Poornima University</p>
+          </div>
 
-        <!-- CONFERENCE CHAIRS -->
-
-<div class="fade-section">
-  <h2 class="section-title">ORGANIZING CHAIRS</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/saurabh-shandilya.png" alt="Dr. Saurabh Shandilya" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
+        </div>
       </div>
-      <div class="member-name">Dr. Saurabh Shandilya</div>
-      <div class="member-role">Professor, CSE & Coordinator IKS</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+
+      <!-- HONORARY PATRON -->
+      <div class="fade-section">
+        <h2 class="section-title"> GENERAL CHAIRS </h2>
+
+        <div class="committee-grid">
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/manoj-gupta.png" alt="Dr. Manoj Gupta">
   </div>
-</div>
+  
+            <div class="member-name">Dr. Manoj Gupta</div>
+            <div class="member-role">Pro-President (FET & FCE)</div>
+            <div class="member-org">Poornima University</div>
+          </div>
 
-<!-- CONVENER -->
-        <div class="fade-section">
-  <h2 class="section-title">CONVENER</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sumit-kapoor.png" alt="Dr. Sumit Kumar Kapoor" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Sumit Kumar Kapoor</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/ravi-soni.png" alt="Dr. Ravi Soni" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Ravi Soni </div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/arun-chougule.png" alt="Prof. (Dr.) Arun Chougule">
   </div>
-</div>
+  
+            <div class="member-name">Prof. (Dr.) Arun Chougule</div>
+            <div class="member-role">Dean Academics</div>
+            <div class="member-org">SKGI</div>
+          </div>
 
-        <!-- CO-CONVENER -->
-        <div class="fade-section">
-  <h2 class="section-title">CO-CONVENER</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/kriti-sankhla.png" alt="Dr. Kriti Sankhla" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Kriti Sankhla</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sagar-kumar.png" alt="Mr. Sagar Kumar" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Mr. Sagar Kumar</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/issam-naqa.png" alt="Dr. Issam El Naqa">
   </div>
-</div>
+  
+            <div class="member-name">Dr. Issam El Naqa</div>
+            <div class="member-role">Chair, Department of Machine Learning</div>
+            <div class="member-org">Moffitt Cancer Center, Tampa, Florida, USA</div>
+          </div>
 
-<!--CONFERENCE ORGANIZING SECRETARIES-->
-       <div class="fade-section">
-  <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
-
-  <div class="committee-grid">
-
-    <!-- 1 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/rajeev-agrawal.png" alt="Prof. Rajeev Agrawal" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Prof. Rajeev Agrawal</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">MNIT, Jaipur</div>
-    </div>
-
-    <!-- 2 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/vishal-gaur.png" alt="Dr. Vishal Gour" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Vishal Gour</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Engineering College Bikaner, Rajasthan, India</div>
-    </div>
-
-    <!-- 3 -->
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/cs-lamba.png" alt="Dr. CS Lamba" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. CS Lamba</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Manipal University</div>
-    </div>
-    
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/vipin-khattri.png" alt="Dr. Vipin Khattri" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Vipin Khattri</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/manju-lata.png" alt="Dr. Manju Lata Joshi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Manju Lata Joshi</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/john-damilakis.png" alt="Dr. John Damilakis">
   </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/payal-bansal.png" alt="Dr. Payal Bansal" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
+  
+            <div class="member-name">Dr. John Damilakis</div>
+            <div class="member-role">Professor School of Medicine, University of Crete</div>
+            <div class="member-org">Crete, Greece, Immediate past president of IOMP</div>
+          </div>
+        </div>
       </div>
-      <div class="member-name">Dr. Payal Bansal </div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">PIET, Jaipur</div>
-    </div>
 
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/shikha-khullar.png" alt="Dr. Shikha Khullar" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Shikha Khullar</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+      <!-- Co chairs -->
+      <div class="fade-section">
+        <h2 class="section-title">GENERAL CO-CHAIRS</h2>
 
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/satish-bansal.png" alt="Dr. Satish Bansal" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Satish Bansal</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-    
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/abhishek-gehlot.png" alt="Dr. Abhishek Gehlot" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Abhishek Gehlot</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">JECRC, Jaipur</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/arpit-kumar-sharma.png" alt="Dr. Arpit Kumar Sharma" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Arpit Kumar Sharma</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Manipal University, Jaipur</div>
-    </div>
-
+        <div class="committee-grid">
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/ajay-khunteta.png" alt="Dr. Ajay Khunteta">
   </div>
-</div>
+  
 
-<!--ORGANIZING COMMITTEE & SUPPORT-->
-        <div class="fade-section">
-  <h2 class="section-title">LOCAL ORGANIZING & SUPPORT COMMITTEE CHAIR</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/rakesh-gupta.png" alt="Dr. Rakesh Kumar Gupta" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Rakesh Kumar Gupta</div>
-      <div class="member-role">Dean Student Welfare</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/ajay-pagre.png" alt="Dr. Ajay Kumar Pagare" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Ajay Kumar Pagare</div>
-      <div class="member-role">Associate Dean IQAC</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/naval-jain.png" alt="Dr. Naval Kishor Jain" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Naval Kishor Jain</div>
-      <div class="member-role">COE</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/vishnu-sharma.png" alt="Dr. Vishnu Sharma" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Vishnu Sharma</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div> 
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/abhishek-sharma.png" alt="Dr. Abhishek Sharma" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Abhishek Sharma</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">PCE</div>
-    </div>
-
-     <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/vipin-khattri.png" alt="Dr. Vipin Khattri" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Vipin Khattri</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-     <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/priyanka-verma.png" alt="Dr. Priyanka Verma" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Priyanka Verma</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
+            <div class="member-name">Dr. Ajay Khunteta</div>
+            <div class="member-role">Dean FCE</div>
+            <div class="member-org">Poornima University</div>
+          </div>
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/devendra-somvanshi.png" alt="Dr. Devendra Somvanshi">
   </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/anmol-chaturvedi.png" alt="Dr. Anmol Chaturvedi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Anmol Chaturvedi</div>
-      <div class="member-role">Assistant Registrar</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/firdos-sheikh.png" alt="Mr. Firdos Alam Sheikh" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Mr. Firdos Alam Sheikh</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-    
+  
+            <div class="member-name">Dr. Devendra Somvanshi</div>
+            <div class="member-role">Registrar</div>
+            <div class="member-org">Poornima University</div>
+          </div>
+          <div class="committee-card">
+             <div class="image-container">
+    <img src="assets/images/shikha-sharma.png" alt="Dr. Shikha Sharma">
   </div>
-</div>
-    
-  <!-- FINANCE COMMITTEE  -->
-        <div class="fade-section">
-  <h2 class="section-title">FINANCE COMMITTEE</h2>
-
-  <div class="committee-grid">
-
-   <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/saurabh-shandilya.png" alt="Dr. Saurabh Shandilya" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
+  
+            <div class="member-name">Dr. Shikha Sharma</div>
+            <div class="member-role">HOD, CSE</div>
+            <div class="member-org">Poornima University</div>
+          </div>
+        </div>
       </div>
-      <div class="member-name">Dr. Saurabh Shandilya</div>
-      <div class="member-role">Professor, CSE & Coordinator IKS</div>
-      <div class="member-org">Poornima University</div>
+    </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- CONFERENCE CHAIRS -->
+
+    <div class="fade-section">
+      <h2 class="section-title">ORGANIZING CHAIRS</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/saurabh-shandilya.png" alt="Dr. Saurabh Shandilya">
   </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sumit-kapoor.png" alt="Dr. Sumit Kumar Kapoor" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
+  
+          <div class="member-name">Dr. Saurabh Shandilya</div>
+          <div class="member-role">Professor, CSE & Coordinator IKS</div>
+          <div class="member-org">Poornima University</div>
+        </div>
       </div>
-      <div class="member-name">Dr. Sumit Kumar Kapoor</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
     </div>
 
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/ravi-soni.png" alt="Dr. Ravi Soni" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Ravi Soni </div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+    <!-- CONVENER -->
+    <div class="fade-section">
+      <h2 class="section-title">CONVENER</h2>
 
+      <div class="committee-grid">
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/sumit-kapoor.png" alt="Dr. Sumit Kumar Kapoor">
   </div>
-</div>
+  
+          <div class="member-name">Dr. Sumit Kumar Kapoor</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
- <!-- TECHNICAL PROGRAM CHAIRS -->
-        <div class="fade-section">
-  <h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
-
-  <div class="committee-grid">
-
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sharad-salunke.png" alt="Dr. Sharad Salunke" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Sharad Salunke</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/bharti-salunke.png" alt="Dr. Bharti Salunke" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Bharti Salunke</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/monika-dandotiya.png" alt="Dr. Monika Dandotiya" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div class="member-name">Dr. Monika Dandotiya</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/ravi-soni.png" alt="Dr. Ravi Soni">
   </div>
-</div> 
+  
+          <div class="member-name">Dr. Ravi Soni </div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
- <!-- ADVISORS -->
-        <div class="fade-section">
-  <h2 class="section-title">ADVISORS</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
-      <img src="assets/images/sunil-gupta.png" alt="Dr. Sunil Gupta" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
       </div>
-      <div class="member-name">Dr. Sunil Gupta</div>
-      <div class="member-role">Dean R&D</div>
-      <div class="member-org">Poornima University</div>
     </div>
 
-    <div class="committee-card">
-      <div class="member-name">Dr. Udit Mamodiya</div>
-      <div class="member-role">Associate Dean Research</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+    <!-- CO-CONVENER -->
+    <div class="fade-section">
+      <h2 class="section-title">CO-CONVENER</h2>
 
-    <div class="committee-card">
-      <div class="member-name">Dr. Swati Gokhru</div>
-      <div class="member-role">Dean International Relations</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+      <div class="committee-grid">
 
-    <div class="committee-card">
-      <div class="member-name">Dr. Ankush Jain</div>
-      <div class="member-role">Dean Academics</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Sanjeev Singh</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">NIT, Bhopal</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Mahesh M. Bundele</div>
-      <div class="member-role">Principal</div>
-      <div class="member-org">Poornima College of Engineering</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Dinesh Goyal</div>
-      <div class="member-role">Principal</div>
-      <div class="member-org">Poornima Institute of Engineering & Technology</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Vijay Chandna</div>
-      <div class="member-role">Principal</div>
-      <div class="member-org">JECRC College, Jaipur</div>
-    </div>
-
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/kriti-sankhla.png" alt="Dr. Kriti Sankhla">
   </div>
-</div>
+  
+          <div class="member-name">Dr. Kriti Sankhla</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
-      
-
-<!--PUBLICITY AND PROMOTION-->
-        <div class="fade-section">
-  <h2 class="section-title">PUBLICITY AND PROMOTION</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Savita Shivani</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Pratish Rawat</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Abhilasha Khandelwal</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Deepika Saxena</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Manali Pareek</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Kavita Lal</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Imran Mirza</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Firdos Alam Sheikh</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Priyanka Verma</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/sagar-kumar.png" alt="Mr. Sagar Kumar">
   </div>
+  
+          <div class="member-name">Mr. Sagar Kumar</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--CONFERENCE ORGANIZING SECRETARIES-->
+    <div class="fade-section">
+      <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
+
+      <div class="committee-grid">
+
+        <!-- 1 -->
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/rajeev-agrawal.png" alt="Dr. Rajeev Agrawal">
+  </div>
+  
+          <div class="member-name">Prof. Rajeev Agrawal</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">MNIT, Jaipur</div>
+        </div>
+
+        <!-- 2 -->
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/vishal-gaur.png" alt="Dr. Vishal Gour">
+  </div>
+  
+          <div class="member-name">Dr. Vishal Gour</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Engineering College Bikaner, Rajasthan, India</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/cs-lamba.png" alt="Dr. CS Lamba">
+  </div>
+  
+          <div class="member-name">Dr. CS Lamba</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Manipal University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/vipin-khattri.png" alt="Dr. Vipin Khattri">
+  </div>
+  
+          <div class="member-name">Dr. Vipin Khattri</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/manju-lata.png" alt="Dr. Manju Lata Joshi">
+  </div>
+  
+          <div class="member-name">Dr. Manju Lata Joshi</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/payal-bansal.png" alt="Dr. Payal Bansal">
+  </div>
+  
+          <div class="member-name">Dr. Payal Bansal </div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">PIET, Jaipur</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/shikha-khullar.png" alt="Dr. Shikha Khullar">
+  </div>
+  
+          <div class="member-name">Dr. Shikha Khullar</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/satish-bansal.png" alt="Dr. Satish Bansal">
+  
+  
+          </div>
+          <div class="member-name">Dr. Satish Bansal</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/abhishek-gehlot.png" alt="Dr. Abhishek Gehlot">
+  </div>
+  
+          <div class="member-name">Dr. Abhishek Gehlot</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">JECRC, Jaipur</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/arpit-kumar-sharma.png" alt="Dr. Arpit Kumar Sharma">
+  </div>
+  
+          <div class="member-name">Dr. Arpit Kumar Sharma</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Manipal University, Jaipur</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--ORGANIZING COMMITTEE & SUPPORT-->
+    <div class="fade-section">
+      <h2 class="section-title">LOCAL ORGANIZING & SUPPORT COMMITTEE CHAIR</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/rakesh-gupta.png" alt="Dr. Rakesh Kumar Gupta">
+  </div>
+  
+          <div class="member-name">Dr. Rakesh Kumar Gupta</div>
+          <div class="member-role">Dean Student Welfare</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/ajay-pagre.png" alt="Dr. Ajay Kumar Pagare">
+  </div>
+          <div class="member-name">Dr. Ajay Kumar Pagare</div>
+          <div class="member-role">Associate Dean IQAC</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/naval-jain.png" alt="Dr. Naval Kishor Jain">
+  </div>
+  
+          <div class="member-name">Dr. Naval Kishor Jain</div>
+          <div class="member-role">COE</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+    <img src="assets/images/vishnu-sharma.png" alt="Dr. Vishnu Sharma">
+  </div>
+  
+          <div class="member-name">Dr. Vishnu Sharma</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/abhishek-sharma.png" alt="Dr. Abhishek Sharma">
+  </div>
+          <div class="member-name">Dr. Abhishek Sharma</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">PCE</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/vipin-khattri.png" alt="Dr. Vipin Khattri">
+  </div>
+          <div class="member-name">Dr. Vipin Khattri</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/priyanka-verma.png" alt="Dr. Priyanka Verma">
+  </div>
+          <div class="member-name">Dr. Priyanka Verma</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/anmol-chaturvedi.png" alt="Dr. Anmol Chaturvedi">
+  </div>
+          <div class="member-name">Dr. Anmol Chaturvedi</div>
+          <div class="member-role">Assistant Registrar</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/firdos-sheikh.png" alt="Mr. Firdos Alam Sheikh">
+  </div>
+          <div class="member-name">Mr. Firdos Alam Sheikh</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FINANCE COMMITTEE  -->
+    <div class="fade-section">
+      <h2 class="section-title">FINANCE COMMITTEE</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/saurabh-shandilya.png" alt="Dr. Saurabh Shandilya">
+  </div>
+          <div class="member-name">Dr. Saurabh Shandilya</div>
+          <div class="member-role">Professor, CSE & Coordinator IKS</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/sumit-kapoor.png" alt="Dr. Sumit Kumar Kapoor">
+  </div>
+          <div class="member-name">Dr. Sumit Kumar Kapoor</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/ravi-soni.png" alt="Dr. Ravi Soni">
+  </div>
+          <div class="member-name">Dr. Ravi Soni </div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TECHNICAL PROGRAM CHAIRS -->
+    <div class="fade-section">
+      <h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
+
+      <div class="committee-grid">
+
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/sharad-salunke.png" alt="Dr. Sharad Salunke">
+  </div>
+          <div class="member-name">Dr. Sharad Salunke</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+        <img src="assets/images/bharti.jpeg" alt="Dr. Bharti Salunke">
+        </div>
+          <div class="member-name">Dr. Bharti Salunke</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/monika-dandotiya.png" alt="Dr. Monika Dandotiya">
+  </div>
+          <div class="member-name">Dr. Monika Dandotiya</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ADVISORS -->
+    <div class="fade-section">
+      <h2 class="section-title">ADVISORS</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+         <div class="image-container">
+    <img src="assets/images/sunil-gupta.jpeg" alt="Dr. Sunil Gupta">
+  </div>
+          <div class="member-name">Dr. Sunil Gupta</div>
+          <div class="member-role">Dean R&D</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+    <img src="assets/images/Udit mamodia.jpeg" alt="Dr. Udit Mamodiya">
+  </div>
+          <div class="member-name">Dr. Udit Mamodiya</div>
+          <div class="member-role">Associate Dean Research</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+        <img src="assets/images/Swati Gokhru.jpeg" alt="Dr. Swati Gokhru">
+        </div>
+          <div class="member-name">Dr. Swati Gokhru</div>
+          <div class="member-role">Dean International Relations</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+        <div class="image-container">
+        <img src="assets/images/ankush-jain.jpeg" alt="Dr. Ankush Jain">
+        </div>
+          <div class="member-name">Dr. Ankush Jain</div>
+          <div class="member-role">Dean Academics</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+        <img src="assets/images/sanjeev-singh.jpeg" alt="Dr. Sanjeev Singh">
+        </div>
+          <div class="member-name">Dr. Sanjeev Singh</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">NIT, Bhopal</div>
+        </div>
+
+        <div class="committee-card">
+           <div class="image-container">
+        <img src="assets/images/mahesh.jpeg" alt="Dr. Ankush Jain">
+        </div>
+          <div class="member-name">Dr. Mahesh M. Bundele</div>
+          <div class="member-role">Principal</div>
+          <div class="member-org">Poornima College of Engineering</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+        <img src="assets/images/dinesh-goyal.jpeg" alt="Dr. Dinesh Goyal">
+        </div>
+          <div class="member-name">Dr. Dinesh Goyal</div>
+          <div class="member-role">Principal</div>
+          <div class="member-org">Poornima Institute of Engineering & Technology</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="image-container">
+        <img src="assets/images/vinay-chandna.jpeg" alt="Dr. Vijay Chandna">
+        </div>
+          <div class="member-name">Dr. Vijay Chandna</div>
+          <div class="member-role">Principal</div>
+          <div class="member-org">JECRC College, Jaipur</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!--PUBLICITY AND PROMOTION-->
+    <div class="fade-section">
+      <h2 class="section-title">PUBLICITY AND PROMOTION</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Savita Shivani</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Pratish Rawat</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Abhilasha Khandelwal</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Deepika Saxena</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Manali Pareek</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Kavita Lal</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Imran Mirza</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Mr. Firdos Alam Sheikh</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Priyanka Verma</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--SPONSORSHIP COMMITTEE-->
+    <div class="fade-section">
+      <h2 class="section-title">SPONSORSHIP COMMITTEE</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Priyanka Mishra</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Vaishali Sonwane</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Richa Mathur</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Monika Dandotiya</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Amit Hirawat</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Mr. Harish Pamnani</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+      </div>
+    </div>
+    <!-- TRACK CHAIR -->
+    <div class="fade-section">
+      <h2 class="section-title">TRACK CHAIR</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Kriti Sankhla</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Shikha Khullar</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Priyanka Mishra</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Ravi Soni</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Priyanka Verma</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Mr. Harish Pamnani</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Abhilasha Khandelwal</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Mirza Samiulla Beg</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Vinay Kumar</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Ashish Awasthi</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Bindiya Jain</div>
+          <div class="member-role">Associate Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Bright Keshwani</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Pankaj Dhadhich</div>
+          <div class="member-role">Professor CSE</div>
+          <div class="member-org">SKIT, Jaipur</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HOSPITALITY COMMITTEE -->
+    <div class="fade-section">
+      <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="member-name">Mr. Ankit Khandelwal</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Nikita Sharma</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Manisha Gaur</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Mr. Satish Bansal</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- MEDIA COORDINATION COMMITTEE -->
+
+    <div class="fade-section">
+      <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
+
+      <div class="committee-grid">
+
+        <div class="committee-card">
+          <div class="member-name">Dr. Vipin Khattri</div>
+          <div class="member-role">Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Garima Jain</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Ms. Shakshi Kanwar Ranawat</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
         </div>
 
 
-        <!--SPONSORSHIP COMMITTEE-->
-        <div class="fade-section">
-  <h2 class="section-title">SPONSORSHIP COMMITTEE</h2>
 
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Priyanka Mishra</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
+      </div>
     </div>
+    <!-- CONFERENCE WEB ADMIN -->
+    <div class="fade-section">
+      <h2 class="section-title">CONFERENCE WEB ADMIN</h2>
 
-    <div class="committee-card">
-      <div class="member-name">Dr. Vaishali Sonwane</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
+      <div class="committee-grid">
 
-    <div class="committee-card">
-      <div class="member-name">Dr. Richa Mathur</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Monika Dandotiya</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Amit Hirawat</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Harish Pamnani</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-  </div>
-</div>
-        <!-- TRACK CHAIR -->
-        <div class="fade-section">
-  <h2 class="section-title">TRACK CHAIR</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Kriti Sankhla</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Shikha Khullar</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Priyanka Mishra</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Ravi Soni</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Priyanka Verma</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Harish Pamnani</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Abhilasha Khandelwal</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Mirza Samiulla Beg</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Vinay Kumar</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Ashish Awasthi</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Bindiya Jain</div>
-      <div class="member-role">Associate Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Bright Keshwani</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Dr. Pankaj Dhadhich</div>
-      <div class="member-role">Professor CSE</div>
-      <div class="member-org">SKIT, Jaipur</div>
-    </div>
-
-  </div>
-</div>
-            
-      <!-- HOSPITALITY COMMITTEE -->
-         <div class="fade-section">
-  <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Ankit Khandelwal</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Nikita Sharma</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Manisha Gaur</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Satish Bansal</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- MEDIA COORDINATION COMMITTEE -->
-
-<div class="fade-section">
-  <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
-
-  <div class="committee-grid">
-
-     <div class="committee-card">
-      <div class="member-name">Dr. Vipin Khattri</div>
-      <div class="member-role">Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>  
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Garima Jain</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Shakshi Kanwar Ranawat</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-   
-
-  </div>
-</div>
-        <!-- CONFERENCE WEB ADMIN -->
-        <div class="fade-section">
-  <h2 class="section-title">CONFERENCE WEB ADMIN</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Mr. Sagar Kumar</div>
-      <div class="member-role"> Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-
-    <div class="committee-card">
-      <div class="member-name">Bhavya Agrawal</div>
-      <div class="member-role">Student</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Bhumika Aggarwal</div>
-      <div class="member-role">Student</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Bhavna Bharti</div>
-      <div class="member-role">Student</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-  </div>
-</div>
-        
-        <!-- REGISTRATION COMMITTEE -->
-         <div class="fade-section">
-  <h2 class="section-title">REGISTRATION COMMITTEE</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Seema Kaloria</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Neha Jain</div>
-      <div class="member-role">Assistant Professor</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Priya Tanwar</div>
-      <div class="member-role">Teaching Assistant</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-    <div class="committee-card">
-      <div class="member-name">Ms. Harleen Kaur</div>
-      <div class="member-role">Teaching Assistant</div>
-      <div class="member-org">Poornima University</div>
-    </div>
-
-  </div>
-</div>
-
-<!--INTERNATIONAL ADVISORY COMMITTEE -->
-        <div class ="fade-section">
-          <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Michael Baron, Charles Sturt University, Australia
-            </div>
-            <div class="committee-card">
-              Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions,
-              Google, USA
-            </div>
-            <div class="committee-card">
-              Pradeep Chintale, Board of Director-Education and Innovation, The
-              New World Foundation, USA
-            </div>
-            <div class="committee-card">
-              Prof. Ajit Khosla, Yamagata University, Japan
-            </div>
-            <div class="committee-card">
-              Alesa Durgaryan, Global Educator, Armenia
-            </div>
-            <div class="committee-card">
-              Dr. Srinivasan Lakshmanan, Delta System &amp; Software Inc. Texas,
-              USA
-            </div>
-            <div class="committee-card">
-              Dr. Sara Ravan Ramzani, Professor, Gisma University of Applied
-              Sciences, Germany
-            </div>
-            <div class="committee-card">
-              Prof Dr S B Goyal, Director, City University, Malaysia
-            </div>
-            <div class="committee-card">
-              Ankit R. Patel, University of Minho, Portugal
-            </div>
-            <div class="committee-card">
-              Dr. Tien Anh Tran, University of Malta, Malta
-            </div>
-            <div class="committee-card">
-              Dr Harjit Pal Singh, The University of the West Indies, St
-              Augustine Trinidad and Tobago
-            </div>
-            <div class="committee-card">
-              Gopi Desaboyina, Sr Systems Engineer, Western Governers
-              University, United States
-            </div>
-            <div class="committee-card">
-              Narendra B Merla, Senior Data Engineering Manager, Oklahoma State
-              University, United States of America
-            </div>
-            <div class="committee-card">
-              Dr Samrat Ray, Peter the Great Saint, Petersburg Polytechnic
-              University, Russia
-            </div>
-            <div class="committee-card">
-              Dr. Muthmainnah, Universitas Al Asyariah Mandar West Sulawesi,
-              Indonesia
-            </div>
-            <div class="committee-card">
-              Dr. Kusum Yadav, University of Ha'il, Saudi Arabia
-            </div>
-            <div class="committee-card">
-              Valliappan, Director of RMC, Perdana University, Malaysia
-            </div>
-            <div class="committee-card">
-              Noor Zaman Jhanjhi, Professor, Taylor's University, Malaysia
-            </div>
-            <div class="committee-card">
-              Dr Dalwinder Kaur, Manipal Global Nxt University, Malaysia
-            </div>
-            <div class="committee-card">
-              Danish Jamil, Sir Syed University of Engineering and Technology,
-              Pakistan
-            </div>
-            <div class="committee-card">
-              Pastor Arguelles, Jr. Director, University of Batangas,
-              Philippines
-            </div>
-            <div class="committee-card">
-              Dr. Aftab Ara, University of Hail, Saudi Arabia
-            </div>
-            <div class="committee-card">
-              Emmanuel Philip Ododo, University of Uyo, Nigeria
-            </div>
-            <div class="committee-card">
-              Dr. Ali Said Al Matari, Sharqiyah University, Oman
-            </div>
-            <div class="committee-card">
-              Syed Abdal Ahmad Khan, RAK Medical and Health Sciences University,
-              United Arab Emirates
-            </div>
-            <div class="committee-card">
-              A S M Ahsanul Sarkar Akib, Managing Director, Robo Tech Valley,
-              Bangladesh
-            </div>
-            <div class="committee-card">Deeksha Dwivedi, Lealie’s, USA</div>
-            <div class="committee-card">
-              Narendra B Merla, Oklahoma State University, USA
-            </div>
-            <div class="committee-card">
-              Alesa Durgaryan, Armenian State Pedagogical University, Armenia
-            </div>
-            <div class="committee-card">
-              Dr Samrat Ray, Peter the Great Saint, Petersburg polytechnic
-              University, Russia
-            </div>
-            <div class="committee-card">
-              Dr Harjit Pal Singh, The University of the West Indies, St
-              Augustine, Trinidad and Tobago
-            </div>
-            <div class="committee-card">
-              Laraib FaTIma Al Hussaini, University of Wah, Wah Cantt, Pakistan
-            </div>
-            <div class="committee-card">Mr. Achraf Golli, Quizard AI, USA</div>
-            <div class="committee-card">
-              Mr. Akbar Doctor, Fresenius Medical Care, USA
-            </div>
-            <div class="committee-card">
-              Mr. Anirudh Khanna, Pacific Gas and Electric, USA
-            </div>
-            <div class="committee-card">Mr. Ankit Bansal, Bayer, USA</div>
-            <div class="committee-card">Mr. Arjun Jaggi, HCLTech, USA</div>
-            <div class="committee-card">
-              Mr. Bharath Muddarla, Whiz IT Solutions, USA
-            </div>
-            <div class="committee-card">
-              Mr. Dilip Kumar, Sr. Software Engineer, Intuit, USA
-            </div>
-            <div class="committee-card">
-              Mr. Diwakar Peddinti, Trackonomy Systems, USA
-            </div>
-            <div class="committee-card">
-              Mr. Gaurav Jindal, Barclays Corporate &amp; Investment Bank, USA
-            </div>
-            <div class="committee-card">
-              Mr. Govindarajan lakshmi kanthan, Independent Researcher, USA
-            </div>
-            <div class="committee-card">
-              Mr. Hariharan Ragothaman, Athenahealth, USA
-            </div>
-            <div class="committee-card">
-              Mr. Hrushikesh Deshmukh, Fannie Mae, USA
-            </div>
-            <div class="committee-card">
-              Mr. Jaipal Reddy Poddutoori, Bbu, USA
-            </div>
-            <div class="committee-card">
-              Ms. Janamolla Reddy, University of the Cumberlands, USA
-            </div>
-            <div class="committee-card">
-              Ms. Janet Zhang, Boston Easy Biotech, Inc., USA
-            </div>
-            <div class="committee-card">Mr. Mahipal Podduturi, Penske, USA</div>
-            <div class="committee-card">
-              Mr. Ramasankar Molleti, Frisco, TX, USA
-            </div>
-            <div class="committee-card">
-              Mr. Naga Tirumala Chillapalli, Macy’s, USA
-            </div>
-            <div class="committee-card">
-              Mr. Pavan Polneni, Lead DevOps Engineer, UBS, USA
-            </div>
-            <div class="committee-card">
-              Mr. Piyush Jain, Deloitte, Singapore
-            </div>
-            <div class="committee-card">
-              Mr. Praneeth Reddy Amudala Puchakayala, Regions Bank, USA
-            </div>
-            <div class="committee-card">Mr. Rajesh Malviya, NTT Data, USA</div>
-            <div class="committee-card">
-              Mr. Rakesh Ramakrishnan, PayPal, USA
-            </div>
-            <div class="committee-card">
-              Mr. Rama Kadapala, Discover Financial Services, USA
-            </div>
-            <div class="committee-card">Mr. Ravi Laudya, SAP, USA</div>
-            <div class="committee-card">
-              Mr. Ravi Kumar, Microsoft Corporation, USA
-            </div>
-            <div class="committee-card">
-              Mr. Saai Krishnan Udayakumar, Salesforce, USA
-            </div>
-            <div class="committee-card">Mr. Sabarna Choudhuri, Amazon, USA</div>
-            <div class="committee-card">
-              Mr. Shaurya Jain, Engineer at Meta, USA
-            </div>
-            <div class="committee-card">Ms. Sonia Mishra, Cloudflare, USA</div>
-            <div class="committee-card">
-              Mr. Sreejith Sreekandan Nair, JPMorgan and Chase, USA
-            </div>
-            <div class="committee-card">
-              Mr. Sri Bhargav Krishna Adusumilli, MindQuest Technology Solutions
-              Inc, USA
-            </div>
-            <div class="committee-card">Mr. Srikanth Samudrala, GGU, USA</div>
-            <div class="committee-card">
-              Ms. Swathi Suddala, SupraSoft INC, USA
-            </div>
-            <div class="committee-card">
-              Mr. Yashovardhan Chaturvedi, Torc.ai, USA
-            </div>
-            <div class="committee-card">Mr. Yonggang Huang, NexWave, USA</div>
-          </div>
+        <div class="committee-card">
+          <div class="member-name">Mr. Sagar Kumar</div>
+          <div class="member-role"> Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
         </div>
 
-        <!--NATIONAL ADVISORY COMMITTEE-->
-        <div class ="fade-section">
-          <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Jaivir Tyagi, Ex- Director, NIH, Roorkee
-            </div>
-            <div class="committee-card">
-              Dr. Harish Kumar Khyani, MBM Universtiy, Jodhpur
-            </div>
-            <div class="committee-card">
-              Dr. Sushindra Kumar Gupta, Scientist-'C', National Institute of
-              Hydrology, Roorkee
-            </div>
-            <div class="committee-card">
-              Dr. Sanjay Kumar Jain, Visiting Professor, Centre of Excellence in
-              Disaster Mitigation &amp; Management, IIT, Roorkee
-            </div>
-            <div class="committee-card">
-              Dr. Prashant Kumar Srivastava, Banaras Hindu University, Varanasi,
-              Uttar Pradesh, India
-            </div>
-            <div class="committee-card">
-              Dr. Yogesh Kumar Gupta, B K Birla Institute of Engineering and
-              Technology, Pilani
-            </div>
-            <div class="committee-card">
-              Dr. PK Singh, Associate Professor, Sardar Vallabhbhai Patel
-              University of Agriculture &amp; Technology, Meerut
-            </div>
-            <div class="committee-card">
-              Dr R Prasanna Kumar, Amrita Vishwa Vidyapeetham Chennai, India
-            </div>
-            <div class="committee-card">
-              Dr. Vijay Mohan Shrimal, Chandigarh University, India
-            </div>
-            <div class="committee-card">
-              Dr. P. Saracanan, SRM Institute of Science and Technology,
-              Chennai, Tamil Nadu, India
-            </div>
-            <div class="committee-card">
-              Pritha Singha Roy, Chitkara University, Punjab, India
-            </div>
-            <div class="committee-card">
-              Dr. Sushil Kumar Singh, Marwadi University, Gujarat, India
-            </div>
-            <div class="committee-card">
-              Mohit Tiwar, Bharati Vidyapeeth's College of Engineering, Delhi,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. Bishwa Ranjan Das, Interscience Institute of Management and
-              Technology, Bhubaneswar, India
-            </div>
-            <div class="committee-card">
-              Dr. Vijaya Kittu Manda, PBMEIT, Visakhapatnam, India
-            </div>
-            <div class="committee-card">
-              Dr Rashmi Soni, Dayananda Sagar Academy of Technology &amp;
-              Management, Bengaluru, India
-            </div>
-            <div class="committee-card">
-              Dr Renjith V Ravi, Rashtriya Raksha University, Gandhinagar, India
-            </div>
-            <div class="committee-card">
-              Ms. Sunita Prareek, Chief Librarian
-            </div>
-            <div class="committee-card">
-              Mr. Ravish Gupta, Dr. C V. Raman University, Kota, India
-            </div>
-            <div class="committee-card">
-              Mr. Nithesh Naik Curiouz, Tech Lab Private Limited, India
-            </div>
-            <div class="committee-card">
-              Ms. Sunita Prareek, Chief Librarian
-            </div>
-            <div class="committee-card">
-              Dr. S. Sujatha BIT Campus, Anna University, Tiruchirappalli, India
-            </div>
-            <div class="committee-card">
-              Mr. Shahid Aziz, PES University, Bengaluru, India
-            </div>
-            <div class="committee-card">
-              Dr. Achala Deshmukh Sinhgad College of Engineering, Pune, India
-            </div>
-            <div class="committee-card">
-              Dr. R. Vijay, Chaitanya Bharathi Institute of Technology,
-              Hyderabad, India
-            </div>
-            <div class="committee-card">
-              Dr. Sucheta Kakde, Mumbai University, India
-            </div>
-            <div class="committee-card">
-              Dr. Suhaib Ahmed, Model Institute of Engineering and Technology,
-              Jammu, India
-            </div>
-            <div class="committee-card">
-              Dr. Sanjeevkumar Angadi, PCET'S &amp; NMVPM's, Pune, India
-            </div>
-            <div class="committee-card">
-              Dr. R. Manikandan, SASTRA Deemed University, Thanjavur, India
-            </div>
-            <div class="committee-card">
-              Dr. Susmita Das, Narula Institute of Technology, West Bengal,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. C. KAVITHA, Dwaraka Doss Goverdhan Doss Vaishnav College,
-              Chennai, India
-            </div>
-            <div class="committee-card">
-              Mr. Rajat Kumar Dwibedi, Aarupadai Veedu Institute of Technology,
-              Salem, India
-            </div>
-            <div class="committee-card">
-              Mr. Chandragiri Radhacharan, JNTUH University College of
-              Engineering Jagtial, Telangana, India
-            </div>
-            <div class="committee-card">
-              Dr. Ashok Kumar, R R.M.D. Engineering College, Chennai, Tamil
-              Nadu, India
-            </div>
-            <div class="committee-card">
-              Dr. Madhusudhana Reddy Barusum, Ravindra College of Engineering
-              for Women, Andhra Pradesh, India
-            </div>
-            <div class="committee-card">
-              Mr. Balasubramanian T, St. Josepha College of Engineering, India
-            </div>
-            <div class="committee-card">
-              Mr. Dinesh Kumar Sain, Bikaner Technical University, India
-            </div>
-            <div class="committee-card">
-              Mrs. M Hima Jyothi, Diksha Technologies Pvt Ltd, India
-            </div>
-            <div class="committee-card">
-              Ms. Charu Jain, Engineering College Bikaner, India
-            </div>
-            <div class="committee-card">
-              Dr. Smita Pareek, BKBIET, Pilani, India
-            </div>
-            <div class="committee-card">
-              Ms. Priya L, Rajalakshmi Engineering College, India
-            </div>
-            <div class="committee-card">
-              Dr. Nitesh Kumar Dixit, Bhartiya Institute of Engineering &amp;
-              Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Lata Gidwani, Rajasthan Technical University, Kota, India
-            </div>
-            <div class="committee-card">
-              Dr. Arvind Singh Choudhary, Govt. Engineering College, Bharatpur,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. A. Mallikarjuna Prasad, JNTU, India
-            </div>
-            <div class="committee-card">
-              Dr. K. Mohana Lakshmi, JNTUH/CMR Technical Campus, India
-            </div>
-            <div class="committee-card">
-              Mr. Dileep Kumar Agarwal, Sobhasaria Group of Institutions, India
-            </div>
-            <div class="committee-card">
-              Dr. R. K. SARAN, Government Agriculture College, India
-            </div>
-            <div class="committee-card">
-              Mr. Javed, Indian Institute of Information Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. G V Suresh Lakkireddy, Bali Reddy College of Engineering,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. D. Sudha, KPR Institute of Engineering and Technology, India
-            </div>
-            <div class="committee-card">
-              Mr. Surender Singh Tanwar, Bikaner Technical University, India
-            </div>
-            <div class="committee-card">
-              Ms. Shruthi U, RNS Institute of Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Saurabh Tege, Geetanjali Institute of Technical Studies, India
-            </div>
-            <div class="committee-card">
-              Mr. Sai Bhavya Prabu, Neev Academy, India
-            </div>
-            <div class="committee-card">
-              Mr. Himanshu Verma, B K Birla Institute of Engineering &amp;
-              Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. M. Moorthi, Saveetha Engineering College, India
-            </div>
-            <div class="committee-card">
-              Dr. P. Raja, Sri Manakula Vinayagar Engineering College, India
-            </div>
-            <div class="committee-card">
-              Mr. K NARESH BABU, Geethanjali College of Engineering and
-              Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Nimish Kumar, BK Birla Institute of Engineering and
-              Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Sankar Babu Potluri, SVR Engineering College, India
-            </div>
-            <div class="committee-card">
-              Dr. Abhishek Gehlot, Jaipur National University, India
-            </div>
-            <div class="committee-card">
-              Prof. R C Chhipa, Suresh Gyan Vihar University, India
-            </div>
-            <div class="committee-card">
-              Dr. Saurabh Singh, Suresh Gyan Vihar University, India
-            </div>
-            <div class="committee-card">
-              Dr. Ashok Kumar R, Anna University / R.M.D. Engineering College,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. Rahul Agrawal, MIT Aurangabad, India
-            </div>
-            <div class="committee-card">
-              Dr P Nageswara Rao, VEMU Institute of Technology, Andhra Pradesh,
-              India
-            </div>
-            <div class="committee-card">Dr. K. Chandra Rekha, JNTUA, India</div>
-            <div class="committee-card">
-              Dr. B.Visalakshi, E.R.K Arts and Science College, Dharmapuri,
-              India
-            </div>
-            <div class="committee-card">
-              Ms. SREELATHA P K, Presidency University, Bangalore, India
-            </div>
-            <div class="committee-card">
-              Dr. Anil Singh Yadav, Bakhtiyarpur College of Engineering, Patna,
-              India
-            </div>
-            <div class="committee-card">
-              Dr. Ravi Kumar Dwivedi, MANIT, Bhopal, India
-            </div>
-            <div class="committee-card">
-              Dr. P. Saravanan, SRM Institute of Science and Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Irum Alvi, Rajasthan Technical University, Kota, India
-            </div>
-            <div class="committee-card">
-              Dr. Rajan Kumar, IES College of Technology, Bhopal, India
-            </div>
-            <div class="committee-card">
-              Mr. Ravish Gupta, Dr. C V. Raman University, India
-            </div>
-            <div class="committee-card">
-              Dr. M. Nagarajan, Industrial and Management consultant, India
-            </div>
-            <div class="committee-card">
-              Mr. Nithesh Naik, Curiouz TechLab Private Limited, India
-            </div>
-            <div class="committee-card">
-              Dr. Sushindra Kumar Gupta, National Institute of Hydrology,
-              Roorkee, India
-            </div>
-            <div class="committee-card">
-              Dr. Princy Randhawa, Manipal University, Jaipur, India
-            </div>
-            <div class="committee-card">
-              Dr Jibin Francis, AMET University, Tamilnadu, India
-            </div>
-            <div class="committee-card">
-              Mr. Sarvesh Kumar, The ICFAI University, Jaipur, India
-            </div>
-            <div class="committee-card">
-              Dr. Manorama Patnaik, Amity University, Jharkhand, Ranchi, India
-            </div>
-            <div class="committee-card">
-              Dr. Rhytheema Dulloo, Hindustan Institute of Technology and
-              Science, Chennai, India
-            </div>
-            <div class="committee-card">
-              Dr. Shazia Shaikh, MGM University's
-            </div>
-            <div class="committee-card">
-              Dr. G. Y. Pathrikar, College of Computer Science and Information
-              Technology, India
-            </div>
-            <div class="committee-card">
-              Dr. Namrata Nagpal, Amity University, India
-            </div>
-            <div class="committee-card">
-              Dr. P Sukumar, Nandha Engineering College Autonomous, Affiliated
-              to Anna University, Chennai, India
-            </div>
-            <div class="committee-card">
-              Ms. Preeti Sharma, DIT University, India
-            </div>
-            <div class="committee-card">
-              Dr. Balambigai. S, Karpagam College of Engineering, India
-            </div>
-            <div class="committee-card">
-              Dr. S. Arul Antran Vijay, Karpagam College of Engineering,
-              Coimbatore, Tamilnadu, India
-            </div>
-          </div>
+
+        <div class="committee-card">
+          <div class="member-name">Bhavya Agrawal</div>
+          <div class="member-role">Student</div>
+          <div class="member-org">Poornima University</div>
         </div>
-        
-        <!-- TECHNICAL NETWORK ADMINISTRATOR -->
-        
-<div class="fade-section">
-  <h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
 
-  <div class="committee-grid">
-    <div class="committee-card">
-      <div class="member-name">Mr. Praful Kumar Dubey</div>
-      <div class="member-role">Network Administrator</div>
-      <div class="member-org">Poornima University</div>
+        <div class="committee-card">
+          <div class="member-name">Bhumika Aggarwal</div>
+          <div class="member-role">Student</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+        <div class="committee-card">
+          <div class="member-name">Bhavna Bharti</div>
+          <div class="member-role">Student</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-</div>
-    </section>
+    <!-- REGISTRATION COMMITTEE -->
+    <div class="fade-section">
+      <h2 class="section-title">REGISTRATION COMMITTEE</h2>
 
-    <div id="footer-placeholder"></div>
+      <div class="committee-grid">
 
-    <script>
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
+        <div class="committee-card">
+          <div class="member-name">Ms. Seema Kaloria</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
-      entry.target.classList.add("show");
+        <div class="committee-card">
+          <div class="member-name">Ms. Neha Jain</div>
+          <div class="member-role">Assistant Professor</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
-      const cards = entry.target.querySelectorAll(".committee-card");
+        <div class="committee-card">
+          <div class="member-name">Ms. Priya Tanwar</div>
+          <div class="member-role">Teaching Assistant</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
-      cards.forEach((card,i)=>{
-        setTimeout(()=>{
-          card.classList.add("visible");
-        }, i*40);
-      });
+        <div class="committee-card">
+          <div class="member-name">Ms. Harleen Kaur</div>
+          <div class="member-role">Teaching Assistant</div>
+          <div class="member-org">Poornima University</div>
+        </div>
 
-    }
-  });
-},{
-  threshold:0.15
-});
+      </div>
+    </div>
 
-document.querySelectorAll(".fade-section").forEach(section=>{
-  observer.observe(section);
-});
-</script>
+    <!--INTERNATIONAL ADVISORY COMMITTEE -->
+    <div class="fade-section">
+      <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
+      <div class="committee-grid">
+        <div class="committee-card">
+          Michael Baron, Charles Sturt University, Australia
+        </div>
+        <div class="committee-card">
+          Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions,
+          Google, USA
+        </div>
+        <div class="committee-card">
+          Pradeep Chintale, Board of Director-Education and Innovation, The
+          New World Foundation, USA
+        </div>
+        <div class="committee-card">
+          Prof. Ajit Khosla, Yamagata University, Japan
+        </div>
+        <div class="committee-card">
+          Alesa Durgaryan, Global Educator, Armenia
+        </div>
+        <div class="committee-card">
+          Dr. Srinivasan Lakshmanan, Delta System &amp; Software Inc. Texas,
+          USA
+        </div>
+        <div class="committee-card">
+          Dr. Sara Ravan Ramzani, Professor, Gisma University of Applied
+          Sciences, Germany
+        </div>
+        <div class="committee-card">
+          Prof Dr S B Goyal, Director, City University, Malaysia
+        </div>
+        <div class="committee-card">
+          Ankit R. Patel, University of Minho, Portugal
+        </div>
+        <div class="committee-card">
+          Dr. Tien Anh Tran, University of Malta, Malta
+        </div>
+        <div class="committee-card">
+          Dr Harjit Pal Singh, The University of the West Indies, St
+          Augustine Trinidad and Tobago
+        </div>
+        <div class="committee-card">
+          Gopi Desaboyina, Sr Systems Engineer, Western Governers
+          University, United States
+        </div>
+        <div class="committee-card">
+          Narendra B Merla, Senior Data Engineering Manager, Oklahoma State
+          University, United States of America
+        </div>
+        <div class="committee-card">
+          Dr Samrat Ray, Peter the Great Saint, Petersburg Polytechnic
+          University, Russia
+        </div>
+        <div class="committee-card">
+          Dr. Muthmainnah, Universitas Al Asyariah Mandar West Sulawesi,
+          Indonesia
+        </div>
+        <div class="committee-card">
+          Dr. Kusum Yadav, University of Ha'il, Saudi Arabia
+        </div>
+        <div class="committee-card">
+          Valliappan, Director of RMC, Perdana University, Malaysia
+        </div>
+        <div class="committee-card">
+          Noor Zaman Jhanjhi, Professor, Taylor's University, Malaysia
+        </div>
+        <div class="committee-card">
+          Dr Dalwinder Kaur, Manipal Global Nxt University, Malaysia
+        </div>
+        <div class="committee-card">
+          Danish Jamil, Sir Syed University of Engineering and Technology,
+          Pakistan
+        </div>
+        <div class="committee-card">
+          Pastor Arguelles, Jr. Director, University of Batangas,
+          Philippines
+        </div>
+        <div class="committee-card">
+          Dr. Aftab Ara, University of Hail, Saudi Arabia
+        </div>
+        <div class="committee-card">
+          Emmanuel Philip Ododo, University of Uyo, Nigeria
+        </div>
+        <div class="committee-card">
+          Dr. Ali Said Al Matari, Sharqiyah University, Oman
+        </div>
+        <div class="committee-card">
+          Syed Abdal Ahmad Khan, RAK Medical and Health Sciences University,
+          United Arab Emirates
+        </div>
+        <div class="committee-card">
+          A S M Ahsanul Sarkar Akib, Managing Director, Robo Tech Valley,
+          Bangladesh
+        </div>
+        <div class="committee-card">Deeksha Dwivedi, Lealie’s, USA</div>
+        <div class="committee-card">
+          Narendra B Merla, Oklahoma State University, USA
+        </div>
+        <div class="committee-card">
+          Alesa Durgaryan, Armenian State Pedagogical University, Armenia
+        </div>
+        <div class="committee-card">
+          Dr Samrat Ray, Peter the Great Saint, Petersburg polytechnic
+          University, Russia
+        </div>
+        <div class="committee-card">
+          Dr Harjit Pal Singh, The University of the West Indies, St
+          Augustine, Trinidad and Tobago
+        </div>
+        <div class="committee-card">
+          Laraib FaTIma Al Hussaini, University of Wah, Wah Cantt, Pakistan
+        </div>
+        <div class="committee-card">Mr. Achraf Golli, Quizard AI, USA</div>
+        <div class="committee-card">
+          Mr. Akbar Doctor, Fresenius Medical Care, USA
+        </div>
+        <div class="committee-card">
+          Mr. Anirudh Khanna, Pacific Gas and Electric, USA
+        </div>
+        <div class="committee-card">Mr. Ankit Bansal, Bayer, USA</div>
+        <div class="committee-card">Mr. Arjun Jaggi, HCLTech, USA</div>
+        <div class="committee-card">
+          Mr. Bharath Muddarla, Whiz IT Solutions, USA
+        </div>
+        <div class="committee-card">
+          Mr. Dilip Kumar, Sr. Software Engineer, Intuit, USA
+        </div>
+        <div class="committee-card">
+          Mr. Diwakar Peddinti, Trackonomy Systems, USA
+        </div>
+        <div class="committee-card">
+          Mr. Gaurav Jindal, Barclays Corporate &amp; Investment Bank, USA
+        </div>
+        <div class="committee-card">
+          Mr. Govindarajan lakshmi kanthan, Independent Researcher, USA
+        </div>
+        <div class="committee-card">
+          Mr. Hariharan Ragothaman, Athenahealth, USA
+        </div>
+        <div class="committee-card">
+          Mr. Hrushikesh Deshmukh, Fannie Mae, USA
+        </div>
+        <div class="committee-card">
+          Mr. Jaipal Reddy Poddutoori, Bbu, USA
+        </div>
+        <div class="committee-card">
+          Ms. Janamolla Reddy, University of the Cumberlands, USA
+        </div>
+        <div class="committee-card">
+          Ms. Janet Zhang, Boston Easy Biotech, Inc., USA
+        </div>
+        <div class="committee-card">Mr. Mahipal Podduturi, Penske, USA</div>
+        <div class="committee-card">
+          Mr. Ramasankar Molleti, Frisco, TX, USA
+        </div>
+        <div class="committee-card">
+          Mr. Naga Tirumala Chillapalli, Macy’s, USA
+        </div>
+        <div class="committee-card">
+          Mr. Pavan Polneni, Lead DevOps Engineer, UBS, USA
+        </div>
+        <div class="committee-card">
+          Mr. Piyush Jain, Deloitte, Singapore
+        </div>
+        <div class="committee-card">
+          Mr. Praneeth Reddy Amudala Puchakayala, Regions Bank, USA
+        </div>
+        <div class="committee-card">Mr. Rajesh Malviya, NTT Data, USA</div>
+        <div class="committee-card">
+          Mr. Rakesh Ramakrishnan, PayPal, USA
+        </div>
+        <div class="committee-card">
+          Mr. Rama Kadapala, Discover Financial Services, USA
+        </div>
+        <div class="committee-card">Mr. Ravi Laudya, SAP, USA</div>
+        <div class="committee-card">
+          Mr. Ravi Kumar, Microsoft Corporation, USA
+        </div>
+        <div class="committee-card">
+          Mr. Saai Krishnan Udayakumar, Salesforce, USA
+        </div>
+        <div class="committee-card">Mr. Sabarna Choudhuri, Amazon, USA</div>
+        <div class="committee-card">
+          Mr. Shaurya Jain, Engineer at Meta, USA
+        </div>
+        <div class="committee-card">Ms. Sonia Mishra, Cloudflare, USA</div>
+        <div class="committee-card">
+          Mr. Sreejith Sreekandan Nair, JPMorgan and Chase, USA
+        </div>
+        <div class="committee-card">
+          Mr. Sri Bhargav Krishna Adusumilli, MindQuest Technology Solutions
+          Inc, USA
+        </div>
+        <div class="committee-card">Mr. Srikanth Samudrala, GGU, USA</div>
+        <div class="committee-card">
+          Ms. Swathi Suddala, SupraSoft INC, USA
+        </div>
+        <div class="committee-card">
+          Mr. Yashovardhan Chaturvedi, Torc.ai, USA
+        </div>
+        <div class="committee-card">Mr. Yonggang Huang, NexWave, USA</div>
+      </div>
+    </div>
 
-    <script>
-      fetch("components/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          const placeholder = document.getElementById("footer-placeholder");
-          placeholder.innerHTML = data;
+    <!--NATIONAL ADVISORY COMMITTEE-->
+    <div class="fade-section">
+      <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
+      <div class="committee-grid">
+        <div class="committee-card">
+          Dr. Jaivir Tyagi, Ex- Director, NIH, Roorkee
+        </div>
+        <div class="committee-card">
+          Dr. Harish Kumar Khyani, MBM Universtiy, Jodhpur
+        </div>
+        <div class="committee-card">
+          Dr. Sushindra Kumar Gupta, Scientist-'C', National Institute of
+          Hydrology, Roorkee
+        </div>
+        <div class="committee-card">
+          Dr. Sanjay Kumar Jain, Visiting Professor, Centre of Excellence in
+          Disaster Mitigation &amp; Management, IIT, Roorkee
+        </div>
+        <div class="committee-card">
+          Dr. Prashant Kumar Srivastava, Banaras Hindu University, Varanasi,
+          Uttar Pradesh, India
+        </div>
+        <div class="committee-card">
+          Dr. Yogesh Kumar Gupta, B K Birla Institute of Engineering and
+          Technology, Pilani
+        </div>
+        <div class="committee-card">
+          Dr. PK Singh, Associate Professor, Sardar Vallabhbhai Patel
+          University of Agriculture &amp; Technology, Meerut
+        </div>
+        <div class="committee-card">
+          Dr R Prasanna Kumar, Amrita Vishwa Vidyapeetham Chennai, India
+        </div>
+        <div class="committee-card">
+          Dr. Vijay Mohan Shrimal, Chandigarh University, India
+        </div>
+        <div class="committee-card">
+          Dr. P. Saracanan, SRM Institute of Science and Technology,
+          Chennai, Tamil Nadu, India
+        </div>
+        <div class="committee-card">
+          Pritha Singha Roy, Chitkara University, Punjab, India
+        </div>
+        <div class="committee-card">
+          Dr. Sushil Kumar Singh, Marwadi University, Gujarat, India
+        </div>
+        <div class="committee-card">
+          Mohit Tiwar, Bharati Vidyapeeth's College of Engineering, Delhi,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. Bishwa Ranjan Das, Interscience Institute of Management and
+          Technology, Bhubaneswar, India
+        </div>
+        <div class="committee-card">
+          Dr. Vijaya Kittu Manda, PBMEIT, Visakhapatnam, India
+        </div>
+        <div class="committee-card">
+          Dr Rashmi Soni, Dayananda Sagar Academy of Technology &amp;
+          Management, Bengaluru, India
+        </div>
+        <div class="committee-card">
+          Dr Renjith V Ravi, Rashtriya Raksha University, Gandhinagar, India
+        </div>
+        <div class="committee-card">
+          Ms. Sunita Prareek, Chief Librarian
+        </div>
+        <div class="committee-card">
+          Mr. Ravish Gupta, Dr. C V. Raman University, Kota, India
+        </div>
+        <div class="committee-card">
+          Mr. Nithesh Naik Curiouz, Tech Lab Private Limited, India
+        </div>
+        <div class="committee-card">
+          Ms. Sunita Prareek, Chief Librarian
+        </div>
+        <div class="committee-card">
+          Dr. S. Sujatha BIT Campus, Anna University, Tiruchirappalli, India
+        </div>
+        <div class="committee-card">
+          Mr. Shahid Aziz, PES University, Bengaluru, India
+        </div>
+        <div class="committee-card">
+          Dr. Achala Deshmukh Sinhgad College of Engineering, Pune, India
+        </div>
+        <div class="committee-card">
+          Dr. R. Vijay, Chaitanya Bharathi Institute of Technology,
+          Hyderabad, India
+        </div>
+        <div class="committee-card">
+          Dr. Sucheta Kakde, Mumbai University, India
+        </div>
+        <div class="committee-card">
+          Dr. Suhaib Ahmed, Model Institute of Engineering and Technology,
+          Jammu, India
+        </div>
+        <div class="committee-card">
+          Dr. Sanjeevkumar Angadi, PCET'S &amp; NMVPM's, Pune, India
+        </div>
+        <div class="committee-card">
+          Dr. R. Manikandan, SASTRA Deemed University, Thanjavur, India
+        </div>
+        <div class="committee-card">
+          Dr. Susmita Das, Narula Institute of Technology, West Bengal,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. C. KAVITHA, Dwaraka Doss Goverdhan Doss Vaishnav College,
+          Chennai, India
+        </div>
+        <div class="committee-card">
+          Mr. Rajat Kumar Dwibedi, Aarupadai Veedu Institute of Technology,
+          Salem, India
+        </div>
+        <div class="committee-card">
+          Mr. Chandragiri Radhacharan, JNTUH University College of
+          Engineering Jagtial, Telangana, India
+        </div>
+        <div class="committee-card">
+          Dr. Ashok Kumar, R R.M.D. Engineering College, Chennai, Tamil
+          Nadu, India
+        </div>
+        <div class="committee-card">
+          Dr. Madhusudhana Reddy Barusum, Ravindra College of Engineering
+          for Women, Andhra Pradesh, India
+        </div>
+        <div class="committee-card">
+          Mr. Balasubramanian T, St. Josepha College of Engineering, India
+        </div>
+        <div class="committee-card">
+          Mr. Dinesh Kumar Sain, Bikaner Technical University, India
+        </div>
+        <div class="committee-card">
+          Mrs. M Hima Jyothi, Diksha Technologies Pvt Ltd, India
+        </div>
+        <div class="committee-card">
+          Ms. Charu Jain, Engineering College Bikaner, India
+        </div>
+        <div class="committee-card">
+          Dr. Smita Pareek, BKBIET, Pilani, India
+        </div>
+        <div class="committee-card">
+          Ms. Priya L, Rajalakshmi Engineering College, India
+        </div>
+        <div class="committee-card">
+          Dr. Nitesh Kumar Dixit, Bhartiya Institute of Engineering &amp;
+          Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Lata Gidwani, Rajasthan Technical University, Kota, India
+        </div>
+        <div class="committee-card">
+          Dr. Arvind Singh Choudhary, Govt. Engineering College, Bharatpur,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. A. Mallikarjuna Prasad, JNTU, India
+        </div>
+        <div class="committee-card">
+          Dr. K. Mohana Lakshmi, JNTUH/CMR Technical Campus, India
+        </div>
+        <div class="committee-card">
+          Mr. Dileep Kumar Agarwal, Sobhasaria Group of Institutions, India
+        </div>
+        <div class="committee-card">
+          Dr. R. K. SARAN, Government Agriculture College, India
+        </div>
+        <div class="committee-card">
+          Mr. Javed, Indian Institute of Information Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. G V Suresh Lakkireddy, Bali Reddy College of Engineering,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. D. Sudha, KPR Institute of Engineering and Technology, India
+        </div>
+        <div class="committee-card">
+          Mr. Surender Singh Tanwar, Bikaner Technical University, India
+        </div>
+        <div class="committee-card">
+          Ms. Shruthi U, RNS Institute of Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Saurabh Tege, Geetanjali Institute of Technical Studies, India
+        </div>
+        <div class="committee-card">
+          Mr. Sai Bhavya Prabu, Neev Academy, India
+        </div>
+        <div class="committee-card">
+          Mr. Himanshu Verma, B K Birla Institute of Engineering &amp;
+          Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. M. Moorthi, Saveetha Engineering College, India
+        </div>
+        <div class="committee-card">
+          Dr. P. Raja, Sri Manakula Vinayagar Engineering College, India
+        </div>
+        <div class="committee-card">
+          Mr. K NARESH BABU, Geethanjali College of Engineering and
+          Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Nimish Kumar, BK Birla Institute of Engineering and
+          Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Sankar Babu Potluri, SVR Engineering College, India
+        </div>
+        <div class="committee-card">
+          Dr. Abhishek Gehlot, Jaipur National University, India
+        </div>
+        <div class="committee-card">
+          Prof. R C Chhipa, Suresh Gyan Vihar University, India
+        </div>
+        <div class="committee-card">
+          Dr. Saurabh Singh, Suresh Gyan Vihar University, India
+        </div>
+        <div class="committee-card">
+          Dr. Ashok Kumar R, Anna University / R.M.D. Engineering College,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. Rahul Agrawal, MIT Aurangabad, India
+        </div>
+        <div class="committee-card">
+          Dr P Nageswara Rao, VEMU Institute of Technology, Andhra Pradesh,
+          India
+        </div>
+        <div class="committee-card">Dr. K. Chandra Rekha, JNTUA, India</div>
+        <div class="committee-card">
+          Dr. B.Visalakshi, E.R.K Arts and Science College, Dharmapuri,
+          India
+        </div>
+        <div class="committee-card">
+          Ms. SREELATHA P K, Presidency University, Bangalore, India
+        </div>
+        <div class="committee-card">
+          Dr. Anil Singh Yadav, Bakhtiyarpur College of Engineering, Patna,
+          India
+        </div>
+        <div class="committee-card">
+          Dr. Ravi Kumar Dwivedi, MANIT, Bhopal, India
+        </div>
+        <div class="committee-card">
+          Dr. P. Saravanan, SRM Institute of Science and Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Irum Alvi, Rajasthan Technical University, Kota, India
+        </div>
+        <div class="committee-card">
+          Dr. Rajan Kumar, IES College of Technology, Bhopal, India
+        </div>
+        <div class="committee-card">
+          Mr. Ravish Gupta, Dr. C V. Raman University, India
+        </div>
+        <div class="committee-card">
+          Dr. M. Nagarajan, Industrial and Management consultant, India
+        </div>
+        <div class="committee-card">
+          Mr. Nithesh Naik, Curiouz TechLab Private Limited, India
+        </div>
+        <div class="committee-card">
+          Dr. Sushindra Kumar Gupta, National Institute of Hydrology,
+          Roorkee, India
+        </div>
+        <div class="committee-card">
+          Dr. Princy Randhawa, Manipal University, Jaipur, India
+        </div>
+        <div class="committee-card">
+          Dr Jibin Francis, AMET University, Tamilnadu, India
+        </div>
+        <div class="committee-card">
+          Mr. Sarvesh Kumar, The ICFAI University, Jaipur, India
+        </div>
+        <div class="committee-card">
+          Dr. Manorama Patnaik, Amity University, Jharkhand, Ranchi, India
+        </div>
+        <div class="committee-card">
+          Dr. Rhytheema Dulloo, Hindustan Institute of Technology and
+          Science, Chennai, India
+        </div>
+        <div class="committee-card">
+          Dr. Shazia Shaikh, MGM University's
+        </div>
+        <div class="committee-card">
+          Dr. G. Y. Pathrikar, College of Computer Science and Information
+          Technology, India
+        </div>
+        <div class="committee-card">
+          Dr. Namrata Nagpal, Amity University, India
+        </div>
+        <div class="committee-card">
+          Dr. P Sukumar, Nandha Engineering College Autonomous, Affiliated
+          to Anna University, Chennai, India
+        </div>
+        <div class="committee-card">
+          Ms. Preeti Sharma, DIT University, India
+        </div>
+        <div class="committee-card">
+          Dr. Balambigai. S, Karpagam College of Engineering, India
+        </div>
+        <div class="committee-card">
+          Dr. S. Arul Antran Vijay, Karpagam College of Engineering,
+          Coimbatore, Tamilnadu, India
+        </div>
+      </div>
+    </div>
 
-          // Small delay so CSS applies first
-          setTimeout(() => {
-            const footer = placeholder.querySelector(".footer");
-            footer.classList.add("show-footer");
-          }, 100);
+    <!-- TECHNICAL NETWORK ADMINISTRATOR -->
+
+    <div class="fade-section">
+      <h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
+
+      <div class="committee-grid">
+        <div class="committee-card">
+          <div class="member-name">Mr. Praful Kumar Dubey</div>
+          <div class="member-role">Network Administrator</div>
+          <div class="member-org">Poornima University</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* MOBILE MENU */
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-    </script>
+      }
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Header
+      /* SCROLL ANIMATION (ONE CLEAN OBSERVER) */
 
-        /* MOBILE MENU */
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
+      const sections = document.querySelectorAll(".fade-section");
 
-        if (menuBtn && mobileMenu) {
-          menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-          });
-        }
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
 
-        /* COMMITTEE CARD SCROLL */
-        const cards = document.querySelectorAll(".committee-card");
+          if (entry.isIntersecting) {
 
-        const cardObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
+            entry.target.classList.add("show");
+
+            const cards = entry.target.querySelectorAll(".committee-card");
+
+            cards.forEach((card, i) => {
+              setTimeout(() => {
+                card.classList.add("visible");
+              }, i * 60);
             });
-          },
-          { threshold: 0.15 },
-        );
 
-        cards.forEach((card) => cardObserver.observe(card));
-
-        /* SECTION SCROLL */
-        const sections = document.querySelectorAll(".fade-section");
-
-        const sectionObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
-
-        sections.forEach((section) => sectionObserver.observe(section));
-
-        /* SLIDER */
-        const sliders = document.querySelectorAll(".slider");
-
-        sliders.forEach((slider) => {
-          const slides = slider.querySelectorAll(".slide");
-          let current = 0;
-
-          if (slides.length > 0) {
-            setInterval(() => {
-              slides[current].classList.remove("opacity-100", "z-10");
-              slides[current].classList.add("opacity-0", "z-0");
-
-              current = (current + 1) % slides.length;
-
-              slides[current].classList.remove("opacity-0", "z-0");
-              slides[current].classList.add("opacity-100", "z-10");
-            }, 4000);
+            // Stop observing (performance)
+            obs.unobserve(entry.target);
           }
+
         });
+      }, {
+        threshold: 0,
+        rootMargin: "0px 0px -100px 0px"
       });
-    </script>
-    <script src="/assets/js/main.js"></script>
-  </body>
+
+      sections.forEach(section => observer.observe(section));
+
+
+      /* SLIDER */
+      const sliders = document.querySelectorAll(".slider");
+
+      sliders.forEach((slider) => {
+        const slides = slider.querySelectorAll(".slide");
+        let current = 0;
+
+        if (slides.length > 0) {
+          setInterval(() => {
+
+            slides[current].classList.remove("opacity-100", "z-10");
+            slides[current].classList.add("opacity-0", "z-0");
+
+            current = (current + 1) % slides.length;
+
+            slides[current].classList.remove("opacity-0", "z-0");
+            slides[current].classList.add("opacity-100", "z-10");
+
+          }, 4000);
+        }
+      });
+
+    });
+  </script>
+
+  <script>
+    fetch("components/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        const placeholder = document.getElementById("footer-placeholder");
+        placeholder.innerHTML = data;
+
+        // Small delay so CSS applies first
+        setTimeout(() => {
+          const footer = placeholder.querySelector(".footer");
+          footer.classList.add("show-footer");
+        }, 100);
+      });
+  </script>
+
+
+  <script src="/assets/js/main.js"></script>
+</body>
+
 </html>

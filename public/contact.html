@@ -1,428 +1,404 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Contact & Venue | ICISET 2026</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicon.png"
-      type="image/x-icon"
-    />
+  <title>Contact & Venue | ICISET 2026</title>
 
-    <link href="./assets/css/output.css" rel="stylesheet" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
 
-    <style>
-      body {
-        animation: fadePage 0.8s ease-in-out;
-      }
+  <link href="./assets/css/output.css" rel="stylesheet" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-      @keyframes fadePage {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+  <style>
+    body {
+      animation: fadePage 0.8s ease-in-out;
+    }
 
-      .fade-section {
+    @keyframes fadePage {
+      from {
         opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
       }
 
-      .fade-section.show {
+      to {
         opacity: 1;
-        transform: translateY(0);
       }
+    }
 
-      .modern-card {
-        transition: all 0.35s ease;
-        background: white;
-      }
+    /* avatar */
+    .avatar {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+    }
 
-      .modern-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-      }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
 
-      .contact-card {
-        background: linear-gradient(135deg, #eef2ff, #e0e7ff);
-        border-radius: 18px;
-        padding: 40px;
-        transition: all 0.35s ease;
-      }
+    .avatar:hover img {
+      transform: scale(1.1);
+    }
 
-      .contact-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px rgba(79, 70, 229, 0.25);
-      }
-    </style>
-  </head>
+    /* text */
+    .name {
+      font-weight: 600;
+      font-size: 16px;
+    }
 
-  <body class="bg-gray-100 text-gray-800">
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
+    .role {
+      color: #1e3a8a;
+      font-size: 14px;
+    }
 
-    <!-- HERO -->
-    <section class="pt-20 pb-8 bg-gray-100 fade-section">
-      <div class="max-w-5xl mx-auto px-6 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <div class="slider relative w-full h-72 md:h-[450px]">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/building.avif"
-                class="w-full h-full object-cover"
-              />
-            </div>
+    .dept {
+      font-size: 12px;
+      color: #555;
+    }
 
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/poornima 3.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
+    .email {
+      font-size: 12px;
+      color: #2563eb;
+    }
 
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/footercover.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
+    .phone {
+      font-size: 12px;
+    }
+
+    /* smaller cards */
+    .contact-card.small {
+      max-width: 260px;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modern-card {
+      transition: all 0.35s ease;
+      background: white;
+    }
+
+    .modern-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+      border-radius: 18px;
+      padding: 40px;
+      transition: all 0.35s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(79, 70, 229, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <!-- HERO -->
+  <section class="pt-20 pb-8 bg-gray-100 fade-section">
+    <div class="max-w-5xl mx-auto px-6 relative">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+        <div class="slider relative w-full h-72 md:h-[450px]">
+          <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+            <img src="assets/images/building.avif" class="w-full h-full object-cover" />
           </div>
 
-          <div class="absolute inset-0 bg-black/10"></div>
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="assets/images/poornima 3.webp" class="w-full h-full object-cover" />
+          </div>
+
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="assets/images/footercover.webp" class="w-full h-full object-cover" />
+          </div>
         </div>
 
-        <div
-          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Contact & Venue
-          </h2>
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
 
-          <p class="text-gray-500">
-            Conference location and contact information
+      <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+          Contact & Venue
+        </h2>
+
+        <p class="text-gray-500">
+          Conference location and contact information
+        </p>
+
+        <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="pt-24 pb-12 bg-gray-100 fade-section">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-3xl font-bold mb-10 text-center">Contact Us</h2>
+
+      <!-- 🔵 TOP GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Organizing Chair -->
+        <div class="contact-card text-center">
+          <h3 class="text-indigo-700 font-semibold mb-4">Organizing Chair</h3>
+          <div class="avatar">
+            <img src="assets/images/saurabh-shandilya.png">
+          </div>
+          <p class="name">Dr. Saurabh Shandilya</p>
+          <p class="role">Professor, PU Jaipur</p>
+          <p class="dept">Faculty of Computer Science and Engineering</p>
+          <p class="email">saurabh.shandilya@poornima.edu.in</p>
+          <p class="phone">+91-9887587811</p>
+        </div>
+
+        <!-- Convener -->
+        <div class="contact-card text-center">
+          <h3 class="text-indigo-700 font-semibold mb-4">Convener</h3>
+          <div class="avatar">
+            <img src="assets/images/sumit-kapoor.png">
+          </div>
+          <p class="name">Dr. Sumit Kumar Kapoor</p>
+          <p class="role">Associate Professor</p>
+          <p class="dept">Faculty of CSE</p>
+          <p class="email">sumit.kapoor@poornima.edu.in</p>
+          <p class="phone">+91-8006690016</p>
+        </div>
+
+        <!-- Convener -->
+        <div class="contact-card text-center">
+          <h3 class="text-indigo-700 font-semibold mb-4">Convener</h3>
+          <div class="avatar">
+            <img src="assets/images/ravi-soni.png">
+          </div>
+          <p class="name">Dr. Ravi Soni</p>
+          <p class="role">Assistant Professor</p>
+          <p class="dept">Faculty of CSE</p>
+          <p class="email">ravi.soni1@poornima.edu.in</p>
+          <p class="phone">+91-9928166649</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 🟣 CO-CONVENER SECTION -->
+  <section class="py-24 bg-gradient-to-r from-indigo-100 to-indigo-200 fade-section">
+
+   
+
+    <div class="flex justify-center gap-12 flex-wrap">
+
+      <!-- Co-Convener 1 -->
+      <div class="contact-card small text-center">
+         <h3 class="text-indigo-700 font-semibold mb-4">Co-Convener</h3>
+        <div class="avatar">
+          <img src="assets/images/kriti-sankhla.png">
+        </div>
+        <p class="name">Dr. Kriti Sankhla</p>
+        <p class="role">Associate Professor, PU Jaipur</p>
+        <p class="dept">Faculty of Computer Science and Engineering</p>
+        <p class="email">kriti.sankhla@poornima.edu.in</p>
+        <p class="phone">+91-9462425725</p>
+      </div>
+
+      <!-- Co-Convener 2 -->
+      <div class="contact-card small text-center">
+         <h3 class="text-indigo-700 font-semibold mb-4">Co-Convener</h3>
+        <div class="avatar">
+          <img src="assets/images/sagar-kumar.png">
+        </div>
+        <p class="name">Mr. Sagar Kumar</p>
+        <p class="role">Assistant Professor, PU Jaipur</p>
+        <p class="dept">Faculty of Computer Science and Engineering</p>
+        <p class="email">sagar.kumar@poornima.edu.in</p>
+        <p class="phone">+91-9982256688</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VENUE SECTION -->
+  <section class="pt-20 pb-16 bg-white fade-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Location + Map -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="modern-card p-8 rounded-2xl">
+          <h2 class="text-2xl font-bold text-primary mb-4">
+            Poornima University
+          </h2>
+          <p class="text-gray-600 mb-6">
+            ICISET 2026 will be held at Poornima University, Jaipur — a
+            state-of-the-art educational institution equipped with modern
+            facilities for international conferences.
           </p>
 
-          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
-        </div>
-      </div>
-    </section>
+          <div class="space-y-6">
+            <div>
+              <p class="font-semibold">Address</p>
+              <p class="text-sm text-gray-600">
+                Plot No. IS-2027-2031, Ramchandrapura P.O. Vidhani Vatika
+                Road, Sitapura, Rajasthan 303905
+              </p>
+            </div>
 
-    <!-- CONTACT SECTION -->
-    <section class="py-24 bg-gray-100 fade-section">
-      <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 text-center">Contact Us</h2>
+            <div>
+              <p class="font-semibold">Phone</p>
+              <p class="text-sm text-gray-600">+91-9887587811</p>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Convener -->
-        <div class="contact-card">
-        <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Organizing Chair</h2>
-
-        <div class="flex flex-col items-center text-center gap-4">
-          <div class="relative flex-shrink-0">
-          <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-indigo-300 ring-offset-4 shadow-lg transition-all duration-300 hover:ring-indigo-500 hover:scale-105">
-            <img
-            src="assets/images/saurabh-shandilya.png"
-            alt="Dr. Saurabh Shandilya"
-            class="w-full h-full object-cover"
-            onerror="this.src='https://ui-avatars.com/api/?name=Saurabh+Shandilya&background=6366f1&color=fff&size=128'"
-            />
-          </div>
-          <span class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full shadow"></span>
-          </div>
-
-          <div>
-          <h3 class="font-semibold text-lg">Dr. Saurabh Shandilya</h3>
-          <p class="text-gray-600">Professor, PU, Jaipur</p>
-          <p class="text-sm text-gray-600 mt-2">Faculty of Computer Science and Engineering</p>
-          <p class="text-sm text-indigo-700 mt-2 font-medium">saurabh.shandilya@poornima.edu.in</p>
-          <p class="text-sm font-semibold mt-1">+91-9887587811</p>
-          </div>
-        </div>
-        </div>
-
-        <!-- Convener 1 -->
-        <div class="contact-card">
-        <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Convener</h2>
-
-        <div class="flex flex-col items-center text-center gap-4">
-          <div class="relative flex-shrink-0">
-          <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-indigo-300 ring-offset-4 shadow-lg transition-all duration-300 hover:ring-indigo-500 hover:scale-105">
-            <img
-            src="assets/images/sumit-kapoor.png"
-            alt="Dr. Sumit Kumar Kapoor"
-            class="w-full h-full object-cover"
-            onerror="this.src='https://ui-avatars.com/api/?name=Sumit+Kapoor&background=6366f1&color=fff&size=128'"
-            />
-          </div>
-          <span class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full shadow"></span>
-          </div>
-
-          <div>
-          <h3 class="font-semibold text-lg">Dr. Sumit Kumar Kapoor</h3>
-          <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
-          <p class="text-sm text-gray-600 mt-2">Faculty of Computer Science and Engineering</p>
-          <p class="text-sm text-indigo-700 mt-2 font-medium">sumit.kapoor@poornima.edu.in</p>
-          <p class="text-sm font-semibold mt-1">+91-8006690016</p>
-          </div>
-        </div>
-        </div>
-
-        <!-- Convener 2 -->
-        <div class="contact-card">
-        <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Convener</h2>
-
-        <div class="flex flex-col items-center text-center gap-4">
-          <div class="relative flex-shrink-0">
-          <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-indigo-300 ring-offset-4 shadow-lg transition-all duration-300 hover:ring-indigo-500 hover:scale-105">
-            <img
-            src="assets/images/ravi-soni.png"
-            alt="Dr. Ravi Soni"
-            class="w-full h-full object-cover"
-            onerror="this.src='https://ui-avatars.com/api/?name=Ravi+Soni&background=6366f1&color=fff&size=128'"
-            />
-          </div>
-          <span class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full shadow"></span>
-          </div>
-
-          <div>
-          <h3 class="font-semibold text-lg">Dr. Ravi Soni</h3>
-          <p class="text-gray-600">Assistant Professor, PU, Jaipur</p>
-          <p class="text-sm text-gray-600 mt-2">Faculty of Computer Science and Engineering</p>
-          <p class="text-sm text-indigo-700 mt-2 font-medium">ravi.soni1@poornima.edu.in</p>
-          <p class="text-sm font-semibold mt-1">+91-9928166649</p>
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="contact-card">
-        <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Co-Convener</h2>
-
-        <div class="flex flex-col items-center text-center gap-4">
-          <div class="relative flex-shrink-0">
-          <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-indigo-300 ring-offset-4 shadow-lg transition-all duration-300 hover:ring-indigo-500 hover:scale-105">
-            <img
-            src="assets/images/kriti-sankhla.png"
-            alt="Dr. Kriti Sankhla"
-            class="w-full h-full object-cover"
-            onerror="this.src='https://ui-avatars.com/api/?name=Kriti+Sankhla&background=6366f1&color=fff&size=128'"
-            />
-          </div>
-          <span class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full shadow"></span>
-          </div>
-
-          <div>
-          <h3 class="font-semibold text-lg">Dr. Kriti Sankhla</h3>
-          <p class="text-gray-600">Associate Professor, PU, Jaipur</p>
-          <p class="text-sm text-gray-600 mt-2">Faculty of Computer Science and Engineering</p>
-          <p class="text-sm text-indigo-700 mt-2 font-medium">kriti.sankhla@poornima.edu.in</p>
-          <p class="text-sm font-semibold mt-1">+91-9462425725</p>
-          </div>
-        </div>
-        </div>
-
-        <div class="contact-card">
-        <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Co-Convener</h2>
-
-        <div class="flex flex-col items-center text-center gap-4">
-          <div class="relative flex-shrink-0">
-          <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-indigo-300 ring-offset-4 shadow-lg transition-all duration-300 hover:ring-indigo-500 hover:scale-105">
-            <img
-            src="assets/images/sagar-kumar.png"
-            alt="Mr. Sagar Kumar"
-            class="w-full h-full object-cover"
-            onerror="this.src='https://ui-avatars.com/api/?name=Sagar+Kumar&background=6366f1&color=fff&size=128'"
-            />
-          </div>
-          <span class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full shadow"></span>
-          </div>
-
-          <div>
-          <h3 class="font-semibold text-lg">Mr. Sagar Kumar</h3>
-          <p class="text-gray-600">Assistant Professor, PU, Jaipur</p>
-          <p class="text-sm text-gray-600 mt-2">Faculty of Computer Science and Engineering</p>
-          <p class="text-sm text-indigo-700 mt-2 font-medium">sagar.kumar@poornima.edu.in</p>
-          <p class="text-sm font-semibold mt-1">+91-9982256688</p>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-  
-
-    <!-- VENUE SECTION -->
-    <section class="py-20 bg-white fade-section">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Location + Map -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-          <div class="modern-card p-8 rounded-2xl">
-            <h2 class="text-2xl font-bold text-primary mb-4">
-              Poornima University
-            </h2>
-            <p class="text-gray-600 mb-6">
-              ICISET 2026 will be held at Poornima University, Jaipur — a
-              state-of-the-art educational institution equipped with modern
-              facilities for international conferences.
-            </p>
-
-            <div class="space-y-6">
-              <div>
-                <p class="font-semibold">Address</p>
-                <p class="text-sm text-gray-600">
-                  Plot No. IS-2027-2031, Ramchandrapura P.O. Vidhani Vatika
-                  Road, Sitapura, Rajasthan 303905
-                </p>
-              </div>
-
-              <div>
-                <p class="font-semibold">Phone</p>
-                <p class="text-sm text-gray-600">+91-9887587811</p>
-              </div>
-
-              <div>
-                <p class="font-semibold">Email</p>
-                <p class="text-sm text-gray-600">iciset2026@poornima.edu.in</p>
-              </div>
+            <div>
+              <p class="font-semibold">Email</p>
+              <p class="text-sm text-gray-600">iciset2026@poornima.edu.in</p>
+              <p class="text-sm text-gray-600">saurabh.shandilya@poornima.edu.in</p>
             </div>
           </div>
-
-          <div class="modern-card p-4 rounded-2xl">
-            <a
-              href="https://www.google.com/maps/place/Poornima+University/@26.7796222,75.8770182,17z/"
-              target="_blank"
-            >
-              <img
-                src="assets/images/map.png"
-                class="rounded-xl w-full object-contain hover:scale-105 transition duration-500"
-              />
-            </a>
-          </div>
         </div>
 
-        <!-- Facilities -->
-        <h2 class="text-3xl font-bold mb-8">Venue Facilities</h2>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-16">
-          <div class="modern-card p-6 rounded-2xl">
-            <h3 class="font-semibold mb-4">Conference Facilities</h3>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li>✓ Large auditorium for keynote sessions</li>
-              <li>✓ Multiple meeting rooms for parallel sessions</li>
-              <li>✓ High-speed WiFi</li>
-              <li>✓ Advanced audio-visual equipment</li>
-            </ul>
-          </div>
-
-          <div class="modern-card p-6 rounded-2xl">
-            <h3 class="font-semibold mb-4">Amenities</h3>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li>✓ On-campus dining</li>
-              <li>✓ Parking available</li>
-              <li>✓ Refreshment lounges</li>
-              <li>✓ Accessible facilities</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Travel -->
-        <h2 class="text-3xl font-bold mb-8">Getting to Jaipur</h2>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="modern-card p-6 rounded-2xl">
-            <h3 class="font-semibold mb-3">By Air ✈️</h3>
-            <p class="text-sm text-gray-600 mb-3">
-              Jaipur International Airport (JAI) is well connected to major
-              cities.
-            </p>
-            <p class="text-xs text-gray-500">
-              Distance: ~13 km | Time: ~30 minutes
-            </p>
-          </div>
-
-          <div class="modern-card p-6 rounded-2xl">
-            <h3 class="font-semibold mb-3">By Rail 🚆</h3>
-            <p class="text-sm text-gray-600 mb-3">
-              Jaipur Railway Station connects to all major Indian cities.
-            </p>
-            <p class="text-xs text-gray-500">
-              Distance: ~12 km | Time: ~25 minutes
-            </p>
-          </div>
-
-          <div class="modern-card p-6 rounded-2xl">
-            <h3 class="font-semibold mb-3">By Road 🚘</h3>
-            <p class="text-sm text-gray-600 mb-3">
-              Excellent highway connectivity from Delhi and nearby states.
-            </p>
-            <p class="text-xs text-gray-500">
-              Delhi to Jaipur: ~260 km | ~4.5 hours
-            </p>
-          </div>
+        <div class="modern-card p-4 rounded-2xl">
+          <a href="https://www.google.com/maps/place/Poornima+University/@26.7796222,75.8770182,17z/" target="_blank">
+            <img src="assets/images/map.png"
+              class="rounded-xl w-full object-contain hover:scale-105 transition duration-500" />
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
-    <script>
-      fetch("components/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          const placeholder = document.getElementById("footer-placeholder");
-          placeholder.innerHTML = data;
+      <!-- Facilities -->
+      <h2 class="text-3xl font-bold mb-8">Venue Facilities</h2>
 
-          // Small delay so CSS applies first
-          setTimeout(() => {
-            const footer = placeholder.querySelector(".footer");
-            footer.classList.add("show-footer");
-          }, 100);
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <div class="modern-card p-6 rounded-2xl">
+          <h3 class="font-semibold mb-4">Conference Facilities</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✓ Large auditorium for keynote sessions</li>
+            <li>✓ Multiple meeting rooms for parallel sessions</li>
+            <li>✓ High-speed WiFi</li>
+            <li>✓ Advanced audio-visual equipment</li>
+          </ul>
+        </div>
+
+        <div class="modern-card p-6 rounded-2xl">
+          <h3 class="font-semibold mb-4">Amenities</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✓ On-campus dining</li>
+            <li>✓ Parking available</li>
+            <li>✓ Refreshment lounges</li>
+            <li>✓ Accessible facilities</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Travel -->
+      <h2 class="text-3xl font-bold mb-8">Getting to Jaipur</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="modern-card p-6 rounded-2xl">
+          <h3 class="font-semibold mb-3">By Air ✈️</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Jaipur International Airport (JAI) is well connected to major
+            cities.
+          </p>
+          <p class="text-xs text-gray-500">
+            Distance: ~13 km | Time: ~30 minutes
+          </p>
+        </div>
+
+        <div class="modern-card p-6 rounded-2xl">
+          <h3 class="font-semibold mb-3">By Rail 🚆</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Jaipur Railway Station connects to all major Indian cities.
+          </p>
+          <p class="text-xs text-gray-500">
+            Distance: ~12 km | Time: ~25 minutes
+          </p>
+        </div>
+
+        <div class="modern-card p-6 rounded-2xl">
+          <h3 class="font-semibold mb-3">By Road 🚘</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Excellent highway connectivity from Delhi and nearby states.
+          </p>
+          <p class="text-xs text-gray-500">
+            Delhi to Jaipur: ~260 km | ~4.5 hours
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("components/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        const placeholder = document.getElementById("footer-placeholder");
+        placeholder.innerHTML = data;
+
+        // Small delay so CSS applies first
+        setTimeout(() => {
+          const footer = placeholder.querySelector(".footer");
+          footer.classList.add("show-footer");
+        }, 100);
+      });
+  </script>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("opacity-100");
+      slides[current].classList.add("opacity-0");
+
+      current = (current + 1) % slides.length;
+
+      slides[current].classList.remove("opacity-0");
+      slides[current].classList.add("opacity-100");
+    }, 4000);
+
+    const sections = document.querySelectorAll(".fade-section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
         });
-    </script>
+      },
+      { threshold: 0.15 },
+    );
 
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      let current = 0;
+    sections.forEach((section) => observer.observe(section));
+  </script>
 
-      setInterval(() => {
-        slides[current].classList.remove("opacity-100");
-        slides[current].classList.add("opacity-0");
+  <script src="/assets/js/main.js"></script>
+</body>
 
-        current = (current + 1) % slides.length;
-
-        slides[current].classList.remove("opacity-0");
-        slides[current].classList.add("opacity-100");
-      }, 4000);
-
-      const sections = document.querySelectorAll(".fade-section");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        { threshold: 0.15 },
-      );
-
-      sections.forEach((section) => observer.observe(section));
-    </script>
-
-    <script src="/assets/js/main.js"></script>
-  </body>
 </html>
