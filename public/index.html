@@ -57,6 +57,60 @@
       .slider:hover img {
         transform: scale(1.05);
       }
+
+      .partner-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.partner-track {
+  display: flex;
+  width: max-content;
+  animation: scrollPartners 35s linear infinite;
+  cursor: pointer;
+}
+
+.partner-card {
+  flex: 0 0 auto;
+  width: 320px;
+  margin: 0 20px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.partner-card img {
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.partner-card:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes scrollPartners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partner-track.paused {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .partner-card {
+    width: 260px;
+  }
+}
+
     </style>
   </head>
 
@@ -179,7 +233,7 @@
 
             <div class="text-gray-700 text-base leading-relaxed space-y-2">
               <p>Rajasthan Centre of Advanced Technology (RCAT), Jaipur</p>
-              <p>Research and Development Cell, Poornima University, Jaipur</p>
+              <p>Bharatiya Knowledge Systems (Bharat BoudhIKS)</p>
               <p>
                 Indian Knowledge System (IKS) Cell, Poornima University, Jaipur
               </p>
@@ -510,156 +564,106 @@
         <div class="track-dots" id="track-dots"></div>
       </div>
 
-      <script>
-        (function () {
-          const track = document.getElementById('track-slide-track');
-          const dotsContainer = document.getElementById('track-dots');
-          const prevBtn = document.getElementById('track-prev');
-          const nextBtn = document.getElementById('track-next');
-          const totalCards = 5;
-          const autoPlayInterval = 4000;
-          let current = 0;
-          let autoTimer = null;
-          let progressTimer = null;
-
-          // Build dots
-          for (let i = 0; i < totalCards; i++) {
-            const dot = document.createElement('button');
-            dot.className = 'track-dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Go to track ' + (i + 1));
-            dot.addEventListener('click', () => goTo(i));
-            dotsContainer.appendChild(dot);
-          }
-
-          function updateDots() {
-            dotsContainer.querySelectorAll('.track-dot').forEach((d, i) => {
-              d.classList.toggle('active', i === current);
-            });
-          }
-
-          function updateSlide() {
-            track.style.transform = 'translateX(-' + (current * 100) + '%)';
-            updateDots();
-          }
-
-          function startProgress() {
-            clearInterval(progressTimer);
-            // Reset all progress bars
-            for (let i = 0; i < totalCards; i++) {
-              const bar = document.getElementById('progress-' + i);
-              if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
-            }
-            // Animate current
-            const currentBar = document.getElementById('progress-' + current);
-            if (currentBar) {
-              requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                  currentBar.style.transition = 'width ' + autoPlayInterval + 'ms linear';
-                  currentBar.style.width = '100%';
-                });
-              });
-            }
-          }
-
-          function goTo(index) {
-            current = (index + totalCards) % totalCards;
-            updateSlide();
-            startProgress();
-            resetAutoPlay();
-          }
-
-          function resetAutoPlay() {
-            clearInterval(autoTimer);
-            autoTimer = setInterval(() => goTo(current + 1), autoPlayInterval);
-          }
-
-          prevBtn.addEventListener('click', () => goTo(current - 1));
-          nextBtn.addEventListener('click', () => goTo(current + 1));
-
-          // Touch / swipe support
-          let touchStartX = 0;
-          track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
-          track.addEventListener('touchend', (e) => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-          }, { passive: true });
-
-          // Init
-          updateSlide();
-          startProgress();
-          resetAutoPlay();
-        })();
-      </script>
+      
     </section>
     <!-- Partners Section -->
     <section class="py-24 bg-gray-200 text-center fade-section">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-6">Our Partners</h2>
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- HEADING -->
+    <h2 class="text-4xl font-bold mb-6">Our Partners</h2>
 
-        <p
-          class="text-justify text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed"
-        >
-          ICISET-2026 is supported by distinguished academic institutions,
-          research organizations, and professional bodies committed to advancing
-          innovation in intelligent computing and future technologies. These
-          collaborations strengthen the conference’s global outreach, research
-          credibility, and academic impact.
-        </p>
+    <p class="text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed text-justify">
+      ICISET-2026 is supported by distinguished academic institutions,
+      research organizations, and professional bodies committed to advancing
+      innovation in intelligent computing and future technologies. These
+      collaborations strengthen the conference’s global outreach, research
+      credibility, and academic impact.
+    </p>
 
-        <div class="grid md:grid-cols-3 gap-10">
-          <div
-            class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition"
-          >
-            <img
-              src="assets/images/organising-logo.png" alt="Poornima University logo"
-              class="mx-auto h-20 mb-4"
-            />
-            <h4 class="text-lg font-semibold text-gray-800">ACM PU, Jaipur</h4>
-            <p class="text-sm text-gray-600 mt-2">
-              The ACM Student Chapter at Poornima University, Jaipur is a
-              dynamic student-led organization dedicated to fostering technical
-              skills and innovation. It encourages excellence in programming,
-              research, and collaborative learning through workshops, events,
-              and competitions.
-            </p>
-          </div>
+    <!-- FLOWING PARTNERS -->
+    <div class="partner-marquee">
+      <div class="partner-track" id="partnerTrack">
 
-          <div
-            class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition"
-          >
-            <img src="assets/images/rcat_logo.jpeg" alt="R-CAT logo" class="mx-auto h-20 mb-4" />
-            <h4 class="text-lg font-semibold text-gray-800">RCAT</h4>
-            <p class="text-sm text-gray-600 mt-2">
-              Rajasthan Council for Advanced Training, fostering innovation,
-              skill development, and industry-oriented research initiatives.
-            </p>
-          </div>
+        <!-- ===== ORIGINAL SET ===== -->
 
-          <div
-            class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition"
-          >
-            <img
-              src="assets/images/R&D Cell Poornima.jpeg" alt="R&D Cell Poornima University logo"
-              class="mx-auto h-20 mb-4"
-            />
-            <h4 class="text-lg font-semibold text-gray-800">
-              R&D Cell Poornima
-            </h4>
-            <p class="text-sm text-gray-600 mt-2">
-              The R&D Cell promotes innovation and a strong research culture at
-              Poornima University. It supports faculty and students in
-              developing new technologies and conducting impactful research.
-            </p>
-          </div>
+        <!-- ACM -->
+        <div class="partner-card">
+          <img src="assets/images/organising-logo.png" alt="Poornima University logo"
+            class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">ACM PU, Jaipur</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            The ACM Student Chapter at Poornima University, Jaipur is a
+            dynamic student-led organization dedicated to fostering technical
+            skills and innovation. It encourages excellence in programming,
+            research, and collaborative learning through workshops, events,
+            and competitions.
+          </p>
         </div>
-        <br />
-        <a
-          href="partners"
-          class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-          >More Partners</a
-        >
+
+        <!-- RCAT -->
+        <div class="partner-card">
+          <img src="assets/images/rcat_logo.jpeg" alt="R-CAT logo"
+            class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">RCAT</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            Rajasthan Council for Advanced Training fosters innovation,
+            skill development, and industry-oriented research initiatives,
+            supporting technological growth and professional excellence.
+          </p>
+        </div>
+
+        <!-- IKS -->
+        <div class="partner-card">
+          <img src="assets/images/iks-logo.jpeg" alt="IKS logo"
+            class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">IKS</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            Indian Knowledge Systems (IKS) promotes interdisciplinary research
+            rooted in India’s traditional knowledge, fostering innovation by
+            integrating ancient wisdom with modern scientific approaches.
+          </p>
+        </div>
+
+        <!-- ===== DUPLICATE (REQUIRED FOR LOOP) ===== -->
+
+        <div class="partner-card">
+          <img src="assets/images/organising-logo.png" class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">ACM PU, Jaipur</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            The ACM Student Chapter at Poornima University, Jaipur is a dynamic student-led organization focused on innovation and technical excellence.
+          </p>
+        </div>
+
+        <div class="partner-card">
+          <img src="assets/images/rcat_logo.jpeg" class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">RCAT</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            RCAT supports industry-driven research and innovation through training and collaboration initiatives.
+          </p>
+        </div>
+
+        <div class="partner-card">
+          <img src="assets/images/iks-logo.jpeg" class="mx-auto h-20 mb-4" />
+          <h4 class="text-lg font-semibold text-gray-800">IKS</h4>
+          <p class="text-sm text-gray-600 mt-2">
+            IKS integrates traditional Indian knowledge with modern science for sustainable innovation.
+          </p>
+        </div>
+
       </div>
-    </section>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="mt-12">
+      <a href="partners"
+        class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        More Partners
+      </a>
+    </div>
+
+  </div>
+</section>
     <!-- Committee Section  -->
     <section class="py-24 bg-white text-center fade-section">
       <div class="max-w-5xl mx-auto px-6">
@@ -768,6 +772,99 @@
         </div>
       </div>
     </section>
+
+    <!-- Track  -->
+     <script>
+        (function () {
+          const track = document.getElementById('track-slide-track');
+          const dotsContainer = document.getElementById('track-dots');
+          const prevBtn = document.getElementById('track-prev');
+          const nextBtn = document.getElementById('track-next');
+          const totalCards = 5;
+          const autoPlayInterval = 4000;
+          let current = 0;
+          let autoTimer = null;
+          let progressTimer = null;
+
+          // Build dots
+          for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'track-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to track ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+          }
+
+          function updateDots() {
+            dotsContainer.querySelectorAll('.track-dot').forEach((d, i) => {
+              d.classList.toggle('active', i === current);
+            });
+          }
+
+          function updateSlide() {
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            updateDots();
+          }
+
+          function startProgress() {
+            clearInterval(progressTimer);
+            // Reset all progress bars
+            for (let i = 0; i < totalCards; i++) {
+              const bar = document.getElementById('progress-' + i);
+              if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+            }
+            // Animate current
+            const currentBar = document.getElementById('progress-' + current);
+            if (currentBar) {
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  currentBar.style.transition = 'width ' + autoPlayInterval + 'ms linear';
+                  currentBar.style.width = '100%';
+                });
+              });
+            }
+          }
+
+          function goTo(index) {
+            current = (index + totalCards) % totalCards;
+            updateSlide();
+            startProgress();
+            resetAutoPlay();
+          }
+
+          function resetAutoPlay() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => goTo(current + 1), autoPlayInterval);
+          }
+
+          prevBtn.addEventListener('click', () => goTo(current - 1));
+          nextBtn.addEventListener('click', () => goTo(current + 1));
+
+          // Touch / swipe support
+          let touchStartX = 0;
+          track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+          track.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+          }, { passive: true });
+
+          // Init
+          updateSlide();
+          startProgress();
+          resetAutoPlay();
+        })();
+      </script>
+
+      <!-- Partners Section -->
+       <script>
+const partnerTrack = document.getElementById("partnerTrack");
+let isPaused = false;
+
+partnerTrack.addEventListener("click", () => {
+  isPaused = !isPaused;
+  partnerTrack.classList.toggle("paused", isPaused);
+});
+</script>
 
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
