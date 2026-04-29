@@ -30,7 +30,7 @@ const importantDates = [
   { event: 'Paper Submission Deadline', date: 'July 10, 2026' },
   { event: 'Notification of Acceptance', date: 'August 10, 2026' },
   { event: 'Camera Ready Submission', date: 'September 01, 2026' },
-  { event: 'Early Bird Registration', date: 'September 05, 2026' },
+  { event: 'Early Bird Registration', date: 'October 30, 2026' },
   { event: 'Conference Dates', date: 'September 25–26, 2026' },
 ]
 
