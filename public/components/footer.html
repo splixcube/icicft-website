@@ -59,6 +59,29 @@
     padding-left: 5px;
   }
 
+  .acknowledgment {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px 10px;
+  text-align: center;
+}
+
+/* Match heading style */
+.acknowledgment h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+/* Match paragraph style EXACTLY */
+.acknowledgment p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 10px;
+}
+
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
@@ -85,6 +108,7 @@
       text-align: center;
       gap: 10px;
     }
+    
   }
 
   /* ================= POPUP CSS ================= */
@@ -130,15 +154,15 @@
 </style>
 
 <footer class="footer">
+
   <div class="footer-container">
+    <!-- 4 columns -->
     <div class="footer-col">
       <h3>ICISET 2026</h3>
-      <p>
-        1st International Conference on Intelligent Systems and Emerging Technologies
-      </p>
+      <p>1st International Conference on Intelligent Systems and Emerging Technologies</p>
       <p>November 27-28, 2026</p>
     </div>
-
+    
     <div class="footer-col">
       <h3>Quick Links</h3>
       <ul>
@@ -167,6 +191,15 @@
     </div>
   </div>
 
+  <!-- ✅ correct section (NOT footer-col) -->
+  <div class="acknowledgment">
+    <h3>Acknowledgment</h3>
+    <p>
+      The Microsoft CMT service was used for managing the peer-reviewing process for this conference.
+      Provided for free by Microsoft — covering Azure cloud services, software development, and support.
+    </p>
+  </div>
+
   <div class="footer-bottom">
     <div class="footer-bottom-container">
       <p>© 2026 Poornima University. All rights reserved.</p>
@@ -178,6 +211,7 @@
       </div>
     </div>
   </div>
+
 </footer>
 
 <!-- ================= POPUP HTML ================= -->
