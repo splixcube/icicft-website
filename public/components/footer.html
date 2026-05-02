@@ -60,27 +60,27 @@
   }
 
   .acknowledgment {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 5px 20px;
-    text-align: center;
-  }
+  max-width: 600px;
+  margin: 0 auto ;
+  padding: 5px 20px;
+  text-align: center;
+}
 
-  /* Match heading style */
-  .acknowledgment h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #ffffff;
-  }
+/* Match heading style */
+.acknowledgment h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
 
-  /* Match paragraph style EXACTLY */
-  .acknowledgment p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #e2e8f0;
-    margin-bottom: 5px;
-  }
+/* Match paragraph style EXACTLY */
+.acknowledgment p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 5px;
+}
 
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -108,6 +108,7 @@
       text-align: center;
       gap: 10px;
     }
+    
   }
 
   /* ================= POPUP CSS ================= */
@@ -153,17 +154,15 @@
 </style>
 
 <footer class="footer">
+
   <div class="footer-container">
     <!-- 4 columns -->
     <div class="footer-col">
       <h3>ICISET 2026</h3>
-      <p>
-        1st International Conference on Intelligent Systems and Emerging
-        Technologies
-      </p>
+      <p>1st International Conference on Intelligent Systems and Emerging Technologies</p>
       <p>November 27-28, 2026</p>
     </div>
-
+    
     <div class="footer-col">
       <h3>Quick Links</h3>
       <ul>
@@ -213,48 +212,14 @@
       </div>
     </div>
   </div>
+
 </footer>
 
 <!-- ================= POPUP HTML ================= -->
 
-<style>
-  #conferencePopup .popup-card {
-    transform: translateY(18px) scale(0.97);
-    opacity: 0;
-    filter: blur(2px);
-  }
-
-  #conferencePopup.show .popup-card.play-in {
-    animation: popupPlay 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  #conferencePopup .popup-card:hover {
-    transform: translateY(-2px);
-    transition: transform 250ms ease, box-shadow 250ms ease;
-  }
-
-  @keyframes popupPlay {
-    0% {
-      transform: translateY(18px) scale(0.97);
-      opacity: 0;
-      filter: blur(2px);
-    }
-    65% {
-      transform: translateY(-4px) scale(1.01);
-      opacity: 1;
-      filter: blur(0);
-    }
-    100% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      filter: blur(0);
-    }
-  }
-</style>
-
 <div id="conferencePopup">
   <div
-    class="popup-card bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
+    class="bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
   >
     <!-- Header -->
     <div
@@ -267,21 +232,9 @@
         </p>
       </div>
 
-      <div class="flex items-center gap-3">
-        <button
-          id="replayPopup"
-          class="text-lg font-semibold hover:text-gray-300 transition"
-          title="Replay animation"
-        >
-          ↻
-        </button>
-        <button
-          id="closePopup"
-          class="text-2xl font-bold hover:text-gray-300 transition"
-        >
-          ×
-        </button>
-      </div>
+      <button id="closePopup" class="text-2xl font-bold hover:text-gray-300">
+        ×
+      </button>
     </div>
 
     <!-- Body -->
@@ -318,7 +271,7 @@
               <span>Late Registration:</span>
               <span class="font-medium">November 15, 2026</span>
             </li>
-
+            
             <li class="flex justify-between">
               <span>Conference Dates:</span>
               <span class="font-medium">November 27–28, 2026</span>
@@ -371,8 +324,7 @@
         class="mt-6 bg-blue-50 border border-blue-200 text-blue-800 text-sm p-4 rounded-lg"
       >
         <strong>Note:</strong> All papers will be peer reviewed. Accepted papers
-        will be recommended for publication in Scopus Indexed Conference
-        Proceedings.
+        will be recommended for publication in Scopus Indexed Conference Proceedings.
       </div>
 
       <!-- Buttons -->
@@ -396,30 +348,18 @@
 </div>
 
 <script>
-  function playPopupAnimation() {
-    const popup = document.getElementById("conferencePopup");
-    const card = popup?.querySelector(".popup-card");
-    if (!popup || !card) return;
-
-    popup.classList.add("show");
-    card.classList.remove("play-in");
-    void card.offsetWidth;
-    card.classList.add("play-in");
-  }
-
   window.addEventListener("load", function () {
     setTimeout(function () {
-      playPopupAnimation();
+      const popup = document.getElementById("conferencePopup");
+      if (popup) {
+        popup.classList.add("show");
+      }
     }, 600);
   });
 
   document.addEventListener("click", function (e) {
     if (e.target.id === "closePopup" || e.target.id === "closePopupBtn") {
       document.getElementById("conferencePopup").classList.remove("show");
-    }
-
-    if (e.target.id === "replayPopup") {
-      playPopupAnimation();
     }
   });
 </script>
