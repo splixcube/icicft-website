@@ -217,9 +217,44 @@
 
 <!-- ================= POPUP HTML ================= -->
 
+<style>
+  #conferencePopup .popup-card {
+    transform: translateY(18px) scale(0.97);
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  #conferencePopup.show .popup-card.play-in {
+    animation: popupPlay 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  #conferencePopup .popup-card:hover {
+    transform: translateY(-2px);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+  }
+
+  @keyframes popupPlay {
+    0% {
+      transform: translateY(18px) scale(0.97);
+      opacity: 0;
+      filter: blur(2px);
+    }
+    65% {
+      transform: translateY(-4px) scale(1.01);
+      opacity: 1;
+      filter: blur(0);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+</style>
+
 <div id="conferencePopup">
   <div
-    class="bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
+    class="popup-card bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
   >
     <!-- Header -->
     <div
@@ -232,9 +267,21 @@
         </p>
       </div>
 
-      <button id="closePopup" class="text-2xl font-bold hover:text-gray-300">
-        ×
-      </button>
+      <div class="flex items-center gap-3">
+        <button
+          id="replayPopup"
+          class="text-lg font-semibold hover:text-gray-300 transition"
+          title="Replay animation"
+        >
+          ↻
+        </button>
+        <button
+          id="closePopup"
+          class="text-2xl font-bold hover:text-gray-300 transition"
+        >
+          ×
+        </button>
+      </div>
     </div>
 
     <!-- Body -->
@@ -349,18 +396,30 @@
 </div>
 
 <script>
+  function playPopupAnimation() {
+    const popup = document.getElementById("conferencePopup");
+    const card = popup?.querySelector(".popup-card");
+    if (!popup || !card) return;
+
+    popup.classList.add("show");
+    card.classList.remove("play-in");
+    void card.offsetWidth;
+    card.classList.add("play-in");
+  }
+
   window.addEventListener("load", function () {
     setTimeout(function () {
-      const popup = document.getElementById("conferencePopup");
-      if (popup) {
-        popup.classList.add("show");
-      }
+      playPopupAnimation();
     }, 600);
   });
 
   document.addEventListener("click", function (e) {
     if (e.target.id === "closePopup" || e.target.id === "closePopupBtn") {
       document.getElementById("conferencePopup").classList.remove("show");
+    }
+
+    if (e.target.id === "replayPopup") {
+      playPopupAnimation();
     }
   });
 </script>
